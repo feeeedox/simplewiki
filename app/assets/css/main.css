@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --color-page-bg: var(--page-bg);
+  --color-content-bg: var(--content-bg);
+  --color-sidebar-bg: var(--sidebar-bg);
+  --color-border: var(--border);
+  --color-border-light: var(--border-light);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-link: var(--link);
+  --color-link-visited: var(--link-visited);
+  --color-link-hover: var(--link-hover);
+  --color-toc-bg: var(--toc-bg);
+  --color-header-band: var(--header-band);
+  --font-body: var(--font-body);
+  --font-heading: var(--font-heading);
+  --color-focus: var(--focus-color);
+}
+
+:root{
+    --page-bg: #f6f6f6;
+    --content-bg: #ffffff;
+    --sidebar-bg: #f8f9fa;
+    --border: #a2a9b1;
+    --border-light: #eaecf0;
+    --text: #202122;
+    --text-muted: #54595d;
+    --link: #0645ad;
+    --link-visited: #0b0080;
+    --link-hover: #447ff5;
+    --toc-bg: #f8f9fa;
+    --header-band: #eaecf0;
+    --font-body: Helvetica, Arial, "Liberation Sans", sans-serif;
+    --font-heading: Georgia, "Linux Libertine", "Times New Roman", serif;
+    --focus-color: #36c;
+  }
+
+*{ box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+a{ color: var(--link); text-decoration: none; }
+a:visited{ color: var(--link-visited); }
+a:hover{ text-decoration: underline; color: var(--link-hover); }
+a:focus-visible{ outline: 2px solid #36c; outline-offset: 1px; }

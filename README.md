@@ -35,7 +35,7 @@ bun dev
 
 ## ✨ Features
 
-- Blazing-fast static site generation
+- Fast static site generation
 - Markdown and MDC support
 - File-based content management
 - Automatic navigation generation

@@ -1,16 +1,35 @@
 <script setup lang="ts">
-    const { data } = await useAsyncData('home', () => {
-  return queryCollection('content').path('/').first()
+defineProps({
+    data: {
+        type: [Object, null],
+        required: true,
+    }
 })
 </script>
 
 <template>
-    <div class="content bg-content-bg pt-4.5 px-6.5 pb-10 border-r border-border">
-        <ContentRenderer :value="data" class="renderer"/>
+    <div class="content bg-content-bg pt-4.5 px-6.5 pb-10 border-r border-l border-border min-h-screen">
+        <ContentRenderer v-if="data" :value="data" class="renderer" :components="{
+            pre: 'ProsePre',
+            FieldTable: 'FieldTable'
+        }" />
+        <p v-else class="text-red-900">No content available.</p>
     </div>
 </template>
 
 <style scoped lang="css">
+.renderer :deep([align="left"]) {
+    text-align: left;
+}
+
+.renderer :deep([align="center"]) {
+    text-align: center;
+}
+
+.renderer :deep([align="right"]) {
+    text-align: right;
+}
+
 .renderer :deep(h1) {
     font-family: var(--font-heading);
     font-size: 24px;
@@ -20,10 +39,9 @@
     border-bottom: 1px solid var(--border-light);
 }
 
-
 .renderer :deep(h2) {
     font-family: var(--font-heading);
-    font-size: 18px;
+    font-size: 20px;
     font-weight: normal;
     margin: 20px 0 8px;
     padding-bottom: 4px;
@@ -32,10 +50,10 @@
 
 .renderer :deep(h2 > a) {
     color: var(--text);
-} 
+}
 
 .renderer :deep(h3) {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: bold;
     margin: 14px 0 6px;
 }
@@ -69,6 +87,7 @@
     margin: 6px 0 12px;
     padding-left: 28px;
 }
+
 .renderer :deep(li) {
     margin: 1px 0;
 }
@@ -79,12 +98,33 @@
     padding-left: 28px;
 }
 
-.renderer :deep(code) {
-    font-family: "Courier New", monospace;
-    background: #f8f9fa;
-    border: 1px solid var(--border-light);
-    padding: 0 4px;
-    font-size: 0.92em;
+.renderer :deep(pre) {
+    background-color: #f6f8fa !important;
+    border: 1px solid var(--border-light, #e1e4e8);
+    border-radius: 6px;
+    padding: 16px;
+    margin: 16px 0;
+    overflow-x: auto;
+    font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+    font-size: 13.5px;
+    line-height: 1.5;
+}
+
+
+.renderer :deep(pre code) {
+    background: none !important;
+    padding: 0 !important;
+    border: none !important;
+    font-family: inherit;
+    color: inherit;
+}
+
+.renderer :deep(.highlight) {
+    background-color: #fffbdd;
+    display: block;
+    margin: 0 -16px;
+    padding: 0 16px;
+    border-left: 3px solid #ffd33d;
 }
 
 .renderer :deep(hr) {
@@ -115,13 +155,15 @@
     padding: 5px 10px;
     text-align: left;
 }
+
 .renderer :deep(th) {
     background: var(--header-band);
     font-weight: bold;
 }
-.renderer :deep(th:last-child),
-.renderer :deep(td:last-child) { width: 90px; }
-.renderer :deep(tr:hover td) { background: #fbfbfc; }  
+
+.renderer :deep(tr:hover td) {
+    background: #fbfbfc;
+}
 
 .renderer :deep(img) {
     max-width: 100%;

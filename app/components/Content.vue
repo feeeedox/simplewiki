@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-    <div class="content bg-content-bg pt-4.5 px-6.5 pb-10 border-r border-l border-border min-h-screen">
+    <div class="bg-content-bg pt-4.5 px-6.5 pb-10 border-r border-l border-border min-h-screen">
         <ContentRenderer v-if="data" :value="data" class="renderer" :components="{
             pre: 'ProsePre',
             FieldTable: 'FieldTable'

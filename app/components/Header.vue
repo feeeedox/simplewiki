@@ -41,12 +41,12 @@ const closeSearch = () => {
 
 <template>
     <header class="bg-content-bg border-b border-border relative z-50">
-        <div class="header__content max-w-275 mx-auto pt-2.25 pb-2 px-5 flex items-end justify-between gap-6 flex-wrap">
-            <div class="flex items-baseline gap-2">
+        <div class="max-w-275 mx-auto pt-2.25 pb-2 px-5 flex flex-col sm:flex-row sm:items-center justify-between sm:gap-6 flex-wrap w-full">
+            <div class="flex items-baseline gap-2 justify-center sm:justify-start">
                 <NuxtLink to="/" class="hover:opacity-90">
                     <h1 class="font-heading text-[1.375rem] font-normal text-text">{{ wikiName }}</h1>
                 </NuxtLink>
-                <p class="text-xs text-text-muted italic">Documentation</p>
+                <p class="text-xs text-text-muted italic hidden sm:block">Documentation</p>
             </div>
             
             <div class="flex flex-col relative">
@@ -58,7 +58,7 @@ const closeSearch = () => {
                         :disabled="status !== 'ready'"
                         type="text" 
                         :placeholder="status === 'ready' ? 'Search wiki...' : 'Indexing...'"
-                        class="w-56 py-1 px-2 border border-border rounded-xs bg-white font-body text-sm text-text focus:outline-none focus:border-focus focus:ring-1 focus:ring-focus disabled:opacity-50"
+                        class="w-full sm:w-56 py-1 px-2 border border-border rounded-xs bg-white font-body text-sm text-text focus:outline-none focus:border-focus focus:ring-1 focus:ring-focus disabled:opacity-50"
                     >
                 </div>
 

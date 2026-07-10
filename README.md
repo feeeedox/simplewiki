@@ -1,75 +1,59 @@
-# Nuxt Minimal Starter
+# SimpleWiki
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+<p align="center">
+  A lightweight, blazing-fast documentation engine built with Nuxt 4, Nuxt Content and Tailwind CSS.
+</p>
 
-## Setup
+<p align="center">
+  <img src="https://img.shields.io/badge/Nuxt-4-00DC82?style=flat&logo=nuxt.js">
+  <img src="https://img.shields.io/badge/TailwindCSS-4-06B6D4?style=flat&logo=tailwindcss">
+  <img src="https://img.shields.io/badge/Markdown-MDC-black?style=flat&logo=markdown">
+</p>
 
-Make sure to install dependencies:
+---
 
-```bash
-# npm
-npm install
+## About
 
-# pnpm
-pnpm install
+**SimpleWiki** is a file-based documentation engine designed for creating fast and customizable wiki systems.
 
-# yarn
-yarn install
+It transforms Markdown files into a searchable and high-performance documentation platform while keeping the content simple and developer-friendly.
 
-# bun
-bun install
-```
+---
 
-## Development Server
+## Features
 
-Start the development server on `http://localhost:3000`:
+- Blazing-fast static site generation
+- Markdown and MDC support
+- File-based content management
+- Automatic navigation generation
+- Tailwind CSS powered design
+- Custom Vue component support
+- Built for documentation and knowledge bases
 
-```bash
-# npm
-npm run dev
+---
 
-# pnpm
-pnpm dev
+## Screenshot
 
-# yarn
-yarn dev
+<p align="center">
+  <img src=".github/screenshots/site.png" alt="SimpleWiki Screenshot">
+</p>
 
-# bun
-bun run dev
-```
+---
 
-## Production
+## Documentation
 
-Build the application for production:
+All guides, configuration options, and usage examples are available in the official [SimpleWiki documentation](https://feeeedox.github.io/simplewiki/).
 
-```bash
-# npm
-npm run build
+---
 
-# pnpm
-pnpm build
+## Tech Stack
 
-# yarn
-yarn build
+- [Nuxt 4](https://nuxt.com/)
+- [Nuxt Content](https://content.nuxt.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
-# bun
-bun run build
-```
+---
 
-Locally preview production build:
+## License
 
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+MIT License

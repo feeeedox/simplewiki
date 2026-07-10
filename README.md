@@ -61,11 +61,9 @@ To install SimpleWiki, check out the [installation guide](https://feeeedox.githu
 
 ### Tools & Libraries Used
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Nuxt-4-00DC82?style=flat&logo=nuxt.js">
-  <img src="https://img.shields.io/badge/TailwindCSS-4-06B6D4?style=flat&logo=tailwindcss">
-  <img src="https://img.shields.io/badge/Markdown-MDC-black?style=flat&logo=markdown">
-</p>
+<img src="https://img.shields.io/badge/Nuxt-4-00DC82?style=flat&logo=nuxt.js">
+<img src="https://img.shields.io/badge/TailwindCSS-4-06B6D4?style=flat&logo=tailwindcss">
+<img src="https://img.shields.io/badge/Markdown-MDC-black?style=flat&logo=markdown">
 
 ### Inspiration
 

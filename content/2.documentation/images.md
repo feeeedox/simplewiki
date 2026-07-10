@@ -106,7 +106,7 @@ SimpleWiki also supports the Nuxt Image component through MDC.
 
 Example:
 
-```md
+```none
 ::nuxt-img{src="/images/example.png" width="300" height="200" format="webp" loading="lazy"}
 ::
 ```

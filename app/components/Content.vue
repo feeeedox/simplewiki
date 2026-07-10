@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-    <div class="bg-content-bg pt-4.5 px-6.5 pb-10 border-r border-l border-border min-h-screen">
+    <div class="bg-content-bg pt-4.5 px-6.5 pb-10 border-r border-l border-border min-h-screen min-w-0">
         <ContentRenderer v-if="data" :value="data" class="renderer" :components="{
             pre: 'ProsePre',
             FieldTable: 'FieldTable'
@@ -104,7 +104,12 @@ defineProps({
     border-radius: 6px;
     padding: 16px;
     margin: 16px 0;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
     overflow-x: auto;
+    white-space: pre;
+    word-break: normal;
     font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
     font-size: 13.5px;
     line-height: 1.5;

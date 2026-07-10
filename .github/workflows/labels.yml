@@ -68,7 +68,6 @@ jobs:
             return exists;
 
       - name: Setup labels
-        if: steps.check_commit.outputs.result == 'true' && steps.check_labels.outputs.result == 'false'
         uses: actions/github-script@v7
         with:
           script: |
@@ -117,7 +116,6 @@ jobs:
             }
 
       - name: 🎉 Setup Complete
-        if: steps.check_commit.outputs.result == 'true' && steps.check_labels.outputs.result == 'false'
         run: |
           echo ""
           echo "============================================================"

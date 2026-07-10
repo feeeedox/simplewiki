@@ -142,13 +142,3 @@ Example:
 ```
 
 Available thumbnail sizes depend on YouTube's supported formats.
-
----
-
-# Choosing the Right Method
-
-| Method            | Best For                        |
-| :---------------- | :------------------------------ |
-| HTML5 Video       | Self-hosted tutorials and demos |
-| YouTube Component | Public videos and tutorials     |
-| External Embeds   | Third-party platforms           |

@@ -21,10 +21,10 @@ A table consists of columns separated by `|` characters.
 Example:
 
 ```md
-| Feature | Description |
-| --- | --- |
-| Markdown | Write documentation |
-| MDC | Add interactive components |
+| Feature  | Description                |
+| :------- | :------------------------- |
+| Markdown | Write documentation        |
+| MDC      | Add interactive components |
 ```
 
 Result:
@@ -43,8 +43,8 @@ You can control the alignment of columns using `:` in the separator row.
 ### Left Alignment
 
 ```md
-| Feature | Description |
-| :--- | :--- |
+| Feature  | Description          |
+| :------- | :------------------- |
 | Markdown | Documentation format |
 ```
 
@@ -59,8 +59,8 @@ Result:
 ### Center Alignment
 
 ```md
-| Feature | Description |
-| :---: | :---: |
+|  Feature |      Description     |
+| :------: | :------------------: |
 | Markdown | Documentation format |
 ```
 
@@ -75,9 +75,9 @@ Result:
 ### Right Alignment
 
 ```md
-| Feature | Description |
-| ---: | ---: |
-| Version | 4.0 |
+|    Feature | Version |
+| ---------: | ------: |
+| SimpleWiki |     1.0 |
 ```
 
 Result:
@@ -100,10 +100,10 @@ Tables can contain:
 Example:
 
 ```md
-| Component | Installation | Required |
-| :--- | :--- | :--- |
-| MongoDB | [Guide](#) | Yes |
-| Redis | `apt install redis` | No |
+| Component | Installation        | Required |
+| :-------- | :------------------ | :------- |
+| MongoDB   | [Guide](#)          | Yes      |
+| Redis     | `apt install redis` | No       |
 ```
 
 Result:
@@ -123,9 +123,9 @@ Example:
 
 ```md
 | Component | Required |
-| :--- | :--- |
-| MongoDB | Yes |
-| Redis | No |
+| :-------- | :------- |
+| MongoDB   | Yes      |
+| Redis     | No       |
 
 {#database-components}
 ```

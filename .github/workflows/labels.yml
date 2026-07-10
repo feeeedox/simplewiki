@@ -1,0 +1,127 @@
+# Remove this action after the initial commit, you won't need it anymore :)
+name: Setup Repository Labels
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  setup-labels:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Detect initial commit
+        id: check_commit
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: commits } = await github.rest.repos.listCommits({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              per_page: 2
+            });
+            const isInitial = commits.length === 1;
+            console.log(`Initial commit: ${isInitial}`);
+            return isInitial;
+
+      - name: Check if custom labels already exist
+        id: check_labels
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const existingLabels = await github.rest.issues.listLabelsForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            });
+            const customLabels = [
+              "🔬 research",
+              "⚙️ ops",
+              "🤖 ci",
+              "🎬 demo",
+              "🐞 bug",
+              "✨ enhancement",
+              "📚 documentation",
+              "❓ question",
+              "🙋 help wanted",
+              "🌱 good first issue",
+              "🚫 wontfix",
+              "🔁 duplicate",
+              "❌ invalid",
+              "⏳ in progress",
+              "✅ ready for review",
+              "⛔ blocked",
+              "🔥 priority: high",
+              "⚡ priority: medium",
+              "🍃 priority: low"
+            ];
+            const exists = existingLabels.data.some(label => customLabels.includes(label.name));
+            console.log(`Custom labels exist: ${exists}`);
+            return exists;
+
+      - name: Setup labels
+        if: steps.check_commit.outputs.result == 'true' && steps.check_labels.outputs.result == 'false'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const existingLabels = await github.rest.issues.listLabelsForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            });
+            for (const label of existingLabels.data) {
+              await github.rest.issues.deleteLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                name: label.name
+              });
+            }
+
+            const labels = [
+              {"name": "🔬 research", "color": "ededed", "description": "Research needed"},
+              {"name": "⚙️ ops", "color": "c2e0c6", "description": "Ops task"},
+              {"name": "🤖 ci", "color": "bfdadc", "description": "Related to GitHub Actions / CI"},
+              {"name": "🎬 demo", "color": "bfdadc", "description": "Demo label"},
+              {"name": "🐞 bug", "color": "d73a4a", "description": "Bug report"},
+              {"name": "✨ enhancement", "color": "a2eeef", "description": "Feature request / enhancement"},
+              {"name": "📚 documentation", "color": "0075ca", "description": "Documentation update"},
+              {"name": "❓ question", "color": "d876e3", "description": "User question or inquiry"},
+              {"name": "🙋 help wanted", "color": "008672", "description": "Needs help from contributors"},
+              {"name": "🌱 good first issue", "color": "7057ff", "description": "Good entry point for new contributors"},
+              {"name": "🚫 wontfix", "color": "ffffff", "description": "Issue won't be fixed"},
+              {"name": "🔁 duplicate", "color": "cccccc", "description": "Duplicate issue"},
+              {"name": "❌ invalid", "color": "e6e6e6", "description": "Invalid issue or PR"},
+              {"name": "⏳ in progress", "color": "fbca04", "description": "Work in progress"},
+              {"name": "✅ ready for review", "color": "0e8a16", "description": "PR ready for review"},
+              {"name": "⛔ blocked", "color": "5319e7", "description": "Work is blocked"},
+              {"name": "🔥 priority: high", "color": "b60205", "description": "High priority"},
+              {"name": "⚡ priority: medium", "color": "d93f0b", "description": "Medium priority"},
+              {"name": "🍃 priority: low", "color": "86a17d", "description": "Low priority"}
+            ];
+
+            for (const label of labels) {
+              await github.rest.issues.createLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                name: label.name,
+                description: label.description,
+                color: label.color
+              });
+            }
+
+      - name: 🎉 Setup Complete
+        if: steps.check_commit.outputs.result == 'true' && steps.check_labels.outputs.result == 'false'
+        run: |
+          echo ""
+          echo "============================================================"
+          echo "✅  All custom labels have been created successfully!"
+          echo "⚠️  You can now safely delete this workflow (.github/workflows/labels.yml)!"
+          echo "============================================================"
+          echo ""

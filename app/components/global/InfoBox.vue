@@ -1,7 +1,7 @@
 <template>
     <div :class="['info-box', type]" :style="{ width: width }">
         <div class="info-box-icon">
-            <img :src="`/icons/${images[type]}`" alt="" />
+            <img :src="`icons/${images[type]}`" alt="" />
         </div>
         <div class="info-box-content">
             <slot />

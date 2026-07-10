@@ -18,14 +18,15 @@ export default defineNuxtConfig({
   app: {
     baseURL: process.env.NODE_ENV === "production" ? "/simplewiki/" : "/", // Change this to your repository name if deploying to GitHub Pages, or leave it as "/" for local development
     head: {
+      base: { href: process.env.NODE_ENV === "production" ? "/simplewiki/" : "/" }, // Change this to your repository name if deploying to GitHub Pages, or leave it as "/" for local development
       link: [
-        { rel: 'icon', href: '/favicon.ico', sizes: '32x32' },
+        { rel: 'icon', href: 'favicon.ico', sizes: '32x32' },
         
-        { rel: 'icon', href: '/icon.svg', type: 'image/svg+xml' },
+        { rel: 'icon', href: 'icon.svg', type: 'image/svg+xml' },
         
-        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
+        { rel: 'apple-touch-icon', href: 'apple-touch-icon.png' },
         
-        { rel: 'manifest', href: '/site.webmanifest' }
+        { rel: 'manifest', href: 'site.webmanifest' }
       ]
     }
   },

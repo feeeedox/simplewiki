@@ -5,7 +5,7 @@
     ":semanticCommits",
     ":dependencyDashboard",
     "group:allNonMajor",
-    "npm:unpublishSafe",
+    "security:minimumReleaseAgeNpm",
     "schedule:weekly"
   ],
   "timezone": "Europe/Berlin",

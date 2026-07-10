@@ -16,9 +16,9 @@ export default defineNuxtConfig({
     },
   },
   app: {
-    baseURL: process.env.NODE_ENV === "production" ? "/simplewiki/" : "/", // Change this to your repository name if deploying to GitHub Pages, or leave it as "/" for local development
+    baseURL: '/simplewiki/', // Change this to your desired base URL, or remove it if you want to serve from the root.
     head: {
-      base: { href: process.env.NODE_ENV === "production" ? "/simplewiki/" : "/" }, // Change this to your repository name if deploying to GitHub Pages, or leave it as "/" for local development
+      base: { href: '/simplewiki/' }, // Change this to your desired base URL, or remove it if you want to serve from the root.
       link: [
         { rel: 'icon', href: 'favicon.ico', sizes: '32x32' },
         

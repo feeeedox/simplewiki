@@ -35,14 +35,14 @@ public/
 You can then embed the video inside a Markdown page:
 
 ```html
-<video src="/videos/bunny.mp4" controls width="100%">
+<video src="/simplewiki/videos/bunny.mp4" controls width="100%">
   Your browser does not support the video tag.
 </video>
 ```
 
 Result:
 
-<video src="/videos/bunny.mp4" controls width="100%">
+<video src="/simplewiki/videos/bunny.mp4" controls width="100%">
   Your browser does not support the video tag.
 </video>
 

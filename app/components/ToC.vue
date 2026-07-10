@@ -1,7 +1,9 @@
 <script setup lang="ts">
+const route = useRoute()
+
 defineProps({
     tocLinks: {
-        type: Array,
+        type: Array as PropType<any[]>,
         required: true,
     }
 })
@@ -16,14 +18,14 @@ defineProps({
             <ol v-if="tocLinks.length" class="m-0 pl-4 list-decimal list-outside">
                 <li v-for="link in tocLinks" :key="link.id"
                     class="mt-1 mb-1 [counter-increment:toc-main] [counter-reset:toc-sub]">
-                    <a :href="`#${link.id}`" class="text-text! hover:text-link-hover! no-underline">
+                    <a :href="`${route.path}#${link.id}`" class="text-text! hover:text-link-hover! no-underline">
                         <span class="text-text-muted! mr-1 [content:counter(toc-main)_'.']"></span>{{ link.text }}
                     </a>
 
                     <ol v-if="link.children && link.children.length" class="pl-4.5 mt-0.5 mb-1 list-inside list-decimal">
                         <li v-for="subLink in link.children" :key="subLink.id"
                             class="mt-0.75 mb-0.75 [counter-increment:toc-sub]">
-                            <a :href="`#${subLink.id}`" class="text-text! hover:text-link-hover! no-underline">
+                            <a :href="`${route.path}#${subLink.id}`" class="text-text! hover:text-link-hover! no-underline">
                                 <span class="text-text-muted! mr-1 [font-variant-numeric:tabular-nums] [content:counter(toc-main)_'.'_counter(toc-sub)]"></span>{{ subLink.text }}
                             </a>
                         </li>

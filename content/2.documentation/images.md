@@ -14,7 +14,7 @@ SimpleWiki supports standard Markdown images as well as the Nuxt Image component
 
 ---
 
-# Basic Images
+## Basic Images
 
 The simplest way to add an image is using standard Markdown syntax.
 
@@ -26,7 +26,7 @@ The text inside the brackets is used as the image's alternative text.
 
 ---
 
-# Image Location
+## Image Location
 
 Static images should be stored inside the `public/` directory.
 
@@ -46,7 +46,7 @@ The image can then be accessed using:
 
 ---
 
-# Image Captions
+## Image Captions
 
 You can add a title attribute to display additional information.
 
@@ -60,7 +60,7 @@ The title is shown when hovering over the image.
 
 ---
 
-# Image Size
+## Image Size
 
 Images can be customized using attributes.
 
@@ -82,7 +82,7 @@ Common values:
 
 ---
 
-# Image Styling
+## Image Styling
 
 Additional HTML attributes can be added.
 
@@ -100,7 +100,7 @@ This can be used for:
 
 ---
 
-# Nuxt Image Component
+## Nuxt Image Component
 
 SimpleWiki also supports the Nuxt Image component through MDC.
 
@@ -120,7 +120,7 @@ This provides additional features such as:
 
 ---
 
-# Responsive Images
+## Responsive Images
 
 For better performance, use optimized images whenever possible.
 

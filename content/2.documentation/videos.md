@@ -18,7 +18,7 @@ SimpleWiki supports multiple ways to embed videos:
 
 ---
 
-# Local Videos
+## Local Videos
 
 For videos stored inside your own project, use the standard HTML5 `<video>` element.
 
@@ -48,7 +48,7 @@ Result:
 
 ---
 
-# Video Controls
+## Video Controls
 
 The `<video>` element supports standard HTML attributes.
 
@@ -77,7 +77,7 @@ Common attributes:
 
 ---
 
-# Video Thumbnails
+## Video Thumbnails
 
 You can define a preview image using the `poster` attribute.
 
@@ -96,7 +96,7 @@ The image will be displayed before the user starts the video.
 
 ---
 
-# YouTube Videos
+## YouTube Videos
 
 SimpleWiki includes a privacy-friendly YouTube component, using the youtube-nocookie.com domain.
 Videos are not loaded immediately. The external YouTube connection is only created after the user starts playback.
@@ -130,7 +130,7 @@ Result:
 
 ---
 
-# Custom Thumbnail Size
+## Custom Thumbnail Size
 
 You can customize the thumbnail quality using the `thumb-size` property.
 

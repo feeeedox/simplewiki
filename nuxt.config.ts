@@ -44,7 +44,7 @@ export default defineNuxtConfig({
     compatibility: {
       prerender: {
         browser: "on-demand",
-        takumi: "wasm",
+        takumi: "node",
       }
     },
   },

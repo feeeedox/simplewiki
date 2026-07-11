@@ -1,8 +1,8 @@
 ---
-title: Kbd (Keyboard Shortcuts)
+title: Kbd (Keyboard)
 description: Display keyboard shortcuts using the SimpleWiki kbd component.
 navigation:
-  title: Kbd (Keyboard Shortcuts)
+  title: Kbd (Keyboard)
   order: 11
 ---
 

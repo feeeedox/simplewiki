@@ -2,7 +2,6 @@
 import { useRoute } from 'vue-router'
 import Content from '~/components/Content.vue';
 import Header from '~/components/Header.vue';
-import WikiPageTakumi from '~/components/OgImage/WikiPage.takumi.vue';
 import Sidebar from '~/components/Sidebar.vue';
 import ToC from '~/components/ToC.vue';
 import Trace from '~/components/Trace.vue';
@@ -15,7 +14,9 @@ const { data } = await useAsyncData(`content-${route.path}`, () => {
 
 useSeoMeta({
     title: () => data.value?.title,
-    description: () => data.value?.description
+    description: () => data.value?.description,
+    ogTitle: () => data.value?.title,
+    ogDescription: () => data.value?.description,
 })
 
 const tocLinks = computed(() => data.value?.body?.toc?.links ?? [])

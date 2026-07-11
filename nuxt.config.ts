@@ -14,8 +14,8 @@ export default defineNuxtConfig({
       crawlLinks: true
     },
   },
-  site: {
-    url: "https://feeeedox.github.io/simplewiki/",
+  ogImage: {
+    zeroRuntime: true,
   },
   app: {
     baseURL: '/simplewiki/', // Change this to your desired base URL, or remove it if you want to serve from the root.

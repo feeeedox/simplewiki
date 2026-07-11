@@ -40,6 +40,17 @@ export default defineNuxtConfig({
       ],
     },
   },
+  ogImage: {
+    zeroRuntime: true,
+    compatibility: {
+      prerender: {
+        takumi: "node",
+      },
+      runtime: {
+        takumi: "node"
+      }
+    },
+  },
   content: {
     build: {
       markdown: {

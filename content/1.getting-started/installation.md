@@ -67,3 +67,36 @@ Any changes you make to the Markdown files are reflected instantly thanks to hot
 
 ---
 
+## Updating SimpleWiki
+
+Keeping your SimpleWiki installation up to date is simple. The included upgrade script downloads the latest framework files while preserving your own content and configuration.
+
+Run:
+
+```bash
+node upgrade.mjs
+```
+
+### Preview an Upgrade
+
+To see what would be updated without changing any files:
+
+```bash
+node upgrade.mjs --dry-run
+```
+
+### Update from another Branch
+
+You can also update from a different branch, for example the development branch:
+
+```bash
+node upgrade.mjs --branch=dev
+```
+
+::info-box{type="info"}
+The upgrade script preserves your personal content, including:
+- `content/`
+- `public/`
+- `app/app.config.ts`
+Framework files such as components, pages, and configuration files are updated automatically.
+::

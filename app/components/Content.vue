@@ -27,6 +27,8 @@ defineProps({
             PullQuote: 'PullQuote',
             CategoryList: 'CategoryList',
             ReferenceList: 'ReferenceList',
+            SeeAlso: 'SeeAlso',
+            LinkCard: 'LinkCard',
         }" />
         <p v-else class="text-red-900">No content available.</p>
     </div>

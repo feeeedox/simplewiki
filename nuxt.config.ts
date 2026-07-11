@@ -43,7 +43,8 @@ export default defineNuxtConfig({
   ogImage: {
     compatibility: {
       prerender: {
-        takumi: "node",
+        browser: "on-demand",
+        takumi: "wasm",
       }
     },
   },

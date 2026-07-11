@@ -33,11 +33,9 @@ defineOgImage('WikiPage', {
 <template>
     <Header @open-sidebar="isSidebarOpen = true" />
     <Trace :title="data?.title" />
-    <div class="max-w-275 mx-auto sm:grid sm:grid-cols-[180px_1fr_240px] w-screen items-start">
+    <div class="max-w-275 mx-auto sm:grid sm:grid-cols-[180px_minmax(0,1fr)_240px] w-full items-start min-h-0">
         <Sidebar :is-open="isSidebarOpen" @close="isSidebarOpen = false" />
         <ToC :is-mobile=true :toc-links="tocLinks" />
-
-
 
         <Content :data="data ? data : null" />
         <ToC :is-mobile=false :toc-links="tocLinks" />

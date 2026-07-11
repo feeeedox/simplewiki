@@ -17,7 +17,7 @@ defineProps<{
 
     <div>
       <div class="text-[13.5px] font-bold text-link visited:text-link-visited">
-        {{ title }}s
+        {{ title }}
       </div>
 
       <div

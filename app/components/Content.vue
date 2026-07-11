@@ -22,7 +22,7 @@ defineProps({
             Collapsible: 'Collapsible',
             Diff: 'Diff',
             Steps: 'Steps',
-            kbd: 'Kbd',
+            Keyboard: 'Keyboard',
             Hatnote: 'Hatnote',
             PullQuote: 'PullQuote',
             CategoryList: 'CategoryList',
@@ -188,17 +188,5 @@ defineProps({
 .renderer :deep(img) {
     max-width: 100%;
     height: auto;
-}
-
-
-.renderer :deep(kdb) {
-    background-color: var(--header-band);
-    border: 1px solid var(--border);
-    border-bottom-width: 2px;
-    border-radius: 2px;
-    padding: 1px 5px;
-    color: var(--text);
-    font-size: 0.7188rem;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 </style>

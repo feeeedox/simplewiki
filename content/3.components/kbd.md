@@ -1,8 +1,8 @@
 ---
-title: Kbd
+title: Kbd (Keyboard Shortcuts)
 description: Display keyboard shortcuts using the SimpleWiki kbd component.
 navigation:
-  title: Kbd
+  title: Kbd (Keyboard Shortcuts)
   order: 11
 ---
 
@@ -17,12 +17,12 @@ It is useful for documenting shortcuts, controls, and key combinations.
 ## Basic Usage
 
 ```md
-Press :kbd{keys="Ctrl+S"} to save your changes.
+Press :keyboard{keys="Ctrl+S"} to save your changes.
 ```
 
 Result:
 
-Press :kbd{keys="Ctrl+S"} to save your changes.
+Press :keyboard{keys="Ctrl+S"} to save your changes.
 
 ---
 
@@ -31,12 +31,12 @@ Press :kbd{keys="Ctrl+S"} to save your changes.
 Multiple keys can be separated using `+`.
 
 ```md
-:kbd{keys="Ctrl+Shift+P"}
+:keyboard{keys="Ctrl+Shift+P"}
 ```
 
 Result:
 
-:kbd{keys="Ctrl+Shift+P"}
+:keyboard{keys="Ctrl+Shift+P"}
 
 ---
 
@@ -45,25 +45,25 @@ Result:
 Single keys are also supported.
 
 ```md
-Press :kbd{keys="Enter"} to continue.
+Press :keyboard{keys="Enter"} to continue.
 ```
 
 Result:
 
-Press :kbd{keys="Enter"} to continue.
+Press :keyboard{keys="Enter"} to continue.
 
 ---
 
 ## Examples
 
 ```md
-- Open the menu with :kbd{keys="Ctrl+K"}
-- Confirm with :kbd{keys="Enter"}
-- Close the window with :kbd{keys="Alt+F4"}
+- Open the menu with :keyboard{keys="Ctrl+K"}
+- Confirm with :keyboard{keys="Enter"}
+- Close the window with :keyboard{keys="Alt+F4"}
 ```
 
 Result:
 
-- Open the menu with :kbd{keys="Ctrl+K"}
-- Confirm with :kbd{keys="Enter"}
-- Close the window with :kbd{keys="Alt+F4"}
+- Open the menu with :keyboard{keys="Ctrl+K"}
+- Confirm with :keyboard{keys="Enter"}
+- Close the window with :keyboard{keys="Alt+F4"}

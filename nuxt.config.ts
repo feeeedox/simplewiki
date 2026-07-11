@@ -11,8 +11,7 @@ export default defineNuxtConfig({
     preset: "github-pages",
     prerender: {
       routes: ["/"],
-      crawlLinks: true,
-      failOnError: false,
+      crawlLinks: true
     },
   },
   app: {

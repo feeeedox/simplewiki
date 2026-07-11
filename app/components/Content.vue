@@ -10,8 +10,23 @@ defineProps({
 <template>
     <div class="bg-content-bg pt-4.5 px-6.5 pb-10 border-r border-l border-border min-h-screen min-w-0">
         <ContentRenderer v-if="data" :value="data" class="renderer" :components="{
+            h1: 'ProseH1',
+            h2: 'ProseH2',
+            h3: 'ProseH3',
+            h4: 'ProseH4',
             pre: 'ProsePre',
-            FieldTable: 'FieldTable'
+            FieldTable: 'FieldTable',
+            Badge: 'Badge',
+            Accordion: 'Accordion',
+            Timeline: 'Timeline',
+            Collapsible: 'Collapsible',
+            Diff: 'Diff',
+            Steps: 'Steps',
+            Kbd: 'Kbd',
+            Hatnote: 'Hatnote',
+            PullQuote: 'PullQuote',
+            CategoryList: 'CategoryList',
+            ReferenceList: 'ReferenceList',
         }" />
         <p v-else class="text-red-900">No content available.</p>
     </div>

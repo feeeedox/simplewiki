@@ -1,4 +1,8 @@
 <script setup lang="ts">
+defineOptions({
+  inheritAttrs: false
+})
+
 defineProps<{
     filename?: string
 }>()
@@ -7,27 +11,14 @@ defineProps<{
 <template>
     <div class="code-wrapper">
         <div v-if="filename" class="code-header">
-            <div class="file-icon">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                    <path
-                        d="M6 2h9l5 5v15H6V2z"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linejoin="round"
-                    />
-                    <path
-                        d="M15 2v6h6"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linejoin="round"
-                    />
-                </svg>
-            </div>
-
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                <path d="M6 2h9l5 5v15H6V2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M15 2v6h6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
             <span>{{ filename }}</span>
         </div>
 
-        <pre :class="$attrs.class"><slot /></pre>
+        <pre v-bind="$attrs"><slot /></pre>
     </div>
 </template>
 

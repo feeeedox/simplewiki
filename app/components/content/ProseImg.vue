@@ -1,27 +1,18 @@
 <template>
-  <figure 
-    v-if="title" 
-    class="wiki-figure" 
-    :style="figureStyle"
-  >
-    <NuxtImg 
-      :src="src" 
-      :alt="alt" 
-      width="100%" 
-      class="wiki-img"
-    />
-    <figcaption class="wiki-figcaption">
-      {{ title }}
-    </figcaption>
-  </figure>
+  <span class="wiki-img-container">
+    <span v-if="title" class="wiki-figure" :style="figureStyle">
+      <NuxtImg :src="src" :alt="alt" width="100%" class="wiki-img" />
+      <span class="wiki-figcaption">{{ title }}</span>
+    </span>
 
-  <NuxtImg 
-    v-else 
-    :src="src" 
-    :alt="alt" 
-    :style="imgStyle"
-    class="wiki-img-standalone"
-  />
+    <NuxtImg
+      v-else
+      :src="src"
+      :alt="alt"
+      :style="imgStyle"
+      class="wiki-img-standalone"
+    />
+  </span>
 </template>
 
 <script setup>
@@ -30,7 +21,7 @@ import { computed, useAttrs } from 'vue'
 const props = defineProps({
   src: { type: String, default: '' },
   alt: { type: String, default: '' },
-  title: { type: String, default: '' } 
+  title: { type: String, default: '' }
 })
 
 const attrs = useAttrs()
@@ -62,7 +53,13 @@ function parseStyleString(styleStr) {
 </script>
 
 <style scoped>
+.wiki-img-container {
+  display: inline-block;
+  width: 100%;
+}
+
 .wiki-figure {
+  display: block; 
   margin: 1.5rem auto;
   padding: 0.5rem;
   border: 1px solid #e2e8f0;

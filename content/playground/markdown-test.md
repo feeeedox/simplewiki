@@ -154,3 +154,164 @@ We use `@nuxt/scripts` for a privacy-friendly (GDPR-compliant) embed. The video 
 
 ::youtube{id="d_IFKP1Ofq0" thumb-size="hqdefault"}
 ::
+
+## Tabs
+
+::tabs
+  :::div{title="npm"}
+  Example command for npm users:
+
+  ```bash
+  npm install simplewiki
+  ```
+  :::
+  :::div{title="pnpm"}
+  Example command for pnpm users:
+  
+  ```bash
+  pnpm add simplewiki
+  ```
+  :::
+  :::div{title="yarn"}
+  Example command for yarn users:
+  
+  ```bash
+  yarn add simplewiki
+  ```
+  :::
+::
+
+## Badges
+
+::badge{type="beta"}
+:: 
+
+::badge{type="deprecated"}
+Removed since version 2.0
+::
+
+::badge{type="new"}
+New Feature
+::
+
+::badge{type="stable"}
+Stable Release
+::
+
+::badge{type="info"}
+Information
+::
+
+## Accordions
+
+::accordion
+  :::div{title="What is X?"}
+  X is a powerful tool that simplifies your workflow.
+  :::
+  :::div{title="How do I install Y?"}
+  Further answer.
+  :::
+::
+
+## Timeline
+
+::timeline
+  :::div{date="2024-06-01" title="v2.0 Release"}
+  Major update with new features and improvements.
+  :::
+  :::div{date="2024-01-15" title="v1.0 Release"}
+  Initial release of the project.
+  :::
+::
+
+## Collapsible Sections
+
+::collapsible{title="Technical Details"}
+Big Title
+You can do stuff here, like adding code blocks:
+
+```javascript
+console.log("Hello, world!");
+```
+::
+
+::collapsible{title="Opened by Default" open=true}
+This section is open by default. You can add any content here.
+::
+
+## Diffs
+
+::diff
+---
+lines:
+  - type: remove
+    content: "const x = 1"
+  - type: add
+    content: "const x = 2"
+  - type: context
+    content: "return x"
+---
+::
+
+## Steps
+
+::steps
+  :::div{title="Install package"}
+    Install the package using your preferred package manager.
+    ```bash
+    npm install simplewiki
+    ```
+  :::
+  :::div{title="Configure"}
+    Configure the package according to your needs.
+  :::
+  :::div{title="Use"}
+    Use the package in your project and enjoy its features:
+    1. Import the package.
+    2. Call the functions.
+  :::
+::
+
+
+## Kbd
+
+Press :kbd{keys="Cmd+C"} to copy a selected item.  
+And press :kbd{keys="Cmd+V"} to paste it.
+
+## Headnote
+
+::hatnote
+This is a hatnote with an icon. It can be used to provide additional context or information to the reader, often appearing at the top of an article or section.
+::
+
+## Pull Quote
+::pull-quote{cite="Albert Einstein"}
+"Imagination is more important than knowledge. For knowledge is limited, whereas imagination embraces the entire world, stimulating progress, giving birth to evolution."
+::
+
+## Reference List
+
+::reference-list
+---
+items:
+  - title: "Nuxt Content Documentation"
+    url: "https://content.nuxtjs.org/"
+    note: "Official documentation for Nuxt Content."
+  - title: "SimpleWiki GitHub Repository"
+    url: "https://github.com/simplewiki/simplewiki"
+  - title: "Nuxt.js Official Website"
+    url: "https://nuxtjs.org/"
+---
+::
+
+::category-list
+---
+items:
+  - label: "Category 1"
+    to: "/category-1"
+  - label: "Category 2"
+    to: "/category-2"
+  - label: "Category 3"
+    to: "/category-3"
+---
+::

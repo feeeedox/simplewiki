@@ -13,6 +13,9 @@ export default defineNuxtConfig({
     "@nuxt/scripts",
     "nuxt-og-image",
   ],
+  image: {
+      provider: 'none',
+  },
   nitro: {
     preset: "github-pages",
     prerender: {

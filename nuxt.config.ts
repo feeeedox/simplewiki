@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
   css: ["@/assets/css/main.css"],
-  modules: ["@nuxt/content", "@nuxt/fonts", "@nuxt/image", "@nuxt/scripts"],
+  modules: ["@nuxt/content", "@nuxt/fonts", "@nuxt/image", "@nuxt/scripts", "nuxt-og-image"],
   nitro: {
     preset: "github-pages",
     prerender: {
@@ -16,6 +16,7 @@ export default defineNuxtConfig({
   },
   app: {
     baseURL: '/simplewiki/', // Change this to your desired base URL, or remove it if you want to serve from the root.
+    cdnURL: '/simplewiki/', // Change this to your desired CDN URL, or remove it if you want to serve from the root.
     head: {
       base: { href: '/simplewiki/' }, // Change this to your desired base URL, or remove it if you want to serve from the root.
       link: [

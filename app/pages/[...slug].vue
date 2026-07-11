@@ -2,6 +2,7 @@
 import { useRoute } from 'vue-router'
 import Content from '~/components/Content.vue';
 import Header from '~/components/Header.vue';
+import WikiPageTakumi from '~/components/OgImage/WikiPage.takumi.vue';
 import Sidebar from '~/components/Sidebar.vue';
 import ToC from '~/components/ToC.vue';
 import Trace from '~/components/Trace.vue';
@@ -21,6 +22,11 @@ const tocLinks = computed(() => data.value?.body?.toc?.links ?? [])
 
 const isSidebarOpen = ref(false)
 
+defineOgImage('WikiPage', {
+  title: data.value?.title,
+  description: data.value?.description,
+})
+
 </script>
 
 <template>
@@ -29,6 +35,8 @@ const isSidebarOpen = ref(false)
     <div class="max-w-275 mx-auto sm:grid sm:grid-cols-[180px_1fr_240px] w-screen items-start">
         <Sidebar :is-open="isSidebarOpen" @close="isSidebarOpen = false" />
         <ToC :is-mobile=true :toc-links="tocLinks" />
+
+
 
         <Content :data="data ? data : null" />
         <ToC :is-mobile=false :toc-links="tocLinks" />

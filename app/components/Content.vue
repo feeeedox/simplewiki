@@ -22,7 +22,7 @@ defineProps({
             Collapsible: 'Collapsible',
             Diff: 'Diff',
             Steps: 'Steps',
-            Kbd: 'Kbd',
+            kbd: 'Kbd',
             Hatnote: 'Hatnote',
             PullQuote: 'PullQuote',
             CategoryList: 'CategoryList',

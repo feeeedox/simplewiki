@@ -25,7 +25,7 @@ const isSidebarOpen = ref(false)
 
 <template>
     <Header @open-sidebar="isSidebarOpen = true" />
-    <Trace />
+    <Trace :title="data?.title" />
     <div class="max-w-275 mx-auto sm:grid sm:grid-cols-[180px_1fr_240px] w-screen items-start">
         <Sidebar :is-open="isSidebarOpen" @close="isSidebarOpen = false" />
         <ToC :is-mobile=true :toc-links="tocLinks" />

@@ -22,7 +22,7 @@ export default defineAppConfig({
 })  
 ```
 
-## Create Your First Pages
+## Create Your First Page
 
 All wiki pages are stored inside the `content/` directory.
 

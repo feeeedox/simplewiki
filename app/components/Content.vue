@@ -89,6 +89,12 @@ defineProps({
     color: var(--text);
 }
 
+.renderer :deep(br) {
+    content: "";
+    display: block;
+    margin: 8px 0;
+}
+    
 .renderer :deep(h5) {
     font-size: 12px;
     font-weight: bold;

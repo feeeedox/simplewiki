@@ -91,5 +91,6 @@ items:
 | `title`       | `string`              | The text displayed for the link.      |
 | `to`          | `string`              | The internal route to navigate to.    |
 | `description` | `string` *(optional)* | Additional text shown after the link. |
+| `external`    | `boolean` *(optional)*| If `true`, the link opens in a new tab.|
 
 The `to` property should point to an existing page within your documentation.

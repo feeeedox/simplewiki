@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{
-  items: { title: string, to: string, description?: string }[]
+  items: { title: string, to: string, description?: string, external?: boolean }[]
 }>()
 </script>
 
@@ -18,6 +18,7 @@ defineProps<{
       >
         <NuxtLink
           :to="item.to"
+          :target="item.external ? '_blank' : undefined"
           class="font-bold text-link"
         >
           {{ item.title }}

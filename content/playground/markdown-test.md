@@ -315,3 +315,19 @@ items:
     to: "/category-3"
 ---
 ::
+
+## References
+
+Das World Wide Web wurde 1989 erfunden. :ref{n="1"}
+Es basiert auf dem HTTP-Protokoll. :ref{n="2"}
+
+::references
+---
+items:
+  - title: "CERN – Tim Berners-Lee und das WWW"
+    url: "https://home.cern/science/computing/birth-web"
+    note: "Originalquelle."
+  - title: "MDN – HTTP Übersicht"
+    url: "https://developer.mozilla.org/de/docs/Web/HTTP/Overview"
+---
+::

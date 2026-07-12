@@ -1,5 +1,4 @@
 ---
-
 title: Link Card
 description: Create highlighted links to other pages using the SimpleWiki link card component.
 navigation:

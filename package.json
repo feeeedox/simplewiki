@@ -27,6 +27,6 @@
     "vue-router": "^5.1.0"
   },
   "devDependencies": {
-    "@takumi-rs/wasm": "^2.0.0-beta.14"
+    "@takumi-rs/wasm": "^2.0.2"
   }
 }

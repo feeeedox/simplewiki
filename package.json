@@ -8,7 +8,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "upgrade": "node scripts/upgrade.mjs"
+    "upgrade": "node scripts/upgrade.mjs",
+    "release": "release-it"
   },
   "dependencies": {
     "@nuxt/content": "3.15.0",
@@ -28,7 +29,9 @@
     "vue-router": "^5.1.0"
   },
   "devDependencies": {
+    "@release-it/conventional-changelog": "^11.0.1",
     "@takumi-rs/wasm": "^2.0.2",
+    "release-it": "^20.2.1",
     "sass-embedded": "^1.100.0"
   }
 }

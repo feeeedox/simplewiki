@@ -1,6 +1,9 @@
 {
   "name": "simplewiki",
   "type": "module",
+  "version": "1.0.0",
+  "description": "A simple wiki built with Nuxt 4 and Tailwind CSS.",
+  "author": "Florian Ohldag <f3dox@proton.me>",
   "private": true,
   "scripts": {
     "build": "nuxt build",

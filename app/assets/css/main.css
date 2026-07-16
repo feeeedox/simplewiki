@@ -80,3 +80,28 @@ body,
 #__nuxt {
     height: 100%;
 }
+
+html {
+  scrollbar-color: var(--border) var(--page-bg);
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 10px; 
+  height: 10px; 
+}
+
+::-webkit-scrollbar-track {
+  background: var(--page-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--border-light); 
+  border-radius: 5px;
+  border: 2px solid var(--page-bg); 
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--border);
+}

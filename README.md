@@ -65,6 +65,12 @@ To install SimpleWiki, check out the [installation guide](https://feeeedox.githu
 <img src="https://img.shields.io/badge/TailwindCSS-4-06B6D4?style=flat&logo=tailwindcss">
 <img src="https://img.shields.io/badge/Markdown-MDC-black?style=flat&logo=markdown">
 
+### 🎨 Assets & Icons Credits
+
+To match the authentic, classic Wiki aesthetics, this project uses a curated collection of classic skeuomorphic and photorealistic web icons:
+
+*   **[Oxygen Icons](https://kde.org/)** – Used for some icons, glossy 3D look. Licensed under the [LGPL](https://www.gnu.org/licenses/lgpl-3.0.html).
+
 ### Inspiration
 
 This project was inspired by:

@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@nuxt/image",
     "@nuxt/scripts",
+    "@nuxtjs/color-mode",
     "nuxt-og-image",
   ],
   image: {

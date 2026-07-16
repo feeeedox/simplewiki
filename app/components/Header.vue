@@ -75,28 +75,34 @@ if (firstGroup) {
                 <p class="text-xs text-text-muted italic hidden sm:block">Documentation</p>
             </div>
 
-            <div class="flex flex-col relative">
-                <div class="flex items-stretch relative">
-                    <input v-model="searchQuery" @blur="closeSearch" @focus="isDropdownOpen = searchResults.length > 0"
-                        :disabled="status !== 'ready'" type="text"
-                        :placeholder="status === 'ready' ? 'Search wiki...' : 'Indexing...'"
-                        class="w-full sm:w-56 py-1 px-2 border border-border rounded-xs bg-white font-body text-sm text-text focus:outline-none focus:border-focus focus:ring-1 focus:ring-focus disabled:opacity-50">
+
+            <div class="flex flex-row items-center justify-center gap-4">
+                <div class="flex flex-col relative">
+                    <div class="flex items-stretch relative">
+                        <input v-model="searchQuery" @blur="closeSearch"
+                            @focus="isDropdownOpen = searchResults.length > 0" :disabled="status !== 'ready'"
+                            type="text" :placeholder="status === 'ready' ? 'Search wiki...' : 'Indexing...'"
+                            class="w-full sm:w-56 py-1 px-2 border border-border rounded-xs bg-white font-body text-sm text-text focus:outline-none focus:border-focus focus:ring-1 focus:ring-focus disabled:opacity-50">
+                    </div>
+
+                    <div v-if="isDropdownOpen"
+                        class="absolute top-full right-0 mt-1 w-72 bg-white border border-border rounded-xs shadow-lg overflow-hidden max-h-72 overflow-y-auto z-50">
+                        <ul class="list-none m-0 p-0">
+                            <li v-for="result in searchResults" :key="result.id"
+                                class="border-b border-border-light last:border-0">
+                                <NuxtLink :to="result.id" class="block p-2 hover:bg-[#f6f8fa] text-left no-underline">
+                                    <div class="text-xs font-bold text-link truncate">{{ result.title }}</div>
+
+                                    <div v-if="result.snippets?.content"
+                                        class="text-[11px] text-text-muted mt-0.5 line-clamp-2 search-snippet"
+                                        v-html="result.snippets.content" />
+                                </NuxtLink>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-
-                <div v-if="isDropdownOpen"
-                    class="absolute top-full right-0 mt-1 w-72 bg-white border border-border rounded-xs shadow-lg overflow-hidden max-h-72 overflow-y-auto z-50">
-                    <ul class="list-none m-0 p-0">
-                        <li v-for="result in searchResults" :key="result.id"
-                            class="border-b border-border-light last:border-0">
-                            <NuxtLink :to="result.id" class="block p-2 hover:bg-[#f6f8fa] text-left no-underline">
-                                <div class="text-xs font-bold text-link truncate">{{ result.title }}</div>
-
-                                <div v-if="result.snippets?.content"
-                                    class="text-[11px] text-text-muted mt-0.5 line-clamp-2 search-snippet"
-                                    v-html="result.snippets.content" />
-                            </NuxtLink>
-                        </li>
-                    </ul>
+                <div>
+                    <span>L</span>
                 </div>
             </div>
         </div>

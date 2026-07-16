@@ -101,9 +101,7 @@ if (firstGroup) {
                         </ul>
                     </div>
                 </div>
-                <div>
-                    <span>L</span>
-                </div>
+            
             </div>
         </div>
     </header>

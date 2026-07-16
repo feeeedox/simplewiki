@@ -12,7 +12,7 @@ defineProps({
 </script>
 
 <template>
-    <div class="sm:ml-4 sm:mt-4 sm:my-0 pt-2 px-3.5 pb-2.5 bg-toc-bg border border-border rounded-xs text-[0.8125rem] [counter-reset:toc-main] sticky top-4 my-8 "
+    <div class="sm:ml-4 sm:mt-4 sm:my-0 pt-2 px-3.5 pb-2.5 bg-toc-bg border border-border rounded-xs text-13 [counter-reset:toc-main] sticky top-4 my-8 "
         v-if="tocLinks.length && !isMobile">
         <div class="font-bold mx-0 mt-0 mb-1.5 pb-1.25 border-b border-border-light tracking-[0.01em] text-text!">
             Table of Contents

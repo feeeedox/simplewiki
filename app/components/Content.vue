@@ -34,7 +34,7 @@ defineProps({
     </div>
 </template>
 
-<style scoped lang="css">
+<style scoped lang="scss">
 .renderer :deep([align="left"]) {
     text-align: left;
 }
@@ -136,6 +136,11 @@ defineProps({
     font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
     font-size: 13.5px;
     line-height: 1.5;
+
+    .dark & {
+        background-color: #0d1117 !important;
+        border-color: var(--border-dark, #30363d);
+    }
 }
 
 
@@ -153,6 +158,11 @@ defineProps({
     margin: 0 -16px;
     padding: 0 16px;
     border-left: 3px solid #ffd33d;
+
+    .dark & {
+        background-color: #1a1c1e;
+        border-color: #ffd33d;
+    }
 }
 
 .renderer :deep(hr) {
@@ -174,7 +184,7 @@ defineProps({
     max-width: 560px;
     margin: 6px 0 16px;
     font-size: 13px;
-    background: #fff;
+    background: var(--content-bg);
 }
 
 .renderer :deep(th),
@@ -190,7 +200,7 @@ defineProps({
 }
 
 .renderer :deep(tr:hover td) {
-    background: #fbfbfc;
+    background: var(--row-hover-bg);
 }
 
 .renderer :deep(img) {

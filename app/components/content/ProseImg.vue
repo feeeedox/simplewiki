@@ -52,7 +52,7 @@ function parseStyleString(styleStr) {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .wiki-img-container {
   display: inline-block;
   width: 100%;
@@ -66,6 +66,11 @@ function parseStyleString(styleStr) {
   background-color: #f7fafc;
   border-radius: 4px;
   text-align: center;
+
+  .dark & {
+    background-color: #161b22;
+    border-color: var(--border-dark, #30363d);
+  }
 }
 
 .wiki-img {

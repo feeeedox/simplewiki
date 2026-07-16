@@ -34,11 +34,11 @@ const tabItems = computed(() => {
         <button 
           type="button" 
           @click="activeTab = index"
-          class="block font-sans text-[13px] px-3 py-[5.5px] border border-[#a2a9b1] outline-none transition-colors duration-100"
+          class="block font-sans text-13 px-3 py-[5.5px] border border-[#a2a9b1] dark:border-border-light outline-none transition-colors duration-100"
           :class="[
             activeTab === index 
-              ? 'bg-white border-b-transparent text-[#202122] font-bold pointer-events-none' 
-              : 'bg-[#f8f9fa] text-[#3366cc] cursor-pointer hover:bg-white hover:text-[#204a87]'
+              ? 'bg-content-bg border-b-transparent text-[#202122] font-bold pointer-events-none dark:text-[#e5e7eb]' 
+              : 'bg-[#f8f9fa] dark:bg-sidebar-bg text-[#3366cc] cursor-pointer hover:bg-content-bg hover:text-[#204a87]'
           ]"
         >
           {{ tab.title }}
@@ -46,7 +46,7 @@ const tabItems = computed(() => {
       </li>
     </ul>
 
-    <div class="bg-white border border-[#a2a9b1] border-top-none p-3 text-[14px]">
+    <div class="bg-content-bg border border-[#a2a9b1] dark:border-border-light border-top-none p-3 text-[14px]">
       <component 
         v-for="(tab, index) in tabItems"
         :key="index"

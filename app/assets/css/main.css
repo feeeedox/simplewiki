@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-page-bg: var(--page-bg);
   --color-content-bg: var(--content-bg);
@@ -16,6 +18,8 @@
   --font-body: var(--font-body);
   --font-heading: var(--font-heading);
   --color-focus: var(--focus-color);
+  --text-13: 0.8125rem;
+  --color-row-hover-bg: var(--row-hover-bg);
 }
 
 :root{
@@ -34,7 +38,26 @@
     --font-body: Helvetica, Arial, "Liberation Sans", sans-serif;
     --font-heading: Georgia, "Linux Libertine", "Times New Roman", serif;
     --focus-color: #36c;
-  }
+    --row-hover-bg: #fbfbfc;
+}
+
+.dark {
+    --page-bg: #101418;        
+    --content-bg: #1a1f26;       
+    --sidebar-bg: #14191f;       
+    --border: #3c424a;         
+    --border-light: #2d333b;     
+    --text: #e1e3e6;             
+    --text-muted: #969ca4;      
+    --link: #6db1ff;            
+    --link-visited: #b99bf8;     
+    --link-hover: #9eceff;      
+    --toc-bg: #1a1f26;         
+    --header-band: #202730;    
+    --focus-color: #4c8fff;  
+    --row-hover-bg: #2c3138;   
+}
+
 
 *{ box-sizing: border-box; }
 

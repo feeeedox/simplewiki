@@ -53,6 +53,11 @@ if (firstGroup) {
     }
 }
 
+const colorMode = useColorMode()
+
+const setTheme = (theme: 'light' | 'dark') => {
+    colorMode.value = theme
+}
 </script>
 
 <template>
@@ -78,19 +83,34 @@ if (firstGroup) {
 
             <div class="flex flex-row items-center justify-center gap-4">
                 <div class="flex flex-col relative">
+                    <ClientOnly>
+                        <div class="flex gap-1.5 text-[11px] font-body items-end text-center mx-auto sm:mx-0">
+                            <span class="text-text-muted hidden sm:block">Design:</span>
+                            <button class="cursor-pointer" @click="setTheme('light')"
+                                :class="colorMode.value === 'light' ? 'text-focus font-medium' : 'text-link hover:underline'">
+                                [ Light ]
+                            </button>
+                            <button class="cursor-pointer" @click="setTheme('dark')"
+                                :class="colorMode.value === 'dark' ? 'text-focus font-medium' : 'text-link hover:underline'">
+                                [ Dark ]
+                            </button>
+                        </div>
+                    </ClientOnly>
+
+
                     <div class="flex items-stretch relative">
                         <input v-model="searchQuery" @blur="closeSearch"
                             @focus="isDropdownOpen = searchResults.length > 0" :disabled="status !== 'ready'"
                             type="text" :placeholder="status === 'ready' ? 'Search wiki...' : 'Indexing...'"
-                            class="w-full sm:w-56 py-1 px-2 border border-border rounded-xs bg-white font-body text-sm text-text focus:outline-none focus:border-focus focus:ring-1 focus:ring-focus disabled:opacity-50">
+                            class="w-full sm:w-56 py-1 px-2 border border-border rounded-xs bg-white dark:bg-sidebar-bg font-body text-sm text-text focus:outline-none focus:border-focus focus:ring-1 focus:ring-focus disabled:opacity-50">
                     </div>
 
                     <div v-if="isDropdownOpen"
-                        class="absolute top-full right-0 mt-1 w-72 bg-white border border-border rounded-xs shadow-lg overflow-hidden max-h-72 overflow-y-auto z-50">
+                        class="absolute top-full right-0 mt-1 w-72 bg-white dark:bg-sidebar-bg border border-border rounded-xs shadow-lg overflow-hidden max-h-72 overflow-y-auto z-50">
                         <ul class="list-none m-0 p-0">
                             <li v-for="result in searchResults" :key="result.id"
                                 class="border-b border-border-light last:border-0">
-                                <NuxtLink :to="result.id" class="block p-2 hover:bg-[#f6f8fa] text-left no-underline">
+                                <NuxtLink :to="result.id" class="block p-2 hover:bg-[#f6f8fa] dark:hover:bg-[#2d333b] text-left no-underline">
                                     <div class="text-xs font-bold text-link truncate">{{ result.title }}</div>
 
                                     <div v-if="result.snippets?.content"
@@ -100,8 +120,8 @@ if (firstGroup) {
                             </li>
                         </ul>
                     </div>
+
                 </div>
-            
             </div>
         </div>
     </header>

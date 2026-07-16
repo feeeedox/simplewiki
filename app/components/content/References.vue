@@ -14,7 +14,7 @@ defineProps<{
       References
     </div>
 
-    <ol class="m-0 pl-5 text-[0.8125rem] space-y-1">
+    <ol class="m-0 pl-5 text-13 space-y-1">
       <li
         v-for="(item, index) in items"
         :key="index"

@@ -14,8 +14,17 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "nuxt-og-image",
   ],
+  colorMode: {
+    preference: "light",
+    fallback: "light",
+    globalName: "__NUXT_COLOR_MODE__",
+    classPrefix: "",
+    classSuffix: "",
+    storage: "localStorage",
+    storageKey: "simplewiki-color-mode",
+  },
   image: {
-      provider: 'none',
+    provider: "none",
   },
   nitro: {
     preset: "github-pages",
@@ -49,7 +58,7 @@ export default defineNuxtConfig({
       prerender: {
         browser: "on-demand",
         takumi: "node",
-      }
+      },
     },
   },
   content: {
@@ -59,7 +68,10 @@ export default defineNuxtConfig({
           searchDepth: 1,
         },
         highlight: {
-          theme: "github-light",
+          theme: {
+            default: "github-light",
+            dark: "github-dark",
+          },
           langs: Object.keys(bundledLanguages).filter(
             (lang) =>
               !lang.includes("+") &&

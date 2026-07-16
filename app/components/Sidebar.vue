@@ -59,7 +59,7 @@ function isGroupOpen(path: string) {
                 <li v-for="item in group.children" :key="item.path"
                     :class="{ 'pl-1.5 border-l-2 border-link -ml-0.5': route.path === item.path }"
                     class="relative pl-2 py-1">
-                    <NuxtLink :to="item.path" class="text-[0.8125rem] text-text-muted hover:text-text dynamic-link"
+                    <NuxtLink :to="item.path" class="text-13 text-text-muted hover:text-text dynamic-link"
                         :class="{ 'font-bold text-text': route.path === item.path }">
                         {{ item.title }}
                     </NuxtLink>
@@ -102,7 +102,7 @@ function isGroupOpen(path: string) {
                                 :class="{ 'pl-1.5 border-l-2 border-link -ml-0.5': route.path === item.path }"
                                 class="relative pl-2 py-1">
                                 <NuxtLink :to="item.path"
-                                    class="text-[0.8125rem] text-text-muted hover:text-text dynamic-link block w-full"
+                                    class="text-13 text-text-muted hover:text-text dynamic-link block w-full"
                                     :class="{ 'font-bold text-text': route.path === item.path }">
                                     {{ item.title }}
                                 </NuxtLink>

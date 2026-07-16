@@ -10,7 +10,7 @@ defineProps<{
       See Also
     </div>
 
-    <ul class="m-0 list-disc pl-4.5 text-[0.8125rem]">
+    <ul class="m-0 list-disc pl-4.5 text-13">
       <li
         v-for="item in items"
         :key="item.to"

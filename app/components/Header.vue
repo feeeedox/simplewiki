@@ -56,7 +56,7 @@ if (firstGroup) {
 const colorMode = useColorMode()
 
 const setTheme = (theme: 'light' | 'dark') => {
-    colorMode.value = theme
+    colorMode.preference = theme
 }
 </script>
 

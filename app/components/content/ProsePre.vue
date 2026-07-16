@@ -22,7 +22,7 @@ defineProps<{
     </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .code-wrapper {
     margin: 16px 0;
 }
@@ -45,6 +45,12 @@ defineProps<{
     font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     font-size: 12px;
     font-weight: 500;
+
+    .dark & {
+        background: #161b22;
+        border-color: var(--border-dark, #30363d);
+        color: #8b949e;
+    }
 }
 
 .file-icon {

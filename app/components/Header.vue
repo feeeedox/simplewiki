@@ -110,7 +110,8 @@ const setTheme = (theme: 'light' | 'dark') => {
                         <ul class="list-none m-0 p-0">
                             <li v-for="result in searchResults" :key="result.id"
                                 class="border-b border-border-light last:border-0">
-                                <NuxtLink :to="result.id" class="block p-2 hover:bg-[#f6f8fa] dark:hover:bg-[#2d333b] text-left no-underline">
+                                <NuxtLink :to="result.id"
+                                    class="block p-2 hover:bg-[#f6f8fa] dark:hover:bg-[#2d333b] text-left no-underline">
                                     <div class="text-xs font-bold text-link truncate">{{ result.title }}</div>
 
                                     <div v-if="result.snippets?.content"

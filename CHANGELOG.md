@@ -1,0 +1,24 @@
+# Changelog
+
+## 1.1.0 (2026-07-16)
+
+### ✨ Features
+
+* add custom scrollbar styles for better aesthetics ([adf404a](https://github.com/feeeedox/simplewiki/commit/adf404ac5c620c34fcf5c9368c3d5d0979b14baa))
+* add dark mode support ([180b889](https://github.com/feeeedox/simplewiki/commit/180b8892d342deb069ee87e99ee70fce28af4bf5))
+* add ogImage configuration for improved Open Graph support ([ca68376](https://github.com/feeeedox/simplewiki/commit/ca68376fb3b818205e6374cea824269dc7cd8da5))
+* add release it ([f53aa35](https://github.com/feeeedox/simplewiki/commit/f53aa357d5d9eed8abe2297a700e38f3d6d77a01))
+
+### 🐛 Bug Fixes
+
+* codeblocks are able to scale the page ([993d0a1](https://github.com/feeeedox/simplewiki/commit/993d0a1b85b4e19cc6b3226d4279e9cbf6404ea8))
+* **deps:** update dependency unstorage to ^1.17.5 ([6230b57](https://github.com/feeeedox/simplewiki/commit/6230b5784851ec7286349adc9e74007de45bd560))
+* format NuxtLink for better readability ([93b2e5c](https://github.com/feeeedox/simplewiki/commit/93b2e5cc12fff40b0b6a2c66734133ce279a5d99))
+* infobox assets ([8277bbf](https://github.com/feeeedox/simplewiki/commit/8277bbffc3753929b4de4f8711957eaeb79043c9))
+* toc ([d949c86](https://github.com/feeeedox/simplewiki/commit/d949c86c91b96908752fb2237ad87e0cc5fbed9d))
+* update package.json with version, description, and author details ([abea29f](https://github.com/feeeedox/simplewiki/commit/abea29fcc723aae6ddd39f4cac8f0086fa86d418))
+* wrong parameter ([054cb45](https://github.com/feeeedox/simplewiki/commit/054cb458a1eb0640786a60c50497f3262b814de1))
+
+### ⚙️ Code Refactoring
+
+* update OG image structure and styles for improved layout ([22747a7](https://github.com/feeeedox/simplewiki/commit/22747a7d8536c0b6e65c7d8efa1d67ee0522ec01))

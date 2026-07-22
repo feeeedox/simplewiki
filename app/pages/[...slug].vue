@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import Content from '~/components/Content.vue';
+import Footer from '~/components/Footer.vue';
 import Header from '~/components/Header.vue';
 import Sidebar from '~/components/Sidebar.vue';
 import ToC from '~/components/ToC.vue';
@@ -33,11 +34,18 @@ defineOgImage('WikiPage', {
 <template>
     <Header @open-sidebar="isSidebarOpen = true" />
     <Trace :title="data?.title" />
-    <div class="max-w-275 mx-auto sm:grid sm:grid-cols-[180px_minmax(0,1fr)_240px] w-full items-start min-h-0">
+    <main class="max-w-275 mx-auto sm:grid sm:grid-cols-[180px_minmax(0,1fr)_240px] w-full items-start min-h-0">
         <Sidebar :is-open="isSidebarOpen" @close="isSidebarOpen = false" />
         <ToC :is-mobile=true :toc-links="tocLinks" />
 
         <Content :data="data ? data : null" />
         <ToC :is-mobile=false :toc-links="tocLinks" />
-    </div>
+    </main>
+
+    <!-- 
+    Hi, first of all, thank you for using SimpleWiki! 
+    I would love you to keep the footer intact, as it helps support the project and allows me to continue developing it.
+    If you want to remove it, please consider supporting the project on GitHub or by donating. You can find the links in the ReadME itself. Thank you for your understanding and support!
+    -->
+    <Footer/>
 </template>

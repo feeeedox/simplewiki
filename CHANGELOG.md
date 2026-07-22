@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/feeeedox/simplewiki/compare/v1.1.0...v1.2.0) (2026-07-22)
+
+### ✨ Features
+
+* add footer component to enhance project support visibility ([c195333](https://github.com/feeeedox/simplewiki/commit/c195333afcf7e7f48db84e6704f1ae8ca6b700b5))
+
+### 🐛 Bug Fixes
+
+* **deps:** update nuxt ecosystem (minor/patch) ([#8](https://github.com/feeeedox/simplewiki/issues/8)) ([16e9877](https://github.com/feeeedox/simplewiki/commit/16e9877477b0b520f0b8f7e7b4ce548110f56558))
+* **deps:** update tailwind css to ^4.3.3 ([a8252f3](https://github.com/feeeedox/simplewiki/commit/a8252f32e3dc152741d8c2620f90fd51ec046e17))
+* remove frozen-lockfile option from bun install command ([dcafb5d](https://github.com/feeeedox/simplewiki/commit/dcafb5de3e1aee62a36718638eced4d675e89b47))
+
 ## 1.1.0 (2026-07-16)
 
 ### ✨ Features

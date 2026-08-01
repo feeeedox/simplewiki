@@ -7,7 +7,6 @@
 </p>
 
 <div align="center">
-  <p></p>
   <div align="center">
       <img src="https://shieldcn.dev/group/github/stars/feeeedox/simplewiki+github/forks/feeeedox/simplewiki+github/ci/feeeedox/simplewiki+github/license/feeeedox/simplewiki.svg?variant=ghost">
       <br/>
@@ -16,16 +15,14 @@
   <br>
 </div>
 
-<p align="center">
-
 ## Table of Contents
 
-- [Quick Start](#-quick-start)
-- [Features](#-features)
-- [Installation](#%EF%B8%8F-installation)
-- [Acknowledgments](#-acknowledgments)
-- [License](#-license)
-- [Contact](#-contact)
+- [Quick Start](#quick-start)
+- [Features](#features)
+- [Installation](#installation)
+- [Acknowledgments](#acknowledgments)
+- [License](#license)
+- [Contact](#contact)
 
 ## Quick Start
 
@@ -63,17 +60,8 @@ To install SimpleWiki, check out the [installation guide](https://feeeedox.githu
 
 <div align="center">
 
-<a href="https://github.com/feeeedox/simplewiki/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=feeeedox/simplewiki" />
-</a>
-
+[![feeeedox/simplewiki contributors](https://shieldcn.dev/contributors/feeeedox/simplewiki.svg?title=false&preset=gradient&bots=true&mode=dark)](https://github.com/feeeedox/simplewiki/graphs/contributors)
 </div>
-
-### Tools & Libraries Used
-
-<img src="https://img.shields.io/badge/Nuxt-4-00DC82?style=flat&logo=nuxt.js">
-<img src="https://img.shields.io/badge/TailwindCSS-4-06B6D4?style=flat&logo=tailwindcss">
-<img src="https://img.shields.io/badge/Markdown-MDC-black?style=flat&logo=markdown">
 
 ### Assets & Icons Credits
 
@@ -114,7 +102,7 @@ If you discover a security vulnerability, please send an email to f3dox@proton.m
 
 ## License
 
-This project is licensed under the MIT License—see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License, see the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
@@ -125,20 +113,10 @@ This project is licensed under the MIT License—see the [LICENSE](LICENSE) file
 ### Get in Touch
 
 <div align="center">
-
-<a href="https://github.com/feeeedox" target="_blank">
-<img src=https://shieldcn.dev/badge/github.svg?variant=secondary&logo=ri%3AFaGithub alt=github style="margin-bottom: 5px;" />
-</a>
-<a href="https://instagram.com/feeeedox" target="_blank">
-<img src=https://shieldcn.dev/badge/instagram.svg?logo=instagram alt=instagram style="margin-bottom: 5px;" />
-</a>
-<a href="https://stackoverflow.com/users/16288266" target="_blank">
-<img src=https://shieldcn.dev/badge/stackoverflow-db7633.svg?variant=secondary&logo=ri%3ATbBrandStackoverflow alt=stackoverflow style="margin-bottom: 5px;" />
-</a>
-<a href="mailto:f3dox@proton.me" target="_blank">
-<img src=https://shieldcn.dev/badge/proton%20mail-6445eb.svg?variant=secondary&logo=protonmail alt=mail style="margin-bottom: 5px;" />
-</a>
-
+  <a href="https://github.com/feeeedox" target="_blank"><img src="https://shieldcn.dev/badge/github.svg?variant=secondary&logo=ri%3AFaGithub" alt="github" height="30" /></a>
+  <a href="https://instagram.com/feeeedox" target="_blank"><img src="https://shieldcn.dev/badge/instagram.svg?logo=instagram" alt="instagram" height="30" /></a>
+  <a href="https://stackoverflow.com/users/16288266" target="_blank"><img src="https://shieldcn.dev/badge/stackoverflow-db7633.svg?variant=secondary&logo=ri%3ATbBrandStackoverflow" alt="stackoverflow" height="30" /></a>
+  <a href="mailto:f3dox@proton.me" target="_blank"><img src="https://shieldcn.dev/badge/proton%20mail-6445eb.svg?variant=secondary&logo=protonmail" alt="mail" height="30" /></a>
 </div>
 
 ### Project Links
@@ -156,8 +134,6 @@ This project is licensed under the MIT License—see the [LICENSE](LICENSE) file
 
 Made with ❤ by [Florian](https://github.com/feeeedox)
 
-![Profile views](https://shieldcn.dev/views/feeeedox/shieldcn.svg?variant=ghost)
+![Profile views](https://shieldcn.dev/views/user/feeeedox.svg?variant=ghost)
 
 </div>
-
----

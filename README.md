@@ -10,9 +10,11 @@
   <p></p>
   <div align="center">
       <img src="https://shieldcn.dev/group/github/stars/feeeedox/simplewiki+github/forks/feeeedox/simplewiki+github/ci/feeeedox/simplewiki+github/license/feeeedox/simplewiki.svg?variant=ghost">
+      <br/>
+      <img src="https://shieldcn.dev/badge/built%20by-humans.svg?variant=ghost&size=default&logo=ri%3AFaHeart">
       <p></p>
-      <img src="https://shieldcn.dev/flag/de.svg?theme=zinc"> 
-      <img src="https://shieldcn.dev/badge/built%20by-humans.svg?variant=outline&theme=red&logo=ri%3AFaHeart&logoColor=ef4444">
+      <img src="https://shieldcn.dev/flag/de.svg?theme=zinc">
+
   </div>
   <br>
 </div>

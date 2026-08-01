@@ -79,18 +79,9 @@ This project was inspired by:
 
 ## Support the Project
 
-If you like the project, there are several ways you can support it:
-
-### Star the Repository
-
-Give the project a star on GitHub!
-
-### Buy Me a Coffee
+If you like the project, give it a star on GitHub or support the development:
 
 [![Buy Me A Coffee](https://shieldcn.dev/badge/buy%20me%20a%20coffee-c6be40.svg?logo=buymeacoffee)](https://buymeacoffee.com/feeeedox)
-
-### Sponsor
-
 [![GitHub Sponsors](https://shieldcn.dev/github/sponsors/feeeedox.svg)](https://github.com/sponsors/feeeedox)
 
 
@@ -134,6 +125,6 @@ This project is licensed under the MIT License, see the [LICENSE](LICENSE) file 
 
 Made with ❤ by [Florian](https://github.com/feeeedox)
 
-![Profile views](https://shieldcn.dev/views/user/feeeedox.svg?variant=ghost)
+![Profile views](https://shieldcn.dev/views/user/feeeedox.svg?variant=outline)
 
 </div>

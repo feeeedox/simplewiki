@@ -1,12 +1,21 @@
-# SimpleWiki
+<h1 align="center">
+  <img src="https://shieldcn.dev/header/gradient.svg?title=SimpleWiki&subtitle=A+file-based+documentation+engine+designed+for+creating+fast+and+customizable+wiki+systems.&mode=dark" width="100%">
+</h1>
 
-**SimpleWiki** is a file-based documentation engine designed for creating fast and customizable wiki systems.
-
-It transforms Markdown files into a searchable and high-performance documentation platform while keeping the content simple and developer-friendly.
+<div align="center">
+  <p></p>
+  <div align="center">
+      <img src="https://shieldcn.dev/group/github/stars/feeeedox/dotfiles+github/forks/feeeedox/dotfiles+github/license/feeeedox/dotfiles.svg?variant=ghost&theme=zinc">
+      <p></p>
+      <img src="https://shieldcn.dev/flag/de.svg?theme=zinc"> <img src="https://shieldcn.dev/badge/made%20for-Hyprland%20&%20Arch%20Linux.svg?theme=zinc">
+  </div>
+  <br>
+</div>
 
 <p align="center">
-  <img src=".github/screenshots/site.png" alt="SimpleWiki Screenshot">
-</p>
+
+![Bild im Dark Mode](.github/screenshots/site-dark.png#gh-dark-mode-only)
+![Bild im Light Mode](.github/screenshots/site-light.png#gh-light-mode-only)
 
 ## 📋 Table of Contents
 
@@ -69,11 +78,12 @@ To install SimpleWiki, check out the [installation guide](https://feeeedox.githu
 
 To match the authentic, classic Wiki aesthetics, this project uses a curated collection of classic skeuomorphic and photorealistic web icons:
 
-*   **[Oxygen Icons](https://kde.org/)** – Used for some icons, glossy 3D look. Licensed under the [LGPL](https://www.gnu.org/licenses/lgpl-3.0.html).
+- **[Oxygen Icons](https://kde.org/)** – Used for some icons, glossy 3D look. Licensed under the [LGPL](https://www.gnu.org/licenses/lgpl-3.0.html).
 
 ### Inspiration
 
 This project was inspired by:
+
 - [MediaWiki](https://www.mediawiki.org/wiki/MediaWiki) - For the design and structure
 - [DokuWiki](https://www.dokuwiki.org/) - For the simplicity and file-based approach
 - [MkDocs](https://www.mkdocs.org/) - For the static site generation and Markdown support
@@ -83,15 +93,19 @@ This project was inspired by:
 If you like the project, there are several ways you can support it:
 
 ### 🌟 Star the Repository
+
 Give the project a star on GitHub!
 
 ### ☕ Buy Me a Coffee
+
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/feeeedox)
 
 ### 💝 Sponsor
+
 [![GitHub Sponsors](https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white)](https://github.com/sponsors/feeeedox)
 
 ### 🗣️ Spread the Word
+
 - Share on social media
 - Write a blog post
 - Tell your friends and colleagues

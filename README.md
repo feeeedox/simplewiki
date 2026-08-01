@@ -1,5 +1,7 @@
 <h1 align="center">
-  <img src="https://shieldcn.dev/header/gradient.svg?title=SimpleWiki&subtitle=A+file-based+documentation+engine+designed+for+creating+fast+and+customizable+wiki+systems.&mode=dark" width="100%">
+
+![Dark Mode](https://shieldcn.dev/header/gradient.svg?title=SimpleWiki&subtitle=A+file-based+documentation+engine+designed+for+creating+fast+and+customizable+wiki+systems.&mode=dark&image=https%3A%2F%2Fi.imgur.com%2Fpih2O1r.png&overlay=0.65#gh-dark-mode-only)
+![Light Mode](https://shieldcn.dev/header/gradient.svg?title=SimpleWiki&subtitle=A+file-based+documentation+engine+designed+for+creating+fast+and+customizable+wiki+systems.&mode=light&image=https%3A%2F%2Fi.imgur.com%2FBn3XJNb.png&overlay=0.65#gh-light-mode-only)
 </h1>
 
 <div align="center">
@@ -13,9 +15,6 @@
 </div>
 
 <p align="center">
-
-![Bild im Dark Mode](.github/screenshots/site-dark.png#gh-dark-mode-only)
-![Bild im Light Mode](.github/screenshots/site-light.png#gh-light-mode-only)
 
 ## 📋 Table of Contents
 

@@ -1,8 +1,10 @@
-<h1 align="center">
-
-![Dark Mode](https://shieldcn.dev/header/gradient.svg?title=SimpleWiki&subtitle=A+file-based+documentation+engine+designed+for+creating+fast+and+customizable+wiki+systems.&mode=dark&image=https%3A%2F%2Fi.imgur.com%2Fpih2O1r.png&overlay=0.65#gh-dark-mode-only)
-![Light Mode](https://shieldcn.dev/header/gradient.svg?title=SimpleWiki&subtitle=A+file-based+documentation+engine+designed+for+creating+fast+and+customizable+wiki+systems.&mode=light&image=https%3A%2F%2Fi.imgur.com%2FBn3XJNb.png&overlay=0.65#gh-light-mode-only)
-</h1>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/header/gradient.svg?title=SimpleWiki&subtitle=A+file-based+documentation+engine+designed+for+creating+fast+and+customizable+wiki+systems.&mode=dark&image=https%3A%2F%2Fi.imgur.com%2Fpih2O1r.png&overlay=0.65">
+    <source media="(prefers-color-scheme: light)" srcset="https://shieldcn.dev/header/gradient.svg?title=SimpleWiki&subtitle=A+file-based+documentation+engine+designed+for+creating+fast+and+customizable+wiki+systems.&mode=light&image=https%3A%2F%2Fi.imgur.com%2FBn3XJNb.png&overlay=0.65">
+    <img alt="SimpleWiki Header" src="https://shieldcn.dev/header/gradient.svg?title=SimpleWiki&subtitle=A+file-based+documentation+engine+designed+for+creating+fast+and+customizable+wiki+systems.&mode=light&image=https%3A%2F%2Fi.imgur.com%2FBn3XJNb.png&overlay=0.65">
+  </picture>
+</p>
 
 <div align="center">
   <p></p>

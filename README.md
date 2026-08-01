@@ -7,27 +7,24 @@
 </p>
 
 <div align="center">
-  <p></p>
   <div align="center">
-      <img src="https://shieldcn.dev/group/github/stars/feeeedox/dotfiles+github/forks/feeeedox/dotfiles+github/license/feeeedox/dotfiles.svg?variant=ghost&theme=zinc">
-      <p></p>
-      <img src="https://shieldcn.dev/flag/de.svg?theme=zinc"> <img src="https://shieldcn.dev/badge/made%20for-Hyprland%20&%20Arch%20Linux.svg?theme=zinc">
+      <img src="https://shieldcn.dev/group/github/stars/feeeedox/simplewiki+github/forks/feeeedox/simplewiki+github/ci/feeeedox/simplewiki+github/license/feeeedox/simplewiki.svg?variant=ghost">
+      <br/>
+      <img src="https://shieldcn.dev/badge/built%20by-humans.svg?variant=ghost&size=default&logo=ri%3AFaHeart">
   </div>
   <br>
 </div>
 
-<p align="center">
+## Table of Contents
 
-## 📋 Table of Contents
+- [Quick Start](#quick-start)
+- [Features](#features)
+- [Installation](#installation)
+- [Acknowledgments](#acknowledgments)
+- [License](#license)
+- [Contact](#contact)
 
-- [🚀 Quick Start](#-quick-start)
-- [✨ Features](#-features)
-- [🛠️ Installation](#%EF%B8%8F-installation)
-- [🏆 Acknowledgments](#-acknowledgments)
-- [📄 License](#-license)
-- [📞 Contact](#-contact)
-
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Clone the repository
@@ -43,7 +40,7 @@ bun install
 bun dev
 ```
 
-## ✨ Features
+## Features
 
 - Fast static site generation
 - Markdown and MDC support
@@ -53,29 +50,20 @@ bun dev
 - Custom Vue component support
 - Built for documentation and knowledge bases
 
-## 🛠️ Installation
+## Installation
 
 To install SimpleWiki, check out the [installation guide](https://feeeedox.github.io/simplewiki/getting-started/installation) for detailed instructions.
 
-## 🏆 Acknowledgments
+## Acknowledgments
 
 ### Contributors
 
 <div align="center">
 
-<a href="https://github.com/feeeedox/simplewiki/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=feeeedox/simplewiki" />
-</a>
-
+[![feeeedox/simplewiki contributors](https://shieldcn.dev/contributors/feeeedox/simplewiki.svg?title=false&preset=gradient&bots=true&mode=dark)](https://github.com/feeeedox/simplewiki/graphs/contributors)
 </div>
 
-### Tools & Libraries Used
-
-<img src="https://img.shields.io/badge/Nuxt-4-00DC82?style=flat&logo=nuxt.js">
-<img src="https://img.shields.io/badge/TailwindCSS-4-06B6D4?style=flat&logo=tailwindcss">
-<img src="https://img.shields.io/badge/Markdown-MDC-black?style=flat&logo=markdown">
-
-### 🎨 Assets & Icons Credits
+### Assets & Icons Credits
 
 To match the authentic, classic Wiki aesthetics, this project uses a curated collection of classic skeuomorphic and photorealistic web icons:
 
@@ -89,39 +77,25 @@ This project was inspired by:
 - [DokuWiki](https://www.dokuwiki.org/) - For the simplicity and file-based approach
 - [MkDocs](https://www.mkdocs.org/) - For the static site generation and Markdown support
 
-## 💰 Support the Project
+## Support the Project
 
-If you like the project, there are several ways you can support it:
+If you like the project, give it a star on GitHub or support the development:
 
-### 🌟 Star the Repository
+[![Buy Me A Coffee](https://shieldcn.dev/badge/buy%20me%20a%20coffee-c6be40.svg?logo=buymeacoffee)](https://buymeacoffee.com/feeeedox)
+[![GitHub Sponsors](https://shieldcn.dev/github/sponsors/feeeedox.svg)](https://github.com/sponsors/feeeedox)
 
-Give the project a star on GitHub!
 
-### ☕ Buy Me a Coffee
-
-[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/feeeedox)
-
-### 💝 Sponsor
-
-[![GitHub Sponsors](https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white)](https://github.com/sponsors/feeeedox)
-
-### 🗣️ Spread the Word
-
-- Share on social media
-- Write a blog post
-- Tell your friends and colleagues
-
-## 🔐 Security
+## Security
 
 ### Reporting Security Vulnerabilities
 
 If you discover a security vulnerability, please send an email to f3dox@proton.me. All security vulnerabilities will be promptly addressed.
 
-## 📄 License
+## License
 
-This project is licensed under the MIT License—see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License, see the [LICENSE](LICENSE) file for details.
 
-## 📞 Contact
+## Contact
 
 ### Project Maintainer
 
@@ -130,23 +104,10 @@ This project is licensed under the MIT License—see the [LICENSE](LICENSE) file
 ### Get in Touch
 
 <div align="center">
-
-<a href="https://github.com/feeeedox" target="_blank">
-<img src=https://img.shields.io/badge/github-%2324292e.svg?&style=for-the-badge&logo=github&logoColor=white alt=github style="margin-bottom: 5px;" />
-</a>
-<a href="https://instagram.com/feeeedox" target="_blank">
-<img src=https://img.shields.io/badge/instagram-%23000000.svg?&style=for-the-badge&logo=instagram&logoColor=white alt=instagram style="margin-bottom: 5px;" />
-</a>
-<a href="https://codepen.com/Fedox-die-Ente" target="_blank">
-<img src=https://img.shields.io/badge/codepen-%23131417.svg?&style=for-the-badge&logo=codepen&logoColor=white alt=codepen style="margin-bottom: 5px;" />
-</a>
-<a href="https://stackoverflow.com/users/16288266" target="_blank">
-<img src=https://img.shields.io/badge/stackoverflow-%23F28032.svg?&style=for-the-badge&logo=stackoverflow&logoColor=white alt=stackoverflow style="margin-bottom: 5px;" />
-</a>
-<a href="mailto:f3dox@proton.me" target="_blank">
-<img src=https://img.shields.io/badge/Proton%20Mail-6D4AFF?&style=for-the-badge&logo=protonmail&logoColor=fff alt=mail style="margin-bottom: 5px;" />
-</a>
-
+  <a href="https://github.com/feeeedox" target="_blank"><img src="https://shieldcn.dev/badge/github.svg?variant=secondary&logo=ri%3AFaGithub" alt="github" height="30" /></a>
+  <a href="https://instagram.com/feeeedox" target="_blank"><img src="https://shieldcn.dev/badge/instagram.svg?logo=instagram" alt="instagram" height="30" /></a>
+  <a href="https://stackoverflow.com/users/16288266" target="_blank"><img src="https://shieldcn.dev/badge/stackoverflow-db7633.svg?variant=secondary&logo=ri%3ATbBrandStackoverflow" alt="stackoverflow" height="30" /></a>
+  <a href="mailto:f3dox@proton.me" target="_blank"><img src="https://shieldcn.dev/badge/proton%20mail-6445eb.svg?variant=secondary&logo=protonmail" alt="mail" height="30" /></a>
 </div>
 
 ### Project Links
@@ -162,10 +123,8 @@ This project is licensed under the MIT License—see the [LICENSE](LICENSE) file
 
 **[⬆ Back to Top](#-simplewiki)**
 
-Made with ❤️ by [Florian](https://github.com/feeeedox)
+Made with ❤ by [Florian](https://github.com/feeeedox)
 
-![Profile views](https://visitor-badge.laobi.icu/badge?page_id=feeeedox&left_text=Profile+views)
+![Profile views](https://shieldcn.dev/views/user/feeeedox.svg?variant=outline)
 
 </div>
-
----

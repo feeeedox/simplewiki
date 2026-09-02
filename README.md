@@ -9,9 +9,9 @@
 <div align="center">
   <p></p>
   <div align="center">
-      <img src="https://shieldcn.dev/group/github/stars/feeeedox/dotfiles+github/forks/feeeedox/dotfiles+github/license/feeeedox/dotfiles.svg?variant=ghost&theme=zinc">
+      <img src="https://shieldcn.dev/group/github/stars/feeeedox/simplewiki+github/forks/feeeedox/simplewiki+github/license/feeeedox/simplewiki?variant=ghost&theme=zinc">
       <p></p>
-      <img src="https://shieldcn.dev/flag/de.svg?theme=zinc"> <img src="https://shieldcn.dev/badge/made%20for-Hyprland%20&%20Arch%20Linux.svg?theme=zinc">
+      <img src="https://shieldcn.dev/flag/de.svg?theme=zinc">
   </div>
   <br>
 </div>

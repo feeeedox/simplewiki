@@ -36,6 +36,7 @@ const MANAGED_PATHS = [
   "app/assets",
   "app/components",
   "app/pages",
+  "app/util",
   "nuxt.config.ts",
   "content.config.ts",
   "tsconfig.json",

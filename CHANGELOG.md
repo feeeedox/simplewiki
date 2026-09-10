@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.1](https://github.com/feeeedox/simplewiki/compare/v1.2.0...v1.2.1) (2026-09-10)
+
+### 🐛 Bug Fixes
+
+* **deps:** update all non-major dependencies ([86c945d](https://github.com/feeeedox/simplewiki/commit/86c945d5782d791747c6669d5a6aebbd8fe2583a))
+* **deps:** update all non-major dependencies ([f43af03](https://github.com/feeeedox/simplewiki/commit/f43af037b308d14bfd45251660beaef8534ba385))
+* **deps:** update dependency better-sqlite3 to v13 ([cb81aaf](https://github.com/feeeedox/simplewiki/commit/cb81aafaa0519cd44f7941031ed242dedb65828a))
+* **deps:** update nuxt ecosystem (minor/patch) ([#11](https://github.com/feeeedox/simplewiki/issues/11)) ([c9da0d0](https://github.com/feeeedox/simplewiki/commit/c9da0d0c936c4e0f4310925f67179c9225712e42))
+* **deps:** update nuxt ecosystem (minor/patch) ([#26](https://github.com/feeeedox/simplewiki/issues/26)) ([9fb26f8](https://github.com/feeeedox/simplewiki/commit/9fb26f8340a925f3c309aa1f6ef5090d4b55feb6))
+
 ## [1.2.0](https://github.com/feeeedox/simplewiki/compare/v1.1.0...v1.2.0) (2026-07-22)
 
 ### ✨ Features

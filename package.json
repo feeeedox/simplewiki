@@ -15,6 +15,7 @@
     "release": "release-it"
   },
   "dependencies": {
+    "@barzhsieh/nuxt-content-mermaid": "^3.0.4",
     "@nuxt/content": "3.16.0",
     "@nuxt/fonts": "0.14.0",
     "@nuxt/image": "2.1.0",
@@ -23,7 +24,9 @@
     "@tailwindcss/vite": "^4.3.3",
     "@takumi-rs/core": "^2.13.2",
     "@unhead/vue": "^2.0.3 || ^3.0.0",
+    "add": "^2.0.9",
     "better-sqlite3": "^13.0.3",
+    "mermaid": "^12.0.0",
     "nuxt": "^4.5.2",
     "nuxt-og-image": "6.7.8",
     "tailwindcss": "^4.3.3",

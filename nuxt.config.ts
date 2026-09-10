@@ -1,5 +1,5 @@
 import tailwindcss from "@tailwindcss/vite";
-import { bundledLanguages, type BundledLanguage } from "shiki";
+import {type BundledLanguage, bundledLanguages} from "shiki";
 
 export default defineNuxtConfig({
   ssr: true,
@@ -74,6 +74,7 @@ export default defineNuxtConfig({
           },
           langs: Object.keys(bundledLanguages).filter(
             (lang) =>
+                lang !== "mermaid" &&
               !lang.includes("+") &&
               !lang.includes("#") &&
               !lang.includes("文"),

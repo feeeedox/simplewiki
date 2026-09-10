@@ -112,15 +112,15 @@ And the best part: it works perfectly inside lists as well.
 
 ## Image Examples
 
-![Alternative text for the image](/images/dramatic-landscape.jpg)
+![Alternative text for the image](/simplewiki/images/dramatic-landscape.jpg)
 
 ---
 
-![My Screenshot](/images/dramatic-landscape.jpg "This is the image caption")
+![My Screenshot](/simplewiki/images/dramatic-landscape.jpg "This is the image caption")
 
 ---
 
-![A smaller image](/images/dramatic-landscape.jpg){width="50%" style="display: block; margin: 0 auto;"}
+![A smaller image](/simplewiki/images/dramatic-landscape.jpg){width="50%" style="display: block; margin: 0 auto;"}
 
 ---
 
@@ -275,8 +275,8 @@ lines:
 
 ## Kbd
 
-Press :kbd{keys="Cmd+C"} to copy a selected item.  
-And press :kbd{keys="Cmd+V"} to paste it.
+Press :keyboard{keys="Cmd+C"} to copy a selected item.  
+And press :keyboard{keys="Cmd+V"} to paste it.
 
 ## Headnote
 
@@ -331,3 +331,90 @@ items:
     url: "https://developer.mozilla.org/de/docs/Web/HTTP/Overview"
 ---
 ::
+
+## Mermaid
+
+```mermaid
+graph TB
+%% Custom Styling
+    classDef client fill:#3b82f6,stroke:#1d4ed8,color:#fff,stroke-width:2px;
+    classDef gateway fill:#8b5cf6,stroke:#6d28d9,color:#fff,stroke-width:2px;
+    classDef service fill:#10b981,stroke:#047857,color:#fff,stroke-width:1.5px;
+    classDef database fill:#f59e0b,stroke:#b45309,color:#fff,stroke-width:2px;
+    classDef messaging fill:#ef4444,stroke:#b91c1c,color:#fff,stroke-width:2px;
+    classDef external fill:#6b7280,stroke:#374151,color:#fff,stroke-dasharray: 5 5;
+
+%% Client Layer
+    subgraph Clients ["📱 Client Layer"]
+        Web["Web Frontend (React)"]:::client
+        Mobile["Mobile App (iOS/Android)"]:::client
+        3rdParty["Third-Party API Clients"]:::client
+    end
+
+%% Edge & Security Layer
+    subgraph Edge ["🛡️ Edge & Security"]
+        WAF["Cloudflare WAF / CDN"]
+        Gateway["Kong API Gateway"]:::gateway
+        Auth["Auth0 / Identity Provider"]:::external
+    end
+
+%% Microservices Tier
+    subgraph Services ["⚙️ Microservices Core"]
+        UserSvc["User Service"]:::service
+        OrderSvc["Order Service"]:::service
+        PaymentSvc["Payment Service"]:::service
+        NotifSvc["Notification Service"]:::service
+    end
+
+%% Messaging & Event Stream
+    subgraph Bus ["📬 Event-Driven Messaging"]
+        Kafka{{"Apache Kafka (Event Stream)"}}:::messaging
+        DLQ[("Dead Letter Queue")]:::messaging
+    end
+
+%% Persistence Layer
+    subgraph Data ["💾 Data Tier"]
+        UserDB[("User DB\n(PostgreSQL)")]:::database
+        OrderDB[("Order DB\n(MongoDB)")]:::database
+        Cache[("Redis Cache Cluster")]:::database
+        AnalyticsDB[("ClickHouse\n(Analytics)")]:::database
+    end
+
+%% External Systems
+    subgraph External ["🌐 External Services"]
+        Stripe["Stripe Gateway"]:::external
+        SendGrid["SendGrid Email API"]:::external
+    end
+
+%% Data Flow & Interconnections
+    Clients ==>|HTTPS / WSS| WAF
+    WAF --> Gateway
+    Gateway -.->|Validate JWT| Auth
+
+    Gateway -->|/users| UserSvc
+    Gateway -->|/orders| OrderSvc
+    Gateway -->|/payments| PaymentSvc
+
+    UserSvc <-->|Read/Write Cache| Cache
+    UserSvc --> UserDB
+
+    OrderSvc --> OrderDB
+    OrderSvc -- "1. OrderCreated Event" --> Kafka
+
+    Kafka -- "2. Consume Event" --> PaymentSvc
+    Kafka -- "3. Consume Event" --> NotifSvc
+    Kafka -.->|Sync CDC Data| AnalyticsDB
+
+    PaymentSvc -->|Process Charge| Stripe
+    PaymentSvc -- "PaymentFailed" --> DLQ
+    PaymentSvc -- "PaymentSuccess" --> Kafka
+
+    NotifSvc -->|Send Transactional Email| SendGrid
+
+%% Notes & Annotation
+    class Web,Mobile,3rdParty client;
+    class Gateway gateway;
+    class UserSvc,OrderSvc,PaymentSvc,NotifSvc service;
+    class UserDB,OrderDB,Cache,AnalyticsDB database;
+    class Kafka,DLQ messaging;
+```

@@ -31,7 +31,7 @@
     "nuxt-og-image": "6.7.8",
     "tailwindcss": "^4.3.3",
     "unstorage": "^1.17.5",
-    "vue": "^3.5.42",
+    "vue": "^3.5.43",
     "vue-router": "^5.3.1"
   },
   "devDependencies": {

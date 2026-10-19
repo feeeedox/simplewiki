@@ -1,0 +1,15 @@
+node_modules
+.nuxt
+.output
+.data
+.nitro
+.cache
+dist
+.git
+.github
+*.log
+.env
+.env.*
+Dockerfile
+docker-compose.yml
+package-lock.json

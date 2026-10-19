@@ -1,0 +1,7 @@
+services:
+  simplewiki:
+    build: .
+    image: simplewiki:latest
+    ports:
+      - "8080:80"
+    restart: unless-stopped

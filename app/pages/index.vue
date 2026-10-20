@@ -1,4 +1,9 @@
 <script setup lang="ts">
+if (import.meta.prerender) {
+    const pages = await queryCollection('content').select('path').all()
+    prerenderRoutes(pages.map(page => page.path))
+}
+
 const { data: navigation } = await useAsyncData('root-redirect', () =>
     queryCollectionNavigation('content')
 )
@@ -16,7 +21,8 @@ if (navigation.value && navigation.value.length > 0) {
             redirectPath = firstGroup.path
         }
 
-        await navigateTo(redirectPath, { redirectCode: 302 })
+        const target = redirectPath.endsWith('/') ? redirectPath : `${redirectPath}/`
+        await navigateTo(target, { redirectCode: 302 })
     }
 }
 </script>

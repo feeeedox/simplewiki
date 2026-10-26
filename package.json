@@ -36,8 +36,8 @@
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^12.0.2",
-    "@takumi-rs/wasm": "^2.14.0",
+    "@takumi-rs/wasm": "^2.17.1",
     "release-it": "^21.1.1",
-    "sass-embedded": "^1.105.1"
+    "sass-embedded": "^1.106.1"
   }
 }

@@ -2,7 +2,7 @@
 FROM oven/bun:1 AS build
 WORKDIR /app
 
-COPY --from=node:22-slim /usr/local/bin/node /usr/local/bin/node
+COPY --from=node:22.23.4-slim /usr/local/bin/node /usr/local/bin/node
 
 COPY package.json bun.lock ./
 RUN --mount=type=cache,target=/root/.bun/install/cache \

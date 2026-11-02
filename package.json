@@ -27,7 +27,7 @@
     "add": "^2.0.9",
     "better-sqlite3": "^13.0.3",
     "mermaid": "^12.2.0",
-    "nuxt": "^4.6.2",
+    "nuxt": "^4.6.3",
     "nuxt-og-image": "6.10.4",
     "tailwindcss": "^4.3.3",
     "unstorage": "^1.17.6",

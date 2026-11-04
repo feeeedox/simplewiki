@@ -41,20 +41,20 @@
 }
 
 .dark {
-    --page-bg: #101418;        
-    --content-bg: #1a1f26;       
-    --sidebar-bg: #14191f;       
-    --border: #3c424a;         
-    --border-light: #2d333b;     
-    --text: #e1e3e6;             
-    --text-muted: #969ca4;      
-    --link: #6db1ff;            
-    --link-visited: #b99bf8;     
-    --link-hover: #9eceff;      
-    --toc-bg: #1a1f26;         
-    --header-band: #202730;    
-    --focus-color: #4c8fff;  
-    --row-hover-bg: #2c3138;   
+    --page-bg: #101418;
+    --content-bg: #1a1f26;
+    --sidebar-bg: #14191f;
+    --border: #3c424a;
+    --border-light: #2d333b;
+    --text: #e1e3e6;
+    --text-muted: #969ca4;
+    --link: #6db1ff;
+    --link-visited: #b99bf8;
+    --link-hover: #9eceff;
+    --toc-bg: #1a1f26;
+    --header-band: #202730;
+    --focus-color: #4c8fff;
+    --row-hover-bg: #2c3138;
 }
 
 
@@ -74,21 +74,14 @@ a:visited{ color: var(--link-visited); }
 a:hover{ text-decoration: underline; color: var(--link-hover); }
 a:focus-visible{ outline: 2px solid #36c; outline-offset: 1px; }
 
-html,
-body,
-#__nuxt,
-#app {
-  height: 100%;
-}
-
 html {
   scrollbar-color: var(--border) var(--page-bg);
   scrollbar-width: thin;
 }
 
 ::-webkit-scrollbar {
-  width: 10px; 
-  height: 10px; 
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -96,9 +89,9 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--border-light); 
+  background-color: var(--border-light);
   border-radius: 5px;
-  border: 2px solid var(--page-bg); 
+  border: 2px solid var(--page-bg);
   transition: background-color 0.2s ease;
 }
 

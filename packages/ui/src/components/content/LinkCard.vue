@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import WikiLink from '../WikiLink.vue'
+
 defineProps<{
   to: string
   title: string
@@ -7,7 +9,7 @@ defineProps<{
 </script>
 
 <template>
-  <NuxtLink
+  <WikiLink
     :to="to"
     class="my-3.5 flex max-w-120 items-start gap-2.5 border border-border bg-content-bg px-3 py-2.5 no-underline! hover:bg-header-band hover:no-underline!"
   >
@@ -27,5 +29,5 @@ defineProps<{
         {{ description }}
       </div>
     </div>
-  </NuxtLink>
+  </WikiLink>
 </template>

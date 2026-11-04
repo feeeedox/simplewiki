@@ -6,5 +6,7 @@ export { default as WikiContentImage } from './components/content/ContentImage.v
 export { default as WikiReference } from './components/content/ContentReference.vue'
 export { default as WikiContentYoutubeApi } from './components/content/ContentYoutubeApi.vue'
 export { default as WikiContentYoutubePlaybuttonApi } from './components/content/ContentYoutubePlaybuttonApi.vue'
+export { default as WikiToC } from './components/ToC.vue'
+export { default as WikiLink } from './components/WikiLink.vue'
 
 export { installWikiUi } from "./install"

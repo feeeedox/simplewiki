@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import WikiLink from '../WikiLink.vue'
+
 defineProps<{
   items: { title: string, to: string, description?: string, external?: boolean }[]
 }>()
@@ -16,13 +18,13 @@ defineProps<{
         :key="item.to"
         class="my-0.5"
       >
-        <NuxtLink
+        <WikiLink
           :to="item.to"
           :target="item.external ? '_blank' : undefined"
           class="font-bold text-link"
         >
           {{ item.title }}
-        </NuxtLink>
+        </WikiLink>
 
         <span
           v-if="item.description"

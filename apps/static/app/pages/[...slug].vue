@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
+import { WikiToC } from '@simplewiki/ui';
 import Content from '~/components/Content.vue';
-import Footer from '~/components/Footer.vue';
 import Header from '~/components/Header.vue';
 import Sidebar from '~/components/Sidebar.vue';
-import ToC from '~/components/ToC.vue';
 import Trace from '~/components/Trace.vue';
 
 const route = useRoute()
@@ -36,10 +35,10 @@ defineOgImage('WikiPage', {
     <Trace :title="data?.title" />
     <main class="max-w-275 mx-auto sm:grid sm:grid-cols-[180px_minmax(0,1fr)_240px] w-full items-start min-h-0">
         <Sidebar :is-open="isSidebarOpen" @close="isSidebarOpen = false" />
-        <ToC :is-mobile=true :toc-links="tocLinks" />
+        <WikiToC :is-mobile=true :toc-links="tocLinks" />
 
         <Content :data="data ? data : null" />
-        <ToC :is-mobile=false :toc-links="tocLinks" />
+        <WikiToC :is-mobile=false :toc-links="tocLinks" />
     </main>
 
     <!--

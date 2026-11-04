@@ -1,5 +1,6 @@
 
-import type { App } from "vue";
+import type { App, Component } from "vue";
+import { wikiLinkKey } from "./link";
 
 import Accordion from "./components/content/Accordion.vue";
 import Badge from "./components/content/Badge.vue";
@@ -23,6 +24,8 @@ import SeeAlso from "./components/content/SeeAlso.vue";
 import Steps from "./components/content/Steps.vue";
 import Tabs from "./components/content/Tabs.vue";
 import Timeline from "./components/content/Timeline.vue";
+import Footer from "./components/Footer.vue";
+import ToC from "./components/ToC.vue";
 
 export const wikiComponents = {
   Badge,
@@ -46,10 +49,16 @@ export const wikiComponents = {
   FieldTable,
   Highlight,
   InfoBox,
-  Tabs
+  Tabs,
+  Footer,
+  ToC
 };
 
-export function installWikiUi(app: App): void {
+export function installWikiUi(app: App, options: { linkComponent?: Component } = {}): void {
+  if (options.linkComponent) {
+    app.provide(wikiLinkKey, options.linkComponent);
+  }
+
   for (const [name, component] of Object.entries(wikiComponents)) {
     app.component(name, component);
   }

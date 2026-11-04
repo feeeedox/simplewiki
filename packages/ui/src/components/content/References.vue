@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import WikiLink from '../WikiLink.vue'
+
 defineProps<{
   items: {
     title: string
@@ -21,22 +23,22 @@ defineProps<{
         :id="`ref-${index + 1}`"
         class="leading-snug"
       >
-        <NuxtLink
+        <WikiLink
           v-if="item.url"
           :href="item.url"
           target="_blank"
           rel="noopener"
           class="text-link hover:underline"
-        >{{ item.title }}</NuxtLink>
+        >{{ item.title }}</WikiLink>
         <span v-else>{{ item.title }}</span>
 
         <span v-if="item.note" class="text-text-muted"> — {{ item.note }}</span>
 
-        <NuxtLink
+        <WikiLink
           :href="`#cite-${index + 1}`"
           class="ml-1.5 text-text-muted hover:text-link text-[0.7rem]"
           aria-label="Back to citation"
-        >↩</NuxtLink>
+        >↩</WikiLink>
       </li>
     </ol>
   </div>

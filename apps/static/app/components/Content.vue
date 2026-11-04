@@ -30,7 +30,7 @@ const components = {
   ReferenceList: 'ReferenceList',
   SeeAlso: 'SeeAlso',
   LinkCard: 'LinkCard',
-  YouTube: 'WikiYouTube'
+  Youtube: 'WikiYouTube'
 }
 </script>
 

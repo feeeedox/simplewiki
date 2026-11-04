@@ -1,0 +1,27 @@
+{
+  "name": "@simplewiki/source",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "graph": "nx graph"
+  },
+  "private": true,
+  "dependencies": {},
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@nx/js": "24.0.4",
+    "@nx/nuxt": "24.0.4",
+    "@nx/vite": "24.0.4",
+    "@nx/web": "24.0.4",
+    "@nx/workspace": "24.0.4",
+    "jiti": "2.4.2",
+    "nuxt": "^4.0.0",
+    "nx": "24.0.4",
+    "typescript": "~6.0.3",
+    "vite": "^8.0.0"
+  },
+  "packageManager": "bun@1.4.4"
+}

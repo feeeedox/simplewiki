@@ -48,10 +48,19 @@
         "sass-embedded": "^1.107.0",
       },
     },
+    "packages/shared": {
+      "name": "@simplewiki/shared",
+      "version": "0.1.0",
+      "peerDependencies": {
+        "mermaid": "^12.2.0",
+        "vue": "^3.5.0",
+      },
+    },
     "packages/ui": {
       "name": "@simplewiki/ui",
       "version": "0.1.0",
       "peerDependencies": {
+        "@simplewiki/shared": "workspace:*",
         "vue": "^3.5.0",
       },
     },
@@ -740,6 +749,8 @@
     "@shikijs/types": ["@shikijs/types@4.6.0", "", { "dependencies": { "@shikijs/vscode-textmate": "^10.1.0", "@types/hast": "^3.0.5" } }, "sha512-+ENG1adsKt/X7cRYw1Nl7BEpBmPOjmQ7bR/eGmHuMlT8gtOFf3KEi5l31DJYyAWhW6Y6bjP1plU7FmaxWGENFw=="],
 
     "@shikijs/vscode-textmate": ["@shikijs/vscode-textmate@10.1.0", "", {}, "sha512-cVBuhDQjBZaNMTwBquYfPydrUP+E3hE6oYGasx8h6ZrODIM7/r+gxLDXdd66oszbrggZHEntdE6j+5gYIVyMWQ=="],
+
+    "@simplewiki/shared": ["@simplewiki/shared@workspace:packages/shared"],
 
     "@simplewiki/static": ["@simplewiki/static@workspace:apps/static"],
 

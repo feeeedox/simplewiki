@@ -1,12 +1,14 @@
 <script lang="ts" setup>
 import {computed, nextTick, onMounted, ref} from 'vue'
-import {renderMermaid} from '~/util/mermaidRenderer.ts'
+import {util} from '@simplewiki/shared'
 
 const slotContainerRef = ref<HTMLDivElement | null>(null)
 
 function extractSource(): string {
   const raw = slotContainerRef.value?.textContent ?? ''
-  return raw.replace(/^\s*mermaid\s*\n/, '').trim()
+  return raw
+      .replace(/^\s*plantuml\s*\n/, '')
+      .trim()
 }
 
 const svgContent  = ref('')
@@ -42,16 +44,14 @@ function applyZoom(delta: number, cx: number, cy: number) {
 
 function onWheel(e: WheelEvent) {
   e.preventDefault()
-  const rect  = containerRef.value!.getBoundingClientRect()
-  const cx    = e.clientX - rect.left
-  const cy    = e.clientY - rect.top
-  applyZoom(e.deltaY < 0 ? ZOOM_FACTOR : -ZOOM_FACTOR, cx, cy)
+  const rect = containerRef.value!.getBoundingClientRect()
+  applyZoom(e.deltaY < 0 ? ZOOM_FACTOR : -ZOOM_FACTOR, e.clientX - rect.left, e.clientY - rect.top)
 }
 
 function onPointerDown(e: PointerEvent) {
   if (e.button !== 0 && e.pointerType === 'mouse') return
-  isPanning     = true
-  panStart      = { x: e.clientX, y: e.clientY }
+  isPanning = true
+  panStart = { x: e.clientX, y: e.clientY }
   originAtStart = { ...transform.value }
   ;(e.currentTarget as HTMLElement).setPointerCapture(e.pointerId)
 }
@@ -82,12 +82,12 @@ function onTouchStart(e: TouchEvent) {
 function onTouchMove(e: TouchEvent) {
   if (e.touches.length !== 2) return
   e.preventDefault()
-  const dist  = getTouchDist(e)
-  const rect  = containerRef.value!.getBoundingClientRect()
+  const dist = getTouchDist(e)
+  const rect = containerRef.value!.getBoundingClientRect()
   // @ts-ignore
-  const cx    = ((e.touches[0].clientX + e.touches[1].clientX) / 2) - rect.left
+  const cx   = ((e.touches[0].clientX + e.touches[1].clientX) / 2) - rect.left
   // @ts-ignore
-  const cy    = ((e.touches[0].clientY + e.touches[1].clientY) / 2) - rect.top
+  const cy   = ((e.touches[0].clientY + e.touches[1].clientY) / 2) - rect.top
   applyZoom((dist - lastPinchDist) / lastPinchDist * 0.6, cx, cy)
   lastPinchDist = dist
 }
@@ -112,7 +112,7 @@ function resetView() {
 
 onMounted(async () => {
   try {
-    svgContent.value  = await renderMermaid(extractSource())
+    svgContent.value  = await util.renderPlantuml(extractSource())
     renderError.value = ''
   } catch (err: any) {
     renderError.value = err?.message ?? 'Render failed'
@@ -132,23 +132,21 @@ const canvasStyle = computed(() => ({
 </script>
 
 <template>
-  <div class="mermaid-wrapper select-none!">
+  <div class="diagram-wrapper select-none!">
     <div ref="slotContainerRef" aria-hidden="true" style="display:none">
       <slot />
     </div>
 
-    <div class="mermaid-header">
-      <span class="mermaid-label">
+    <div class="diagram-header">
+      <span class="diagram-label">
         <svg fill="none" height="13" viewBox="0 0 24 24" width="13">
-          <rect height="5" rx="1" stroke="currentColor" stroke-width="2" width="7" x="2"  y="2"/>
-          <rect height="5" rx="1" stroke="currentColor" stroke-width="2" width="7" x="15" y="9"/>
-          <rect height="5" rx="1" stroke="currentColor" stroke-width="2" width="7" x="2"  y="17"/>
-          <path d="M9 4.5h3.5a1 1 0 0 1 1 1v5"  stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
-          <path d="M9 19.5h3.5a1 1 0 0 0 1-1v-5" stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
+          <path d="M12 21V10" stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
+          <path d="M12 10C12 10 8 8 6 4c4 0 7 2 6 6z" fill="currentColor" opacity=".25" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/>
+          <path d="M12 14c0 0 4-2 6-6-4 0-7 2-6 6z" fill="currentColor" opacity=".25" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/>
         </svg>
-        Diagram
+        PlantUML
       </span>
-      <div class="mermaid-controls">
+      <div class="diagram-controls">
         <span class="zoom-level">{{ zoomPercent }}%</span>
         <button class="ctrl-btn" title="Zoom in" @click="zoomIn">
           <svg fill="none" height="13" viewBox="0 0 24 24" width="13">
@@ -173,7 +171,7 @@ const canvasStyle = computed(() => ({
 
     <div
         ref="containerRef"
-        class="mermaid-viewport"
+        class="diagram-viewport"
         @pointercancel="onPointerUp"
         @pointerdown="onPointerDown"
         @pointermove="onPointerMove"
@@ -182,12 +180,12 @@ const canvasStyle = computed(() => ({
         @touchstart.passive="onTouchStart"
         @wheel.prevent="onWheel"
     >
-      <div v-if="isLoading" class="mermaid-status">
+      <div v-if="isLoading" class="diagram-status">
         <span class="spinner" />
         Rendering…
       </div>
 
-      <div v-else-if="renderError" class="mermaid-status mermaid-error">
+      <div v-else-if="renderError" class="diagram-status diagram-error">
         <svg fill="none" height="16" viewBox="0 0 24 24" width="16">
           <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
           <path d="M12 8v4M12 16h.01" stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
@@ -199,7 +197,7 @@ const canvasStyle = computed(() => ({
           v-else
           ref="canvasRef"
           :style="canvasStyle"
-          class="mermaid-canvas"
+          class="diagram-canvas"
           v-html="svgContent"
       />
 
@@ -211,7 +209,7 @@ const canvasStyle = computed(() => ({
 </template>
 
 <style lang="scss" scoped>
-.mermaid-wrapper {
+.diagram-wrapper {
   margin: 16px 0;
   border: 1px solid var(--color-border-light);
   border-radius: 6px;
@@ -219,7 +217,7 @@ const canvasStyle = computed(() => ({
   background: var(--color-content-bg);
 }
 
-.mermaid-header {
+.diagram-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -234,13 +232,13 @@ const canvasStyle = computed(() => ({
   user-select: none;
 }
 
-.mermaid-label {
+.diagram-label {
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-.mermaid-controls {
+.diagram-controls {
   display: flex;
   align-items: center;
   gap: 2px;
@@ -281,7 +279,7 @@ const canvasStyle = computed(() => ({
   }
 }
 
-.mermaid-viewport {
+.diagram-viewport {
   position: relative;
   height: 380px;
   overflow: hidden;
@@ -293,7 +291,7 @@ const canvasStyle = computed(() => ({
   &:active { cursor: grabbing; }
 }
 
-.mermaid-canvas {
+.diagram-canvas {
   position: absolute;
   top: 0;
   left: 0;
@@ -303,14 +301,10 @@ const canvasStyle = computed(() => ({
     width: 100%;
     height: auto;
     max-width: none;
-
-    text, .label {
-      fill: var(--color-text) !important;
-    }
   }
 }
 
-.mermaid-status {
+.diagram-status {
   position: absolute;
   inset: 0;
   display: flex;
@@ -323,7 +317,7 @@ const canvasStyle = computed(() => ({
   pointer-events: none;
 }
 
-.mermaid-error {
+.diagram-error {
   color: #c0392b;
   .dark & { color: #ff7675; }
 }

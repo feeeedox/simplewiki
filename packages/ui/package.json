@@ -8,6 +8,7 @@
     "./theme.css": "./src/styles/theme.css"
   },
   "peerDependencies": {
-    "vue": "^3.5.0"
+    "vue": "^3.5.0",
+    "@simplewiki/shared": "workspace:*"
   }
 }

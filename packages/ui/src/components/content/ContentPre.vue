@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+import MermaidDiagram from './MermaidDiagram.vue';
+import PlantumlDiagram from './PlantumlDiagram.vue';
+
 defineOptions({ inheritAttrs: false })
 
 const props = defineProps<{

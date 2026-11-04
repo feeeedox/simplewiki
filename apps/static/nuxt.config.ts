@@ -1,5 +1,5 @@
 import tailwindcss from "@tailwindcss/vite";
-import {type BundledLanguage, bundledLanguages} from "shiki";
+import { type BundledLanguage, bundledLanguages } from "shiki";
 
 export default defineNuxtConfig({
   ssr: true,

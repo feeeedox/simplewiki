@@ -15,6 +15,10 @@ import References from "./components/content/References.vue";
 import Diff from "./components/content/Diff.vue";
 import CategoryList from "./components/content/CategoryList.vue";
 import Steps from "./components/content/Steps.vue";
+import ContentPre from "./components/content/ContentPre.vue";
+import MermaidDiagram from "./components/content/MermaidDiagram.vue";
+import PlantumlDiagram from "./components/content/PlantumlDiagram.vue";
+import ContentH1 from "./components/content/ContentH1.vue";
 
 export const wikiComponents = {
   Badge,
@@ -30,7 +34,11 @@ export const wikiComponents = {
   References,
   Diff,
   CategoryList,
-  Steps
+  Steps,
+  ContentPre,
+  MermaidDiagram,
+  PlantumlDiagram,
+  ContentH1
 };
 
 export function installWikiUi(app: App): void {

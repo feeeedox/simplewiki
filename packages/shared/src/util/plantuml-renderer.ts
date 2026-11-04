@@ -60,6 +60,7 @@ async function encodePlantuml(source: string): Promise<string> {
 }
 
 const SERVER =
+    // @ts-ignore
     (import.meta.env?.VITE_PLANTUML_SERVER as string | undefined) ??
     'https://www.plantuml.com/plantuml'
 

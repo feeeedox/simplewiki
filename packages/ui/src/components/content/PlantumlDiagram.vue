@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import {computed, nextTick, onMounted, ref} from 'vue'
-import {util} from '@simplewiki/shared'
+import { util } from '@simplewiki/shared'
+import { computed, nextTick, onMounted, ref } from 'vue'
 
 const slotContainerRef = ref<HTMLDivElement | null>(null)
 

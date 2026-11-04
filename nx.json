@@ -20,8 +20,8 @@
       "plugin": "@nx/nuxt/plugin",
       "options": {
         "buildTargetName": "build",
-        "serveTargetName": "dev",
-        "buildStaticTargetName": "prerender",
+        "serveTargetName": "serve",
+        "buildStaticTargetName": "build-static",
         "buildDepsTargetName": "build-deps",
         "watchDepsTargetName": "watch-deps",
         "serveStaticTargetName": "serve-static"

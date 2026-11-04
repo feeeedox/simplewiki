@@ -1,0 +1,42 @@
+{
+  "name": "@simplewiki/static",
+  "type": "module",
+  "version": "1.2.1",
+  "description": "A simple wiki built with Nuxt 4 and Tailwind CSS.",
+  "author": "Florian Ohldag <f3dox@proton.me>",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --port 3000",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@simplewiki/ui": "workspace:*",
+    "@barzhsieh/nuxt-content-mermaid": "^3.0.5",
+    "@nuxt/content": "3.16.2",
+    "@nuxt/fonts": "0.14.0",
+    "@nuxt/image": "2.2.0",
+    "@nuxt/scripts": "1.3.12",
+    "@nuxtjs/color-mode": "^4.0.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "@takumi-rs/core": "^2.17.1",
+    "@unhead/vue": "^2.0.3 || ^3.0.0",
+    "add": "^2.0.9",
+    "shiki": "^4.6.0",
+    "zod": "^4.6.7",
+    "better-sqlite3": "^13.0.3",
+    "mermaid": "^12.2.0",
+    "nuxt": "^4.6.3",
+    "nuxt-og-image": "6.10.4",
+    "tailwindcss": "^4.3.3",
+    "unstorage": "^1.17.6",
+    "vue": "^3.5.44",
+    "vue-router": "^5.4.0"
+  },
+  "devDependencies": {
+    "@takumi-rs/wasm": "^2.19.0",
+    "sass-embedded": "^1.107.0"
+  }
+}

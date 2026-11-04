@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "graph": "nx graph"
+    "graph": "nx graph",
+    "dev:static": "nx run @simplewiki/static:dev",
+    "build:static": "nx run @simplewiki/static:generate"
   },
   "private": true,
   "dependencies": {},

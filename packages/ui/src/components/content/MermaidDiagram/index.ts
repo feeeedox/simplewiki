@@ -1,0 +1,1 @@
+export { default as MermaidDiagram } from './MermaidDiagram.vue'

@@ -25,7 +25,7 @@ const props = withDefaults(defineProps<{
         :video-id="id"
         :thumbnail-size="props.thumbSize"
         trigger="mousedown"
-        class="wiki-youtube-player"
+        class="wikiYoutubePlayer"
       >
         <WikiContentYoutubePlaybuttonApi />
       </ScriptYouTubePlayer>
@@ -34,7 +34,7 @@ const props = withDefaults(defineProps<{
 </template>
 
 <style scoped>
-.wiki-youtube-player {
+.wikiYoutubePlayer {
   display: block;
   width: 100%;
   height: 100%;

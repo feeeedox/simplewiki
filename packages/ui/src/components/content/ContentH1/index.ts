@@ -1,0 +1,1 @@
+export { default as ContentH1 } from './ContentH1.vue' 

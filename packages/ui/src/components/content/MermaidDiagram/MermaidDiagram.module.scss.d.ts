@@ -1,0 +1,13 @@
+export declare const ctrlBtn: string;
+export declare const mermaidCanvas: string;
+export declare const mermaidControls: string;
+export declare const mermaidError: string;
+export declare const mermaidHeader: string;
+export declare const mermaidLabel: string;
+export declare const mermaidStatus: string;
+export declare const mermaidViewport: string;
+export declare const mermaidWrapper: string;
+export declare const scrollHint: string;
+export declare const spin: string;
+export declare const spinner: string;
+export declare const zoomLevel: string;

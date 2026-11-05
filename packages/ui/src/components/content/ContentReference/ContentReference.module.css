@@ -1,0 +1,6 @@
+.link {
+    color: var(--link);
+    font-size: 0.95em;
+    font-weight: var(--font-weight-normal);
+    padding: 0 calc(var(--spacing) * 0.5);
+}

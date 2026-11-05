@@ -39,15 +39,16 @@ This is an information box.
 
 The component supports different styles using the `type` property.
 
-| Type        | Purpose                          |
-| :---------- | :------------------------------- |
-| `info`      | General information              |
-| `tip`       | Helpful suggestions              |
-| `important` | Important notes                  |
-| `alert`     | Warnings or critical information |
-| `help`      | Help messages                    |
-| `download`  | Download-related information     |
-| `todo`      | Tasks or unfinished items        |
+| Type              | Purpose                             |
+| :-----------------| :-----------------------------------|
+| `info`            | General information                 |
+| `tip`             | Helpful suggestions                 |
+| `important`       | Important notes                     |
+| `alert`           | Warnings or critical information    |
+| `help`            | Help messages                       |
+| `download`        | Download-related information        |
+| `todo`            | Tasks or unfinished items           |
+| `deprecated`      | Not used anymore/replacement exist. |
 
 ---
 

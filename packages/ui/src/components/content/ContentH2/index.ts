@@ -1,0 +1,1 @@
+export { default as ContentH2 } from './ContentH2.vue' 

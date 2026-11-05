@@ -1,0 +1,38 @@
+/* table-auto w-full max-w-140 border-collapse text-13 bg-content-bg */
+
+.table {
+    table-layout: auto;
+    width: 100%;
+    max-width: var(var(--spacing) * 140);
+    border-collapse: collapse;
+    font-size: var(--text-13);
+    background-color: var(--content-bg);
+}
+
+.tableHead {
+    width: 1%;
+    white-space: nowrap;
+    background-color: var(--header-band);
+    color: var(--text);
+    font-weight: var(--font-weight-bold);
+    text-align: left;
+    padding: calc(var(--spacing) * 2.5) calc(var(--spacing) * 1.5);
+}
+
+.tableData {
+    width: auto;
+    color: var(--text);
+    padding: calc(var(--spacing) * 2.5) calc(var(--spacing) * 1.5);
+    overflow-wrap: break-word;
+    word-break: break-word;
+    background-color: var(--content-bg);
+}
+
+.tableData a {
+    color: #2563eb;
+    text-decoration-line: underline;
+}
+
+.tableData:hover a {
+    color: #1d4ed8;
+}

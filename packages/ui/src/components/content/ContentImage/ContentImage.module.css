@@ -1,0 +1,46 @@
+.wikiImgContainer {
+  display: inline-block;
+  width: 100%;
+}
+
+.wikiFigure {
+  display: block;
+  box-sizing: border-box;
+  margin: 1.5rem auto;
+  padding: 0.5rem;
+  border: 1px solid #e2e8f0;
+  background-color: #f7fafc;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.wikiImg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.wikiImgStandalone {
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+}
+
+.wikiFigcaption {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #4a5568;
+  font-style: italic;
+}
+
+:global(.dark) .wikiFigure {
+  background-color: #161b22;
+  border-color: var(--border-dark, #30363d);
+}
+
+:global(.dark) .wikiFigcaption {
+  color: #a0aec0;
+}

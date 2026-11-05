@@ -1,0 +1,1 @@
+export { default as ContentH4 } from './ContentH4.vue' 

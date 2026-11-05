@@ -1,0 +1,153 @@
+.diagramWrapper {
+    user-select: none;
+    margin: 16px 0;
+    border: 1px solid var(--color-border-light);
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--color-content-bg);
+}
+
+.diagramHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 32px;
+    padding: 0 10px 0 12px;
+    background: var(--color-header-band);
+    border-bottom: 1px solid var(--color-border-light);
+    color: var(--color-text-muted);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12px;
+    font-weight: 500;
+    user-select: none;
+}
+
+.diagramLabel {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.diagramControls {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.zoomLevel {
+    font-size: 11px;
+    min-width: 34px;
+    text-align: right;
+    margin-right: 4px;
+    color: var(--color-text-muted);
+    opacity: 0.7;
+}
+
+.ctrlBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+
+    &:hover {
+        background: var(--color-content-bg);
+        border-color: var(--color-border);
+        color: var(--color-text);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--color-focus);
+        outline-offset: 1px;
+    }
+}
+
+.diagramViewport {
+    position: relative;
+    height: 380px;
+    overflow: hidden;
+    cursor: grab;
+    touch-action: none;
+    background:
+        radial-gradient(circle, var(--color-border-light) 1px, transparent 1px) 0 0 / 20px 20px;
+
+    &:active {
+        cursor: grabbing;
+    }
+}
+
+.diagramCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    :global(svg) {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: none;
+    }
+}
+
+.diagramStatus {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--color-text-muted);
+    font-family: var(--font-body);
+    font-size: 13px;
+    pointer-events: none;
+}
+
+.diagramError {
+    color: #c0392b;
+
+}
+
+.spinner {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--color-border);
+    border-top-color: var(--color-text-muted);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.scrollHint {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: var(--color-header-band);
+    border: 1px solid var(--color-border-light);
+    color: var(--color-text-muted);
+    font-family: var(--font-body);
+    font-size: 11px;
+    opacity: 0.6;
+    pointer-events: none;
+    white-space: nowrap;
+    user-select: none;
+}
+
+:global(.dark) .diagramError {
+    color: #ff7675;
+}

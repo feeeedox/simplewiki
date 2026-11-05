@@ -1,6 +1,8 @@
 {
   "devDependencies": {
-    "typed-css-modules": "^0.9.1"
+    "sass": "^1.107.1",
+    "typed-css-modules": "^0.9.1",
+    "typed-scss-modules": "^8.1.1"
   },
   "exports": {
     ".": "./src/index.ts",
@@ -13,9 +15,13 @@
   },
   "private": true,
   "scripts": {
-    "css:types": "tcm src -p '**/*.module.css'",
+    "css:types": "tcm src -p '**/*.module.css' && bunx typed-scss-modules 'src/**/*.module.scss'",
     "css:watch": "tcm src -p '**/*.module.css' -w"
   },
   "type": "module",
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "dependencies": {
+    "isomorphic-dompurify": "^4.6.0",
+    "marked": "^18.1.3"
+  }
 }

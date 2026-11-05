@@ -1,0 +1,13 @@
+export declare const ctrlBtn: string;
+export declare const diagramCanvas: string;
+export declare const diagramControls: string;
+export declare const diagramError: string;
+export declare const diagramHeader: string;
+export declare const diagramLabel: string;
+export declare const diagramStatus: string;
+export declare const diagramViewport: string;
+export declare const diagramWrapper: string;
+export declare const scrollHint: string;
+export declare const spin: string;
+export declare const spinner: string;
+export declare const zoomLevel: string;

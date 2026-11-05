@@ -1,0 +1,22 @@
+.container {
+    margin-top: calc(var(--spacing) * 8);
+    padding-top: calc(var(--spacing) * 2);
+    border-top-width: 1px;
+    border-color: var(--border-light);
+    font-size: 12.5px;
+    color: var(--text-muted);
+}
+
+.label {
+    font-weight: var(--font-weight-bold);
+    margin-right: calc(var(--spacing) * 1.5);
+}
+
+.link {
+    color: var(--link);
+}
+
+.sep {
+    margin: 0 calc(var(--spacing) * 1.5);
+    color: var(--border);
+}

@@ -1,0 +1,1 @@
+export { default as Hatnote } from './Hatnote.vue' 

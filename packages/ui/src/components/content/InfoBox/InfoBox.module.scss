@@ -1,0 +1,87 @@
+.infoBox {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    max-width: 100%;
+}
+
+.infoBox[data-variant="alert"] {
+    border-left: 4px solid #f56565;
+    background-color: #fff5f5;
+
+    :global(.dark) & {
+        background-color: #4c1d1d;
+    }
+}
+
+.infoBox[data-variant="download"] {
+    border-left: 4px solid #4fa808;
+    background-color: #f0fff0;
+
+    :global(.dark) & {
+        background-color: #1a2e1a;
+    }
+}
+
+.infoBox[data-variant="help"] {
+    border-left: 4px solid #4299e1;
+    background-color: #ebf8ff;
+
+    :global(.dark) & {
+        background-color: #1a2e3a;
+    }
+}
+
+.infoBox[data-variant="important"] {
+    border-left: 4px solid #ed8936;
+    background-color: #fffaf0;
+
+    :global(.dark) & {
+        background-color: #3a2e1a;
+    }
+}
+
+.infoBox[data-variant="info"] {
+    border-left: 4px solid #4299e1;
+    background-color: #ebf8ff;
+
+    :global(.dark) & {
+        background-color: #1a2e3a;
+    }
+}
+
+.infoBox[data-variant="tip"] {
+    border-left: 4px solid #fdf998;
+    background-color: #fefce8;
+
+    :global(.dark) & {
+        background-color: #3a3a1a;
+    }
+}
+
+.infoBox[data-variant="todo"] {
+    border-left: 4px solid #FDD706;
+    background-color: #fffaf0;
+
+    :global(.dark) & {
+        background-color: #3a2e1a;
+    }
+}
+
+.infoBox[data-variant="deprecated"] {
+    border-left: 4px solid #f59e0b;
+    background-color: #fffbeb;
+
+    :global(.dark) & {
+        background-color: #2d2311;
+    }
+}
+
+
+.infoBoxIcon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    max-height: 48px;
+    max-width: 48px;
+}

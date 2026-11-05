@@ -4,28 +4,28 @@ import { wikiLinkKey } from "./link";
 
 import { Accordion } from "./components/content/Accordion";
 import { Badge } from "./components/content/Badge";
-import CategoryList from "./components/content/CategoryList.vue";
-import Collapsible from "./components/content/Collapsible.vue";
-import ContentH1 from "./components/content/ContentH1.vue";
-import ContentPre from "./components/content/ContentPre.vue";
-import Diff from "./components/content/Diff.vue";
-import FieldTable from "./components/content/FieldTable.vue";
-import Hatnote from "./components/content/Hatnote.vue";
-import Highlight from "./components/content/Highlight.vue";
-import InfoBox from "./components/content/InfoBox.vue";
-import Keyboard from "./components/content/Keyboard.vue";
-import LinkCard from "./components/content/LinkCard.vue";
-import MermaidDiagram from "./components/content/MermaidDiagram.vue";
-import PlantumlDiagram from "./components/content/PlantumlDiagram.vue";
-import PullQuote from "./components/content/PullQuote.vue";
-import ReferenceList from "./components/content/ReferenceList.vue";
-import References from "./components/content/References.vue";
-import SeeAlso from "./components/content/SeeAlso.vue";
-import Steps from "./components/content/Steps.vue";
-import Tabs from "./components/content/Tabs.vue";
-import Timeline from "./components/content/Timeline.vue";
+import { Diff } from "./components/content/Diff/";
 import Footer from "./components/Footer.vue";
 import ToC from "./components/ToC.vue";
+import { CategoryList } from "./components/content/CategoryList";
+import { Collapsible } from "./components/content/Collapsible";
+import { ContentH1 } from "./components/content/ContentH1";
+import { ContentPre } from "./components/content/ContentPre";
+import { FieldTable } from "./components/content/FieldTable";
+import { Hatnote } from "./components/content/Hatnote";
+import { Highlight } from "./components/content/Highlight";
+import { InfoBox } from "./components/content/InfoBox";
+import { Keyboard } from "./components/content/Keyboard";
+import { LinkCard } from "./components/content/LinkCard";
+import { MermaidDiagram } from "./components/content/MermaidDiagram";
+import { PlantumlDiagram } from "./components/content/PlantumlDiagram";
+import { PullQuote } from "./components/content/PullQuote";
+import { ReferenceList } from "./components/content/ReferenceList";
+import { References } from "./components/content/References";
+import { SeeAlso } from "./components/content/SeeAlso";
+import { Steps } from "./components/content/Steps";
+import { Tabs } from "./components/content/Tabs";
+import { Timeline } from "./components/content/Timeline";
 
 export const wikiComponents = {
   Badge,

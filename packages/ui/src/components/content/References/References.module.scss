@@ -1,0 +1,33 @@
+.container {
+    margin-top: calc(var(--spacing) * 8);
+    padding-top: calc(var(--spacing) * 4);
+    border-top-width: 1px;
+    border-color: var(--border);
+}
+
+.title {
+    margin-bottom: calc(var(--spacing) * 2);
+    font-size: 0.688rem;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    line-height: 0.02em;
+    color: var(--text-muted);
+}
+
+.container>li {
+    line-height: var(--leading-snug);
+}
+
+.note {
+    color: var(--text-muted);
+}
+
+.cite {
+    margin-left: calc(var(--spacing) * 1.5);
+    color: var(--text-muted);
+    font-size: 0.7rem;
+
+    &:hover {
+        color: var(--link);
+    }
+}

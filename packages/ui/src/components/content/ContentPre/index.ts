@@ -1,0 +1,1 @@
+export { default as ContentPre } from './ContentPre.vue' 

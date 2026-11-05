@@ -1,0 +1,22 @@
+.figure {
+    max-width: calc(var(--spacing) * 120);
+    margin: calc(var(--spacing) * 4) calc(var(--spacing) * 6);
+}
+
+.figure>blockquote {
+    font-family: var(--font-heading);
+    font-size: 1.063rem;
+    font-style: italic;
+    color: var(--text);
+    border-left-width: 3px !important;
+    border-color: var(--border) !important;
+    padding-left: calc(var(--spacing) * 3.5);
+    letter-spacing: normal;
+}
+
+.figure>figcaption {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    padding-left: calc(var(--spacing) * 3.5);
+    margin-top: calc(var(--spacing) * 1);
+}

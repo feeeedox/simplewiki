@@ -110,6 +110,10 @@ And the best part: it works perfectly inside lists as well.
 **Box**: This is a TODO box.
 ::
 
+::info-box{type="deprecated" width="60%"}
+**Box**: This is a Deprecated box.
+::
+
 ## Image Examples
 
 ![Alternative text for the image](/simplewiki/images/dramatic-landscape.jpg)

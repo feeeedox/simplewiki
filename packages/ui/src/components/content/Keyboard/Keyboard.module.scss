@@ -1,0 +1,20 @@
+.container {
+    display: inline-flex;
+    align-items: center;
+    gap: calc(var(--spacing) * 0.5);
+}
+
+.kbd {
+    background-color: var(--header-band);
+    border-width: 1px;
+    border-color: var(--border);
+    border-bottom-width: 2px;
+    border-radius: var(--radius-xs);
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: calc(var(--spacing) * 1.25);
+    padding-right: calc(var(--spacing) * 1.25);
+    color: var(--text);
+    font-size: 0.7188rem;
+    font-family: monospace;
+}

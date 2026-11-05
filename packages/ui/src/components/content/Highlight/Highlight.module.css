@@ -1,0 +1,9 @@
+.highlight {
+    background-color: color-mix(in srgb, var(--color-yellow-200) 60%, transparent);
+    border-radius: var(--radius-xs);
+    text-align: inherit;
+}
+
+:global(.dark) .highlight {
+    background-color: color-mix(in srgb, var(--color-yellow-800) 60%, transparent)
+}

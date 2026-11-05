@@ -1,0 +1,2 @@
+// @ts-ignore - For some reason Typescript is having a problem with only this component. If someones knows a fix for that, please remove this line and fix it 😭
+export { default as InfoBox } from './InfoBox.vue'

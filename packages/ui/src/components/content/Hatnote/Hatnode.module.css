@@ -1,0 +1,16 @@
+.item {
+    font-size: var(--text-13);
+    color: var(--text-muted);
+    margin-bottom: calc(var(--spacing) * 2.5);
+    position: relative;
+}
+
+.withIcon {
+    padding-left: calc(var(--spacing) * 5);
+}
+
+.icon {
+    position: absolute;
+    left: 0;
+    color: var(--text-muted);
+}

@@ -1,0 +1,41 @@
+.playButtonOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.playIcon {
+  width: 68px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(33, 33, 33, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.playIcon svg {
+  width: 30px;
+  height: 30px;
+}
+
+:global(.wikiYoutubePlayer:hover) .playButtonOverlay {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+:global(.wikiYoutubePlayer:hover) .playIcon {
+  background: #ff0000;
+  transform: scale(1.05);
+}
+
+:global(.wikiYoutubePlayer:has(iframe)) .playButtonOverlay {
+  display: none;
+}

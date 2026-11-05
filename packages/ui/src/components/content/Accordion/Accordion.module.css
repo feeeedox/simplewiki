@@ -1,0 +1,50 @@
+/* border border-border rounded-xs my-4 */
+
+.container {
+    border-width: 1px;
+    border-color: var(--border);
+    border-radius: 0.125rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem; 
+}
+
+.element {
+    border-bottom: 1px solid var(--border-light);
+}
+
+.element:last-child {
+    border-bottom: none;
+}
+
+.accordion {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    text-align: left;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    background-color: var(--header-band);
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--text);
+}
+
+.accordion:hover {
+    background-color: var(--border-light);
+}
+
+.accordion > span {
+    color: var(--text-muted)
+}
+
+.content {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 13.5px;
+    background-color: var(--content-bg);
+}

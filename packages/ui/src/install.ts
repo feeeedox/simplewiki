@@ -2,7 +2,7 @@
 import type { App, Component } from "vue";
 import { wikiLinkKey } from "./link";
 
-import Accordion from "./components/content/Accordion.vue";
+import { Accordion } from "./components/content/Accordion";
 import Badge from "./components/content/Badge.vue";
 import CategoryList from "./components/content/CategoryList.vue";
 import Collapsible from "./components/content/Collapsible.vue";

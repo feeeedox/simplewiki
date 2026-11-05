@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { ref, useSlots, computed } from 'vue'
+import { computed, ref, useSlots } from 'vue'
+import styles from './Accordion.module.css'
 
 const slots = useSlots()
 const openIndex = ref<number | null>(0)
@@ -24,21 +25,21 @@ function toggle(index: number) {
 </script>
 
 <template>
-  <div class="border border-border rounded-xs my-4">
+  <div :class="styles.container">
     <div
       v-for="(item, index) in items"
       :key="index"
-      class="border-b border-border-light last:border-b-0"
+      :class="styles.element"
     >
       <button
         type="button"
         @click="toggle(index)"
-        class="w-full flex items-center justify-between text-left px-3 py-2 bg-header-band hover:bg-border-light text-[13px] font-bold text-text"
+        :class="styles.accordion"
       >
         {{ item.title }}
-        <span class="text-text-muted">{{ openIndex === index ? '−' : '+' }}</span>
+        <span>{{ openIndex === index ? '−' : '+' }}</span>
       </button>
-      <div v-show="openIndex === index" class="px-3 py-2 text-[13.5px] bg-content-bg">
+      <div v-show="openIndex === index" :class="styles.content">
         <component :is="item.vnode" />
       </div>
     </div>

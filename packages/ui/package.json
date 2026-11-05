@@ -1,17 +1,21 @@
 {
-  "name": "@simplewiki/ui",
-  "version": "0.1.0",
-  "private": true,
-  "type": "module",
+  "devDependencies": {
+    "typed-css-modules": "^0.9.1"
+  },
   "exports": {
     ".": "./src/index.ts",
     "./theme.css": "./src/styles/theme.css"
   },
+  "name": "@simplewiki/ui",
   "peerDependencies": {
-    "vue": "^3.5.0",
-    "@simplewiki/shared": "workspace:*"
+    "@simplewiki/shared": "workspace:*",
+    "vue": "^3.5.0"
   },
-  "devDependencies": {
-    "typed-css-modules": "^0.9.1"
-  }
+  "private": true,
+  "scripts": {
+    "css:types": "tcm src -p '**/*.module.css'",
+    "css:watch": "tcm src -p '**/*.module.css' -w"
+  },
+  "type": "module",
+  "version": "0.1.0"
 }

@@ -1,14 +1,3 @@
-<template>
-    <div :class="['info-box', type]" :style="{ width: width }">
-        <div class="info-box-icon">
-            <img :src="`icons/${images[type]}`" alt="" />
-        </div>
-        <div class="info-box-content">
-            <slot />
-        </div>
-    </div>
-</template>
-
 <script setup>
 defineProps({
     type: {
@@ -31,6 +20,17 @@ const images = {
     todo: 'todo.png',
 }
 </script>
+
+<template>
+    <div :class="['info-box', type]" :style="{ width: width }">
+        <div class="info-box-icon">
+            <img :src="`icons/${images[type]}`" alt="" />
+        </div>
+        <div class="info-box-content">
+            <slot />
+        </div>
+    </div>
+</template>
 
 <style scoped lang="scss">
 .info-box {

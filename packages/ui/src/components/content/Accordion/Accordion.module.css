@@ -1,9 +1,7 @@
-/* border border-border rounded-xs my-4 */
-
 .container {
     border-width: 1px;
     border-color: var(--border);
-    border-radius: 0.125rem;
+    border-radius: var(--radius-xs);
     margin-top: 1rem;
     margin-bottom: 1rem; 
 }
@@ -45,6 +43,6 @@
     padding-right: 0.75rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    font-size: 13.5px;
+    font-size: 0.844rem;
     background-color: var(--content-bg);
 }

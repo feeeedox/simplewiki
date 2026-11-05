@@ -1,5 +1,6 @@
 @source "../components";
 @custom-variant dark (&:where(.dark, .dark *));
+@import "./tokens.css";
 
 @theme {
   --color-page-bg: var(--page-bg);
@@ -57,6 +58,9 @@
     --row-hover-bg: #2c3138;
 }
 
+.text-13 {
+  font-size: 0.813rem;
+}
 
 *{ box-sizing: border-box; }
 

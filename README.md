@@ -79,7 +79,7 @@ To install SimpleWiki, check out the [installation guide](https://feeeedox.githu
 
 To match the authentic, classic Wiki aesthetics, this project uses a curated collection of classic skeuomorphic and photorealistic web icons:
 
-- **[Oxygen Icons](https://kde.org/)** – Used for some icons, glossy 3D look. Licensed under the [LGPL](https://www.gnu.org/licenses/lgpl-3.0.html).
+- **[Oxygen Icons](https://develop.kde.org/frameworks/oxygen-icons/)** – Used for some icons, glossy 3D look. Licensed under the [LGPL](https://www.gnu.org/licenses/lgpl-3.0.html).
 
 ### Inspiration
 

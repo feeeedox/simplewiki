@@ -107,5 +107,7 @@ const images = {
 .info-box-icon {
     font-size: 1.25rem;
     flex-shrink: 0;
+    max-height: 48px;
+    max-width: 48px;
 }
 </style>

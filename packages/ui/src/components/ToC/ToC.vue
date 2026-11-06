@@ -3,7 +3,7 @@
 import WikiLink from './../WikiLink.vue';
 import styles from './ToC.module.scss';
 
-interface TocLink {
+export interface TocLink {
     id: string
     text: string
     children?: TocLink[]

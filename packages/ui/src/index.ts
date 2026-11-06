@@ -6,7 +6,11 @@ export { ContentImage as WikiContentImage } from './components/content/ContentIm
 export { ContentReference as WikiReference } from './components/content/ContentReference'
 export { ContentYoutubeApi as WikiContentYoutubeApi } from './components/content/ContentYoutubeApi'
 export { ContentYoutubePlaybuttonApi as WikiContentYoutubePlaybuttonApi } from './components/content/ContentYoutubePlaybuttonApi'
+export { WikiHeader as WikiHeader } from './components/layout/Header'
+export type { WikiHeaderSearchResult } from './components/layout/Header'
+
 export { ToC as WikiToC } from './components/ToC'
 export { default as WikiLink } from './components/WikiLink.vue'
+export { WikiTrace } from './components/layout/Trace'
 
 export { installWikiUi } from "./install"

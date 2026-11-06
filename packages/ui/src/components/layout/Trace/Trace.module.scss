@@ -1,0 +1,53 @@
+.trace {
+    --trace-background: var(--header-band, #f8f9fa);
+    --trace-border: var(--border, #a2a9b1);
+    --trace-text: var(--text, #202122);
+    --trace-muted: var(--text-muted, #54595d);
+    --trace-link: var(--link, #0645ad);
+    --trace-separator: #72777d;
+
+    background-color: var(--trace-background);
+    border-bottom: 1px solid var(--trace-border);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4px 20px;
+
+    color: var(--trace-muted);
+    font-size: 11.5px;
+    line-height: 1;
+}
+
+.link {
+    color: var(--trace-link);
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.separator {
+    margin: 0 3px;
+    color: var(--trace-separator);
+    user-select: none;
+}
+
+.active {
+    color: var(--trace-text);
+    font-weight: 700;
+}
+
+:global(.dark) .trace {
+    --trace-background: var(--header-band, #161b22);
+    --trace-border: var(--border, #30363d);
+    --trace-text: var(--text, #e6edf3);
+    --trace-muted: var(--text-muted, #8b949e);
+    --trace-link: var(--link, #58a6ff);
+    --trace-separator: #8b949e;
+}

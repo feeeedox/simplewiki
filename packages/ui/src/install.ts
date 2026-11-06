@@ -4,13 +4,11 @@ import { wikiLinkKey } from "./link";
 
 import { Accordion } from "./components/content/Accordion";
 import { Badge } from "./components/content/Badge";
-import { Diff } from "./components/content/Diff/";
-import Footer from "./components/Footer.vue";
-import ToC from "./components/ToC.vue";
 import { CategoryList } from "./components/content/CategoryList";
 import { Collapsible } from "./components/content/Collapsible";
 import { ContentH1 } from "./components/content/ContentH1";
 import { ContentPre } from "./components/content/ContentPre";
+import { Diff } from "./components/content/Diff/";
 import { FieldTable } from "./components/content/FieldTable";
 import { Hatnote } from "./components/content/Hatnote";
 import { Highlight } from "./components/content/Highlight";
@@ -26,6 +24,8 @@ import { SeeAlso } from "./components/content/SeeAlso";
 import { Steps } from "./components/content/Steps";
 import { Tabs } from "./components/content/Tabs";
 import { Timeline } from "./components/content/Timeline";
+import { Footer } from "./components/Footer";
+import { ToC } from "./components/ToC";
 
 export const wikiComponents = {
   Badge,

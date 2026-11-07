@@ -1,62 +1,56 @@
-
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
-import { NuxtLink } from '#components'
+import { ref, computed, onMounted } from "vue";
+import { NuxtLink } from "#components";
 
 const emit = defineEmits<{
-  'open-sidebar': []
-}>()
+  "open-sidebar": [];
+}>();
 
-const { wikiName } = useAppConfig()
-const { status, search } = useSearchCollection('content')
-const colorMode = useColorMode()
+const { wikiName } = useAppConfig();
+const { status, search } = useSearchCollection("content");
+const colorMode = useColorMode();
 
-import { WikiHeader as BaseWikiHeader, type WikiHeaderSearchResult } from '@simplewiki/ui'
+import { WikiHeader as BaseWikiHeader, type WikiHeaderSearchResult } from "@simplewiki/ui";
 
-const mounted = ref(false)
+const mounted = ref(false);
 
 onMounted(() => {
-  mounted.value = true
-})
+  mounted.value = true;
+});
 
-const { data: navigation } = await useAsyncData(
-  'root-redirect',
-  () => queryCollectionNavigation('content')
-)
+const { data: navigation } = await useAsyncData("root-redirect", () =>
+  queryCollectionNavigation("content"),
+);
 
 const redirectPath = computed(() => {
-  const firstGroup = navigation.value?.[0]
+  const firstGroup = navigation.value?.[0];
 
-  return firstGroup?.children?.[0]?.path
-    ?? firstGroup?.path
-    ?? '/'
-})
+  return firstGroup?.children?.[0]?.path ?? firstGroup?.path ?? "/";
+});
 
-const theme = computed<'light' | 'dark' | null>(() => {
-  if (!mounted.value) return null
+const theme = computed<"light" | "dark" | null>(() => {
+  if (!mounted.value) return null;
 
-  return colorMode.value === 'dark' ? 'dark' : 'light'
-})
+  return colorMode.value === "dark" ? "dark" : "light";
+});
 
-function setTheme(value: 'light' | 'dark') {
-  colorMode.preference = value
+function setTheme(value: "light" | "dark") {
+  colorMode.preference = value;
 }
 
-async function searchWiki(
-  query: string
-): Promise<WikiHeaderSearchResult[]> {
+async function searchWiki(query: string): Promise<WikiHeaderSearchResult[]> {
   const results = await search(query, {
     snippet: {
-      columns: ['content'],
-      around: 40
-    }
-  })
+      columns: ["content"],
+      around: 40,
+    },
+  });
 
-  return results.slice(0, 6).map(result => ({
+  return results.slice(0, 6).map((result) => ({
     id: String(result.id),
-    title: String(result.title ?? ''),
-    snippet: result.snippets?.content
-  }))
+    title: String(result.title ?? ""),
+    snippet: result.snippets?.content,
+  }));
 }
 </script>
 

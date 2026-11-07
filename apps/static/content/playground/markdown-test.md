@@ -116,19 +116,19 @@ And the best part: it works perfectly inside lists as well.
 
 ## Image Examples
 
-![Alternative text for the image](/simplewiki/images/dramatic-landscape.jpg)
+![Alternative text for the image](/simplewiki/images/demo-image.jpg)
 
 ---
 
-![My Screenshot](/simplewiki/images/dramatic-landscape.jpg "This is the image caption")
+![My Screenshot](/simplewiki/images/demo-image.jpg "This is the image caption")
 
 ---
 
-![A smaller image](/simplewiki/images/dramatic-landscape.jpg){width="50%" style="display: block; margin: 0 auto;"}
+![A smaller image](/simplewiki/images/demo-image.jpg){width="50%" style="display: block; margin: 0 auto;"}
 
 ---
 
-::nuxt-img{src="/images/dramatic-landscape.jpg" width="300" height="200" format="webp" loading="lazy"}
+::nuxt-img{src="/images/demo-image.jpg" width="300" height="200" format="webp" loading="lazy"}
 ::
 
 ## Videos

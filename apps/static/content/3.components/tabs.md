@@ -52,7 +52,7 @@ Result:
   :::div{title="Tab 2"}
     This is the content of Tab 2.
     You can also include images:
-    ![Alternative text for the image](/images/dramatic-landscape.jpg)
+    ![Alternative text for the image](/images/demo-image.jpg)
   :::
   :::div{title="Tab 3"}
     This is the content of Tab 3.
@@ -75,7 +75,7 @@ Result:
   :::div{title="Tab 2"}
     This is the content of Tab 2.
     You can also include images:
-    ![Alternative text for the image](/images/dramatic-landscape.jpg)
+    ![Alternative text for the image](/images/demo-image.jpg)
   :::
   :::div{title="Tab 3"}
     This is the content of Tab 3.

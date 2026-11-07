@@ -1,5 +1,6 @@
 import tailwindcss from "@tailwindcss/vite";
 import { type BundledLanguage, bundledLanguages } from "shiki";
+import { resolve } from 'node:path'
 
 export default defineNuxtConfig({
   ssr: true,
@@ -33,6 +34,12 @@ export default defineNuxtConfig({
       crawlLinks: true,
       autoSubfolderIndex: true,
     },
+    publicAssets: [
+      {
+        dir: resolve(__dirname, '../../packages/assets/public'),
+        baseURL: '/'
+      }
+    ]
   },
   experimental: {
     asyncContext: true,
@@ -74,7 +81,7 @@ export default defineNuxtConfig({
           },
           langs: Object.keys(bundledLanguages).filter(
             (lang) =>
-                lang !== "mermaid" &&
+              lang !== "mermaid" &&
               !lang.includes("+") &&
               !lang.includes("#") &&
               !lang.includes("文"),

@@ -1,0 +1,1 @@
+export { default as WikiRenderer } from './Renderer.vue'

@@ -1,0 +1,215 @@
+.desktop,
+.mobile {
+    --sidebar-background: var(--sidebar-bg, #f8f9fa);
+    --sidebar-border: var(--border, #a2a9b1);
+    --sidebar-border-light: var(--border-light, #c8ccd1);
+    --sidebar-text: var(--text, #202122);
+    --sidebar-muted: var(--text-muted, #54595d);
+    --sidebar-link: var(--link, #0645ad);
+}
+
+.desktop {
+    display: none;
+    position: sticky;
+    top: 8px;
+    height: calc(100dvh - 8px);
+    min-height: 0;
+    padding-top: 12px;
+    padding-bottom: 64px;
+    box-sizing: border-box;
+    overflow-y: auto;
+
+    @media (min-width: 640px) {
+        display: block;
+    }
+}
+
+.group {
+    margin-bottom: 14px;
+    padding: 0 12px;
+}
+
+.groupHeader,
+.mobileGroupHeader {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 4px;
+    padding: 0 0 3px;
+    border: none;
+    border-bottom: 1px solid var(--sidebar-border-light);
+    background: none;
+    color: var(--sidebar-muted);
+    font-family: inherit;
+    font-size: 11.5px;
+    font-weight: 700;
+    line-height: inherit;
+    letter-spacing: 0.02em;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.groupHeader {
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+        color: var(--sidebar-text);
+    }
+}
+
+.groupToggle {
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.item {
+    position: relative;
+    padding: 4px 0 4px 8px;
+    border-left: 2px solid transparent;
+
+    &.active {
+        margin-left: -2px;
+        padding-left: 6px;
+        border-left-color: var(--sidebar-link);
+    }
+}
+
+.link {
+    color: var(--sidebar-muted);
+    font-size: 13px;
+    font-weight: 400;
+    text-decoration: none;
+
+    &:hover {
+        color: var(--sidebar-text);
+    }
+
+    .active &,
+    &.active {
+        color: var(--sidebar-text);
+        font-weight: 700;
+    }
+}
+
+.groupLink {
+    display: block;
+    padding: 4px 8px;
+}
+
+.mobile {
+    @media (min-width: 640px) {
+        display: none;
+    }
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 850;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+}
+
+.drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 900;
+    display: flex;
+    flex-direction: column;
+    width: 83.333333%;
+    height: 100dvh;
+    box-sizing: border-box;
+    border-right: 1px solid var(--sidebar-border);
+    background-color: var(--sidebar-background);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.mobileHeader {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--sidebar-border-light);
+}
+
+.mobileTitle {
+    margin: 0;
+    color: var(--sidebar-muted);
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.closeButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border: none;
+    background: transparent;
+    color: var(--sidebar-muted);
+    cursor: pointer;
+
+    &:hover {
+        color: var(--sidebar-text);
+    }
+
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.mobileContent {
+    flex: 1;
+    min-height: 0;
+    padding: 12px 0;
+    overflow-y: auto;
+
+    .link {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+.fadeEnterActive,
+.fadeLeaveActive {
+    transition: opacity 0.2s linear;
+}
+
+.fadeEnterFrom,
+.fadeLeaveTo {
+    opacity: 0;
+}
+
+.slideEnterActive,
+.slideLeaveActive {
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slideEnterFrom,
+.slideLeaveTo {
+    transform: translateX(-100%);
+}
+
+:global(.dark) .desktop,
+:global(.dark) .mobile {
+    --sidebar-background: var(--sidebar-bg, #161b22);
+    --sidebar-border: var(--border, #30363d);
+    --sidebar-border-light: var(--border-light, #30363d);
+    --sidebar-text: var(--text, #e6edf3);
+    --sidebar-muted: var(--text-muted, #8b949e);
+    --sidebar-link: var(--link, #58a6ff);
+}

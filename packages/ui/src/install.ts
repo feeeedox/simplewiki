@@ -25,7 +25,7 @@ import { Steps } from "./components/content/Steps";
 import { Tabs } from "./components/content/Tabs";
 import { Timeline } from "./components/content/Timeline";
 import { Footer } from "./components/Footer";
-import { ToC } from "./components/ToC";
+import { ToC } from "./components/layout/ToC";
 
 export const wikiComponents = {
   Badge,

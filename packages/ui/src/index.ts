@@ -9,8 +9,13 @@ export { ContentYoutubePlaybuttonApi as WikiContentYoutubePlaybuttonApi } from '
 export { WikiHeader as WikiHeader } from './components/layout/Header'
 export type { WikiHeaderSearchResult } from './components/layout/Header'
 
-export { ToC as WikiToC } from './components/ToC'
+export { WikiSidebar as WikiSidebar } from './components/layout/Sidebar'
+export type { WikiSidebarItem } from './components/layout/Sidebar'
+
+
+export { ToC as WikiToC } from './components/layout/ToC'
 export { default as WikiLink } from './components/WikiLink.vue'
 export { WikiTrace } from './components/layout/Trace'
+export { WikiRenderer } from './components/content/Renderer'
 
 export { installWikiUi } from "./install"

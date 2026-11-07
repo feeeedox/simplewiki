@@ -2,10 +2,6 @@
 import { useRoute } from 'vue-router'
 import { WikiToC } from '@simplewiki/ui';
 import Content from '~/components/Content.vue';
-import Header from '~/components/Header.vue';
-import Sidebar from '~/components/Sidebar.vue';
-import WikiHeader from '~/components/WikiHeader.vue';
-import WikiTrace from '~/components/WikiTrace.vue';
 
 const route = useRoute()
 
@@ -35,7 +31,7 @@ defineOgImage('WikiPage', {
     <WikiHeader @open-sidebar="isSidebarOpen = true" />
     <WikiTrace :title="data?.title" />
     <main class="max-w-275 mx-auto sm:grid sm:grid-cols-[180px_minmax(0,1fr)_240px] w-full items-start min-h-0">
-        <Sidebar :is-open="isSidebarOpen" @close="isSidebarOpen = false" />
+        <WikiSidebar :is-open="isSidebarOpen" @close="isSidebarOpen = false" />
         <WikiToC :is-mobile=true :toc-links="tocLinks" />
 
         <Content :data="data ? data : null" />

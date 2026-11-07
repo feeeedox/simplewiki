@@ -1,6 +1,6 @@
 
 <script setup lang="ts">
-import WikiLink from './../WikiLink.vue';
+import WikiLink from '../../WikiLink.vue';
 import styles from './ToC.module.scss';
 
 export interface TocLink {

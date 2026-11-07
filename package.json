@@ -5,6 +5,7 @@
   "scripts": {
     "graph": "nx graph",
     "dev:static": "nx run @simplewiki/static:dev",
+    "dev:dynamic": "nx run @simplewiki/dynamic:dev",
     "build:static": "nx run @simplewiki/static:generate"
   },
   "private": true,

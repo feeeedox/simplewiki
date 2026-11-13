@@ -45,3 +45,4 @@ Thumbs.db
 .claude/settings.local.json
 
 vite.config.*.timestamp*
+notes.txt

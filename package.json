@@ -1,19 +1,22 @@
 {
   "name": "@simplewiki/source",
   "version": "0.0.0",
-  "license": "MIT",
-  "scripts": {
-    "graph": "nx graph",
-    "dev:static": "nx run @simplewiki/static:dev",
-    "dev:dynamic": "nx run @simplewiki/dynamic:dev",
-    "build:static": "nx run @simplewiki/static:generate"
-  },
   "private": true,
-  "dependencies": {},
+  "license": "MIT",
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
+  "scripts": {
+    "graph": "nx graph",
+    "ui:exports": "node packages/ui/scripts/generate-exports.mjs",
+    "dev:static": "nx run @simplewiki/static:dev",
+    "dev:dynamic": "nx run @simplewiki/dynamic:dev",
+    "build:static": "nx run @simplewiki/static:generate"
+  },
+  "dependencies": {
+    "@comark/vue": "^0.9.2"
+  },
   "devDependencies": {
     "@nx/js": "24.0.4",
     "@nx/nuxt": "24.0.4",

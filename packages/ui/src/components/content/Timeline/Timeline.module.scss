@@ -1,48 +1,48 @@
 .timeline {
-    position: relative;
-    padding-left: calc(var(--spacing) * 5);
-    margin-block: calc(var(--spacing) * 4);
-    border-left: 2px solid var(--color-border-light);
+  position: relative;
+  padding-left: calc(var(--spacing) * 5);
+  margin-block: calc(var(--spacing) * 4);
+  border-left: 2px solid var(--border-light);
 }
 
 .event {
-    position: relative;
-    padding-bottom: calc(var(--spacing) * 5);
+  position: relative;
+  padding-bottom: calc(var(--spacing) * 5);
 
-    &:last-child {
-        padding-bottom: 0;
-    }
+  &:last-child {
+    padding-bottom: 0;
+  }
 }
 
 .marker {
-    position: absolute;
-    left: calc(var(--spacing) * -6.25);
-    top: calc(var(--spacing) * 1);
+  position: absolute;
+  left: calc(var(--spacing) * -6.25);
+  top: calc(var(--spacing) * 1);
 
-    width: calc(var(--spacing) * 2.5);
-    height: calc(var(--spacing) * 2.5);
+  width: calc(var(--spacing) * 2);
+  height: calc(var(--spacing) * 2);
 
-    border-radius: 50%;
-    background-color: var(--color-focus);
-    border: 2px solid var(--color-content-bg);
+  border-radius: 50%;
+  background-color: var(--focus-color);
+  border: 2px solid var(--focus-color);
 }
 
 .date {
-    font-size: 11px;
-    font-weight: var(--font-weight-bold);
-    color: var(--color-text-muted);
-    text-transform: uppercase;
-    letter-spacing: var(--tracking-wide);
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
 }
 
 .title {
-    font-size: 14px;
-    font-weight: var(--font-weight-bold);
-    color: var(--color-text);
-    margin-bottom: calc(var(--spacing) * 0.5);
+  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+  color: var(--text);
+  margin-bottom: calc(var(--spacing) * 0.5);
 }
 
 .content {
-    font-size: 13.5px;
-    color: var(--color-text);
+  font-size: 13.5px;
+  color: var(--text);
 }

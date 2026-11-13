@@ -1,6 +1,6 @@
+@import "./tokens.css";
 @source "../components";
 @custom-variant dark (&:where(.dark, .dark *));
-@import "./tokens.css";
 
 @theme {
   --color-page-bg: var(--page-bg);
@@ -22,47 +22,54 @@
   --color-row-hover-bg: var(--row-hover-bg);
 }
 
-:root{
-    --page-bg: #f6f6f6;
-    --content-bg: #ffffff;
-    --sidebar-bg: #f8f9fa;
-    --border: #a2a9b1;
-    --border-light: #eaecf0;
-    --text: #202122;
-    --text-muted: #54595d;
-    --link: #0645ad;
-    --link-visited: #0b0080;
-    --link-hover: #447ff5;
-    --toc-bg: #ffffff;
-    --header-band: #eaecf0;
-    --font-body: Helvetica, Arial, "Liberation Sans", sans-serif;
-    --font-heading: Georgia, "Linux Libertine", "Times New Roman", serif;
-    --focus-color: #36c;
-    --row-hover-bg: #fbfbfc;
+:root {
+  --page-bg: #f6f6f6;
+  --content-bg: #ffffff;
+  --sidebar-bg: #f8f9fa;
+  --border: #a2a9b1;
+  --border-light: #eaecf0;
+  --text: #202122;
+  --text-muted: #54595d;
+  --link: #0645ad;
+  --link-visited: #0b0080;
+  --link-hover: #447ff5;
+  --toc-bg: #ffffff;
+  --header-band: #eaecf0;
+  --font-body: Helvetica, Arial, "Liberation Sans", sans-serif;
+  --font-heading: Georgia, "Linux Libertine", "Times New Roman", serif;
+  --focus-color: #36c;
+  --color-focus: #36c;
+  --text-13: 0.8125rem;
+  --row-hover-bg: #fbfbfc;
 }
 
 .dark {
-    --page-bg: #101418;
-    --content-bg: #1a1f26;
-    --sidebar-bg: #14191f;
-    --border: #3c424a;
-    --border-light: #2d333b;
-    --text: #e1e3e6;
-    --text-muted: #969ca4;
-    --link: #6db1ff;
-    --link-visited: #b99bf8;
-    --link-hover: #9eceff;
-    --toc-bg: #1a1f26;
-    --header-band: #202730;
-    --focus-color: #4c8fff;
-    --row-hover-bg: #2c3138;
+  --page-bg: #101418;
+  --content-bg: #1a1f26;
+  --sidebar-bg: #14191f;
+  --border: #3c424a;
+  --border-light: #2d333b;
+  --text: #e1e3e6;
+  --text-muted: #969ca4;
+  --link: #6db1ff;
+  --link-visited: #b99bf8;
+  --link-hover: #9eceff;
+  --toc-bg: #1a1f26;
+  --header-band: #202730;
+  --focus-color: #4c8fff;
+  --row-hover-bg: #2c3138;
 }
 
 .text-13 {
   font-size: 0.813rem;
 }
 
-*{ box-sizing: border-box; }
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border: 0 solid;
+}
 
 body {
   margin: 0;
@@ -73,10 +80,21 @@ body {
   line-height: 1.5;
 }
 
-a{ color: var(--link); text-decoration: none; }
-a:visited{ color: var(--link-visited); }
-a:hover{ text-decoration: underline; color: var(--link-hover); }
-a:focus-visible{ outline: 2px solid #36c; outline-offset: 1px; }
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+a:visited {
+  color: var(--link-visited);
+}
+a:hover {
+  text-decoration: underline;
+  color: var(--link-hover);
+}
+a:focus-visible {
+  outline: 2px solid #36c;
+  outline-offset: 1px;
+}
 
 html {
   scrollbar-color: var(--border) var(--page-bg);

@@ -1,48 +1,56 @@
 .container {
-    border-width: 1px;
-    border-color: var(--border);
-    border-radius: var(--radius-xs);
-    margin-top: 1rem;
-    margin-bottom: 1rem; 
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xs);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .element {
-    border-bottom: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
 }
 
 .element:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .accordion {
-    width: 100%;
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    text-align: left;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-    padding-bottom: 0.5rem;
-    padding-top: 0.5rem;
-    background-color: var(--header-band);
-    font-size: 13px;
-    font-weight: bold;
-    color: var(--text);
+  appearance: none;
+  border: 0;
+  border-radius: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  background-color: var(--header-band);
+  font-size: 13px;
+  font-family: inherit;
+  font-weight: bold;
+  color: var(--text);
+  cursor: pointer;
 }
 
 .accordion:hover {
-    background-color: var(--border-light);
+  background-color: var(--border-light);
 }
 
 .accordion > span {
-    color: var(--text-muted)
+  color: var(--text-muted);
 }
 
 .content {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    font-size: 0.844rem;
-    background-color: var(--content-bg);
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 0.844rem;
+  background-color: var(--content-bg) !important;
+}
+
+.content :global(p) {
+  margin: 0;
 }

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import WikiHeader from '@/components/WikiHeader.vue'
+import WikiSidebar from '@/components/WikiSidebar.vue'
 import WikiTrace from '@/components/WikiTrace.vue'
 import { WikiRenderer } from '@simplewiki/ui'
 </script>
@@ -8,7 +9,7 @@ import { WikiRenderer } from '@simplewiki/ui'
   <WikiHeader />
   <WikiTrace />
   <main class="container">
-    <div>sidebar</div>
+    <WikiSidebar :is-open="false" />
     <WikiRenderer>
       <slot />
     </WikiRenderer>

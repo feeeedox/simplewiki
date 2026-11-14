@@ -30,7 +30,7 @@ import {
 } from '@simplewiki/ui'
 import WikiImage from '@/components/content/WikiImage.vue'
 import WikiYouTube from '@/components/content/WikiYouTube.vue'
-import content from '@/content/home.md?raw'
+import content from '@/mock/home.md?raw'
 
 const components = {
   img: WikiImage,

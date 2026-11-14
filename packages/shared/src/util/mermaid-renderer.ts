@@ -1,35 +1,33 @@
-import mermaid from 'mermaid'
+let idCounter = 0;
+let queue = Promise.resolve();
 
-let initialized = false
-let idCounter   = 0
-let queue       = Promise.resolve()
+import mermaid from "mermaid";
 
-function init() {
-    if (initialized) return
-    initialized = true
+export type MermaidTheme = "light" | "dark";
+export function renderMermaid(source: string, theme: MermaidTheme = "light"): Promise<string> {
+  const p = queue.then(async () => {
     mermaid.initialize({
-        startOnLoad:   false,
-        theme:         document.documentElement.classList.contains('dark') ? 'dark' : 'default',
-        securityLevel: 'loose',
-    })
-}
+      startOnLoad: false,
+      theme: theme === "dark" ? "dark" : "default",
+      securityLevel: "strict",
+    });
 
-export function renderMermaid(source: string): Promise<string> {
-    const p = queue.then(async () => {
-        init()
-        const id     = `mermaid-r${++idCounter}`
-        const result = await mermaid.render(id, source)
+    const id = `mermaid-r${++idCounter}`;
 
-        document.getElementById(id)?.remove()
-        document.getElementById(`d${id}`)?.remove()
+    try {
+      const result = await mermaid.render(id, source);
 
-        return result.svg
-            .replace(/\s+width="[^"]*"/, '')
-            .replace(/\s+height="[^"]*"/, '')
-    })
+      return result.svg.replace(/\s+width="[^"]*"/, "").replace(/\s+height="[^"]*"/, "");
+    } finally {
+      document.getElementById(id)?.remove();
+      document.getElementById(`d${id}`)?.remove();
+    }
+  });
 
-    // @ts-ignore
-    queue = p.catch(() => {})
+  queue = p.then(
+    () => undefined,
+    () => undefined,
+  );
 
-    return p
+  return p;
 }

@@ -1,424 +1,440 @@
 ---
-title: Markdown Test
-description: An overview of all native Markdown and MDC features.
+title: Markdown and Components Test
+description: A visual test page for Markdown syntax and every SimpleWiki content component.
 navigation:
   title: Markdown Test
   hide: true
 ---
 
-# Heading 1 (H1)
+# Markdown and Components Test
 
-Ideally, use an H1 only once per file as the main page title.
+This page is a visual index of the Markdown features and content components used by SimpleWiki. Each example is rendered, so changes to the theme and renderer can be checked in one place.
 
-## Heading 2 (H2)
+## Page index
 
-### Heading 3 (H3)
+- [Headings and text](#headings-and-text)
+- [Links, images and media](#links-images-and-media)
+- [Lists, quotes and tables](#lists-quotes-and-tables)
+- [Code and diagrams](#code-and-diagrams)
+- [Inline components](#inline-components)
+- [Content components](#content-components)
+- [Structured data and references](#structured-data-and-references)
 
-#### Heading 4 (H4)
+## Headings and text
 
-##### Heading 5 (H5)
+### Heading level 3
 
----
+#### Heading level 4
 
-## Text Formatting
+##### Heading level 5
 
-You can make text **bold**, *italic*, or ~~strikethrough~~.  
-Inline `code` is also perfect for variables or short commands.
+###### Heading level 6
 
-* This is **bold text inside a list**.
-* Here is a [link to Google](https://google.com) with a regular title.
+Plain text, **bold**, _italic_, _**bold italic**_, ~~strikethrough~~ and `inline code` can appear in one paragraph. Here is an escaped \*asterisk\*, an entity &copy;, and an explicit line break.<br>
+This sentence starts on the next line.
 
----
-
-## Lists and Quotes
-
-### Unordered List
-
-- Apple
-- Banana
-  - Subitem A
-  - Subitem B
-- Orange
-
-### Ordered List
-
-1. First step
-2. Second step
-3. Third step
-
-### Blockquotes
-
-> "The best thing about Nuxt Content is that it understands Vue components directly inside Markdown."
-> — An enthusiastic developer
+The HTML break above creates a line break; this blank line starts a new paragraph.
 
 ---
 
-## 3. Code Blocks (with Syntax Highlighting)
+## Links, images and media
 
-Nuxt Content uses Shiki by default to provide excellent syntax highlighting. You can also highlight specific lines or assign filenames:
+An [internal link](/getting-started/installation), an [external link](https://www.markdownguide.org/ "Markdown Guide"), a bare URL <https://example.com>, and a reference style [documentation link][docs-link].
 
-```javascript {2}
-// This line is displayed normally
-console.log("This line is visually highlighted!");
-const content = "Nuxt Content rocks";
-```
+[docs-link]: /documentation/markdown-syntax "Markdown syntax"
 
-## Table
+### Images
 
-| Component | Installation | Required |
-| :--- | :--- | :--- |
-| MongoDB | [Installation Guide](#) | Yes | {#mongodb}
-| Redis | [Installation Guide (Debian 10)](#) | Yes | {#redis}
-| NATS | [Installation Guide](#) | Yes | {#nats}
-| potatocloud | [Repository](#) | Yes | {#potatocloud}
+Standard image with alternative text:
 
-# Documentation for :highlight[Important Core Features]
+![A landscape used for image testing](/simplewiki/images/demo-image.jpg)
 
-This is a regular paragraph where we want to
-:highlight[highlight a specific word].
+Image with a title and a constrained width:
 
-And the best part: it works perfectly inside lists as well.
+![The same landscape at half width](/simplewiki/images/demo-image.jpg "Image with title"){width="50%"}
 
-- This is a normal list item.
-- This is an :highlight[extremely important point] with inherited styling.
+Nuxt image component with explicit dimensions and lazy loading:
 
-::info-box{type="alert" width="60%"}
-**Box**: This is an alert box.
+::nuxt-img{src="/images/demo-image.jpg" alt="Landscape through Nuxt Image" width="300" height="200" loading="lazy"}
 ::
 
-::info-box{type="download" width="60%"}
-**Box**: This is a download box.
-::
+### Local video
 
-::info-box{type="help" width="60%"}
-**Box**: This is a help box.
-::
-
-::info-box{type="important" width="60%"}
-**Box**: This is an important box.
-::
-
-::info-box{type="info" width="60%"}
-**Box**: This is an information box.
-::
-
-::info-box{type="tip" width="60%"}
-**Box**: This is a tip box.
-::
-
-::info-box{type="todo" width="60%"}
-**Box**: This is a TODO box.
-::
-
-::info-box{type="deprecated" width="60%"}
-**Box**: This is a Deprecated box.
-::
-
-## Image Examples
-
-![Alternative text for the image](/simplewiki/images/demo-image.jpg)
-
----
-
-![My Screenshot](/simplewiki/images/demo-image.jpg "This is the image caption")
-
----
-
-![A smaller image](/simplewiki/images/demo-image.jpg){width="50%" style="display: block; margin: 0 auto;"}
-
----
-
-::nuxt-img{src="/images/demo-image.jpg" width="300" height="200" format="webp" loading="lazy"}
-::
-
-## Videos
-
-In Nuxt Content, you can embed videos using standard HTML tags, native Vue components, or external embeds (such as YouTube).
-
-### Local Videos (HTML5)
-
-For videos stored inside your `public/` directory, you can use the standard HTML5 `<video>` tag directly in Markdown:
-
-<video src="/videos/bunny.mp4" controls width="100%" poster="/images/video-thumbnail.jpg">
-  Your browser does not support the video tag.
+<video src="/simplewiki/videos/bunny.mp4" controls width="100%">
+  Your browser does not support HTML5 video.
 </video>
 
-
-
-### YouTube Videos
-
-We use `@nuxt/scripts` for a privacy-friendly (GDPR-compliant) embed. The video is only loaded after the user clicks the play button.
+### YouTube: default and alternate thumbnail
 
 ::youtube{id="d_IFKP1Ofq0"}
 ::
 
----
-
-### Optional: Use a Different Thumbnail Size
-
 ::youtube{id="d_IFKP1Ofq0" thumb-size="hqdefault"}
 ::
 
-## Tabs
+## Lists, quotes and tables
 
-::tabs
-  :::div{title="npm"}
-  Example command for npm users:
+### Unordered, nested and ordered lists
 
-  ```bash
-  npm install simplewiki
-  ```
-  :::
-  :::div{title="pnpm"}
-  Example command for pnpm users:
-  
-  ```bash
-  pnpm add simplewiki
-  ```
-  :::
-  :::div{title="yarn"}
-  Example command for yarn users:
-  
-  ```bash
-  yarn add simplewiki
-  ```
-  :::
+- First item with **bold** text
+- Second item
+  - Nested item
+  - Another nested item with `code`
+- Third item
+
+1. First step
+2. Second step
+   1. Nested step
+   2. Another nested step
+3. Third step
+
+### Task list
+
+- [x] Inspect the content
+- [ ] Publish the final implementation
+
+### Blockquotes
+
+> A short quotation with **formatting**.
+>
+> A second paragraph inside the same quote.
+>
+> > A nested quotation.
+
+### Tables
+
+| Left aligned                          | Centered | Right aligned |
+| :------------------------------------ | :------: | ------------: |
+| **Bold**                              |  `code`  |            12 |
+| [Link](/getting-started/installation) | _Italic_ |           345 |
+
+### Footnote
+
+This sentence has a footnote.[^sample]
+
+[^sample]: A footnote with **Markdown** formatting and a [link](https://example.com).
+
+## Code and diagrams
+
+### Plain fenced code
+
+```
+Plain text stays plain.
+  Indentation stays visible.
+```
+
+### Language, filename and highlighted line
+
+```typescript [example.ts] {2}
+const project = "SimpleWiki";
+console.log(project);
+```
+
+### Indented code
+
+    npm run dev:static
+
+### Mermaid
+
+```mermaid
+flowchart LR
+  Markdown --> Renderer
+  Renderer --> Page
+```
+
+### PlantUML
+
+```plantuml
+@startuml
+actor Reader
+Reader -> Wiki: Open page
+Wiki --> Reader: Render content
+@enduml
+```
+
+## Inline components
+
+### Highlight
+
+Use :highlight[highlighted words] in prose, including **bold :highlight[emphasis]** and a list item:
+
+- A normal item
+- An :highlight[important] item
+
+### Keyboard
+
+Single key :keyboard{keys="Enter"}, shortcut :keyboard{keys="Ctrl+Shift+P"}, and platform shortcut :keyboard{keys="Cmd+C"}.
+
+### Badges: every type and custom text
+
+:badge{type="new"} :badge{type="beta"} :badge{type="stable"} :badge{type="deprecated"} :badge{type="info"} :badge
+
+:badge{type="beta"}[Experimental] :badge{type="stable"}[Version 1.0]
+
+## Content components
+
+### Info box: every type
+
+::info-box
+The default type is information.
 ::
 
-## Badges
-
-::badge{type="beta"}
-:: 
-
-::badge{type="deprecated"}
-Removed since version 2.0
+::info-box{type="info"}
+General **information** with a [link](/getting-started/installation).
 ::
 
-::badge{type="new"}
-New Feature
+::info-box{type="tip"}
+A helpful tip.
 ::
 
-::badge{type="stable"}
-Stable Release
+::info-box{type="important"}
+An important note.
 ::
 
-::badge{type="info"}
-Information
+::info-box{type="alert"}
+An alert or warning.
 ::
 
-## Accordions
+::info-box{type="help"}
+Help for the reader.
+::
+
+::info-box{type="download"}
+A download notice.
+::
+
+::info-box{type="todo"}
+A task that is still open.
+::
+
+::info-box{type="deprecated"}
+A deprecated feature.
+::
+
+::info-box{type="info" width="60%"}
+Custom width: 60%.
+::
+
+### Hatnote: icon and no icon
+
+:hatnote[This page is a visual test of the renderer.]
+
+::hatnote{icon=false}
+The same note style without an icon, with **Markdown** text.
+::
+
+### Pull quote: with and without citation
+
+::pull-quote
+Good documentation makes the next step clear.
+::
+
+::pull-quote{cite="SimpleWiki test page"}
+One page can exercise **many components** at once.
+::
+
+### Collapsible: closed, open and default title
+
+::collapsible{title="Closed by default"}
+Hidden content with a list:
+
+- First detail
+- Second detail
+  ::
+
+::collapsible{title="Open by default" open=true}
+This content starts expanded. It also contains `inline code`.
+::
+
+::collapsible
+This example uses the default title.
+::
+
+### Accordion: several panels and rich content
 
 ::accordion
-  :::div{title="What is X?"}
-  X is a powerful tool that simplifies your workflow.
+:::div{title="First panel"}
+The first panel contains **formatted text**.
+:::
+:::div{title="Second panel"}
+
+- A nested list
+- Another item
   :::
-  :::div{title="How do I install Y?"}
-  Further answer.
+  :::div{title="Third panel"}
+  A [link](/getting-started/installation) inside a panel.
   :::
+  ::
+
+### Tabs: multiple labels and nested Markdown
+
+::tabs
+:::div{title="npm"}
+
+```bash
+npm install simplewiki
+```
+
+:::
+:::div{title="pnpm"}
+
+```bash
+pnpm add simplewiki
+```
+
+:::
+:::div{title="Notes"}
+This tab contains **text** and a list:
+
+- One item
+- Another item
+  :::
+  ::
+
+### Steps: named, unnamed and rich content
+
+::steps
+:::div{title="Install"}
+Install the package.
+:::
+:::div
+This step has no title.
+:::
+:::div{title="Configure"}
+Set up the project with `npm run dev:static`.
+:::
 ::
 
-## Timeline
+### Timeline: dated, titled and untitled events
 
 ::timeline
-  :::div{date="2024-06-01" title="v2.0 Release"}
-  Major update with new features and improvements.
-  :::
-  :::div{date="2024-01-15" title="v1.0 Release"}
-  Initial release of the project.
-  :::
+:::div{date="2024-01-15" title="First release"}
+Initial documentation.
+:::
+:::div{date="2024-06-01"}
+An event without a title.
+:::
+:::div{date="2025-01-01" title="Updated content"}
+**Rich text** and a [link](/getting-started/installation).
+:::
 ::
 
-## Collapsible Sections
-
-::collapsible{title="Technical Details"}
-Big Title
-You can do stuff here, like adding code blocks:
-
-```javascript
-console.log("Hello, world!");
-```
-::
-
-::collapsible{title="Opened by Default" open=true}
-This section is open by default. You can add any content here.
-::
-
-## Diffs
+### Diff: context, removal and addition
 
 ::diff
 ---
+
 lines:
-  - type: remove
-    content: "const x = 1"
-  - type: add
-    content: "const x = 2"
-  - type: context
-    content: "return x"
+
+- type: context
+  content: "const version = 1"
+- type: remove
+  content: "const name = 'old'"
+- type: add
+  content: "const name = 'new'"
+- type: context
+  content: "export { name, version }"
+
 ---
+
 ::
 
-## Steps
+### Link card: title only and description
 
-::steps
-  :::div{title="Install package"}
-    Install the package using your preferred package manager.
-    ```bash
-    npm install simplewiki
-    ```
-  :::
-  :::div{title="Configure"}
-    Configure the package according to your needs.
-  :::
-  :::div{title="Use"}
-    Use the package in your project and enjoy its features:
-    1. Import the package.
-    2. Call the functions.
-  :::
+::link-card{to="/getting-started/installation" title="Installation"}
 ::
 
-
-## Kbd
-
-Press :keyboard{keys="Cmd+C"} to copy a selected item.  
-And press :keyboard{keys="Cmd+V"} to paste it.
-
-## Headnote
-
-::hatnote
-This is a hatnote with an icon. It can be used to provide additional context or information to the reader, often appearing at the top of an article or section.
+::link-card{to="/documentation/markdown-syntax" title="Markdown syntax" description="Read the full syntax guide."}
 ::
 
-## Pull Quote
-::pull-quote{cite="Albert Einstein"}
-"Imagination is more important than knowledge. For knowledge is limited, whereas imagination embraces the entire world, stimulating progress, giving birth to evolution."
+## Structured data and references
+
+### Field table: plain and formatted values
+
+::field-table
+---
+
+items:
+Project: SimpleWiki
+Command: "npm run dev:static"
+URL: "https://example.com/api"
+Description: "A value with **bold text**, `code`, and a colon: inside it."
+---
+
 ::
 
-## Reference List
+### Reference list: with and without notes
 
 ::reference-list
 ---
+
 items:
-  - title: "Nuxt Content Documentation"
-    url: "https://content.nuxtjs.org/"
-    note: "Official documentation for Nuxt Content."
-  - title: "SimpleWiki GitHub Repository"
-    url: "https://github.com/simplewiki/simplewiki"
-  - title: "Nuxt.js Official Website"
-    url: "https://nuxtjs.org/"
+
+- title: Markdown Guide
+  url: https://www.markdownguide.org/
+  note: Reference for Markdown syntax.
+- title: Nuxt Content
+  url: https://content.nuxt.com/
+
 ---
+
 ::
 
-::category-list
----
-items:
-  - label: "Category 1"
-    to: "/category-1"
-  - label: "Category 2"
-    to: "/category-2"
-  - label: "Category 3"
-    to: "/category-3"
----
-::
+### Inline citations and references: URL, note and plain source
 
-## References
-
-Das World Wide Web wurde 1989 erfunden. :ref{n="1"}
-Es basiert auf dem HTTP-Protokoll. :ref{n="2"}
+The web was created at CERN. :ref{n="1"} HTTP carries web requests. :ref{n="2"} A printed source can also be cited. :ref{n="3"}
 
 ::references
 ---
+
 items:
-  - title: "CERN – Tim Berners-Lee und das WWW"
-    url: "https://home.cern/science/computing/birth-web"
-    note: "Originalquelle."
-  - title: "MDN – HTTP Übersicht"
-    url: "https://developer.mozilla.org/de/docs/Web/HTTP/Overview"
+
+- title: The birth of the Web
+  url: https://home.cern/science/computing/birth-web
+  note: CERN history.
+- title: HTTP overview
+  url: https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
+- title: Printed reference without a URL
+  note: Example of a source without a link.
+
 ---
+
 ::
 
-## Mermaid
+### Category list: linked and plain labels
 
-```mermaid
-graph TB
-%% Custom Styling
-    classDef client fill:#3b82f6,stroke:#1d4ed8,color:#fff,stroke-width:2px;
-    classDef gateway fill:#8b5cf6,stroke:#6d28d9,color:#fff,stroke-width:2px;
-    classDef service fill:#10b981,stroke:#047857,color:#fff,stroke-width:1.5px;
-    classDef database fill:#f59e0b,stroke:#b45309,color:#fff,stroke-width:2px;
-    classDef messaging fill:#ef4444,stroke:#b91c1c,color:#fff,stroke-width:2px;
-    classDef external fill:#6b7280,stroke:#374151,color:#fff,stroke-dasharray: 5 5;
+::category-list
+---
 
-%% Client Layer
-    subgraph Clients ["📱 Client Layer"]
-        Web["Web Frontend (React)"]:::client
-        Mobile["Mobile App (iOS/Android)"]:::client
-        3rdParty["Third-Party API Clients"]:::client
-    end
+items:
 
-%% Edge & Security Layer
-    subgraph Edge ["🛡️ Edge & Security"]
-        WAF["Cloudflare WAF / CDN"]
-        Gateway["Kong API Gateway"]:::gateway
-        Auth["Auth0 / Identity Provider"]:::external
-    end
+- label: Getting started
+  to: /getting-started/installation
+- label: Components
+  to: /components/overview
+- label: Unlinked category
 
-%% Microservices Tier
-    subgraph Services ["⚙️ Microservices Core"]
-        UserSvc["User Service"]:::service
-        OrderSvc["Order Service"]:::service
-        PaymentSvc["Payment Service"]:::service
-        NotifSvc["Notification Service"]:::service
-    end
+---
 
-%% Messaging & Event Stream
-    subgraph Bus ["📬 Event-Driven Messaging"]
-        Kafka{{"Apache Kafka (Event Stream)"}}:::messaging
-        DLQ[("Dead Letter Queue")]:::messaging
-    end
+::
 
-%% Persistence Layer
-    subgraph Data ["💾 Data Tier"]
-        UserDB[("User DB\n(PostgreSQL)")]:::database
-        OrderDB[("Order DB\n(MongoDB)")]:::database
-        Cache[("Redis Cache Cluster")]:::database
-        AnalyticsDB[("ClickHouse\n(Analytics)")]:::database
-    end
+### See also: basic and described links
 
-%% External Systems
-    subgraph External ["🌐 External Services"]
-        Stripe["Stripe Gateway"]:::external
-        SendGrid["SendGrid Email API"]:::external
-    end
+::see-also
+---
 
-%% Data Flow & Interconnections
-    Clients ==>|HTTPS / WSS| WAF
-    WAF --> Gateway
-    Gateway -.->|Validate JWT| Auth
+items:
 
-    Gateway -->|/users| UserSvc
-    Gateway -->|/orders| OrderSvc
-    Gateway -->|/payments| PaymentSvc
+- title: Installation
+  to: /getting-started/installation
+- title: Markdown syntax
+  to: /documentation/markdown-syntax
+  description: Learn the supported Markdown features.
+- title: Mermaid documentation
+  to: https://mermaid.js.org/
+  description: External diagram reference.
+  external: true
 
-    UserSvc <-->|Read/Write Cache| Cache
-    UserSvc --> UserDB
+---
 
-    OrderSvc --> OrderDB
-    OrderSvc -- "1. OrderCreated Event" --> Kafka
-
-    Kafka -- "2. Consume Event" --> PaymentSvc
-    Kafka -- "3. Consume Event" --> NotifSvc
-    Kafka -.->|Sync CDC Data| AnalyticsDB
-
-    PaymentSvc -->|Process Charge| Stripe
-    PaymentSvc -- "PaymentFailed" --> DLQ
-    PaymentSvc -- "PaymentSuccess" --> Kafka
-
-    NotifSvc -->|Send Transactional Email| SendGrid
-
-%% Notes & Annotation
-    class Web,Mobile,3rdParty client;
-    class Gateway gateway;
-    class UserSvc,OrderSvc,PaymentSvc,NotifSvc service;
-    class UserDB,OrderDB,Cache,AnalyticsDB database;
-    class Kafka,DLQ messaging;
-```
+::

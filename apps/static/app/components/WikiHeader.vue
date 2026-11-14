@@ -34,7 +34,7 @@ const theme = computed<"light" | "dark" | null>(() => {
   return colorMode.value === "dark" ? "dark" : "light";
 });
 
-function setTheme(value: "light" | "dark") {
+function setTheme(value: "light" | "dark" | "auto") {
   colorMode.preference = value;
 }
 

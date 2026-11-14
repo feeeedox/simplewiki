@@ -4,7 +4,7 @@ import 'vue-lite-youtube-embed/style.css'
 
 import { WikiContentYoutubeApi as BaseWikiYouTube } from '@simplewiki/ui'
 
-type ThumbnailSize = 'default' | 'medium' | 'high' | 'standard' | 'maxresdefault'
+type ThumbnailSize = 'default' | 'mqdefault' | 'hqdefault' | 'sddefault' | 'maxresdefault'
 
 const props = withDefaults(
   defineProps<{
@@ -20,7 +20,9 @@ const props = withDefaults(
 <template>
   <BaseWikiYouTube :id="props.id" :thumb-size="props.thumbSize">
     <template #default="{ id }">
-      <LiteYouTubeEmbed :id="id" title="YouTube Video" class="wikiYoutubePlayer" />
+      <div class="wikiYoutubePlayer">
+        <LiteYouTubeEmbed :id="id" :poster="props.thumbSize" title="YouTube Video" />
+      </div>
     </template>
   </BaseWikiYouTube>
 </template>

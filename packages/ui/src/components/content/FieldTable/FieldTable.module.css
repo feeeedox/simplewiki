@@ -3,7 +3,7 @@
 .table {
     table-layout: auto;
     width: 100%;
-    max-width: var(var(--spacing) * 140);
+    max-width: calc(var(--spacing) * 140);
     border-collapse: collapse;
     font-size: var(--text-13);
     background-color: var(--content-bg);

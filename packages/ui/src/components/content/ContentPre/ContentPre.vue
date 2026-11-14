@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { onMounted, ref } from 'vue';
 import { MermaidDiagram } from '../MermaidDiagram';
 import { PlantumlDiagram } from '../PlantumlDiagram';
 import styles from './ContentPre.module.css';
@@ -13,13 +14,18 @@ const props = defineProps<{
 const isMermaid  = props.language === 'mermaid'
 const isPlantUML = props.language === 'plantuml' || props.language === 'puml'
 const isDiagram  = isMermaid || isPlantUML
+const isMounted = ref(false)
+
+onMounted(() => {
+  isMounted.value = true
+})
 </script>
 
 <template>
-  <ClientOnly v-if="isDiagram">
-    <MermaidDiagram  v-if="isMermaid"><slot /></MermaidDiagram>
-    <PlantumlDiagram v-else><slot /></PlantumlDiagram>
-  </ClientOnly>
+  <template v-if="isDiagram">
+    <MermaidDiagram v-if="isMounted && isMermaid"><slot /></MermaidDiagram>
+    <PlantumlDiagram v-else-if="isMounted"><slot /></PlantumlDiagram>
+  </template>
 
   <div v-else :class="styles.codeWrapper">
     <div v-if="filename" :class="styles.codeHeader">

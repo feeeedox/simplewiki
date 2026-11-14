@@ -1,92 +1,115 @@
-const PLANTUML_ALPHABET =
-    '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_'
+const PLANTUML_ALPHABET = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_";
 
 function encode6bit(b: number): string {
-    // @ts-ignore
-    return PLANTUML_ALPHABET[b & 0x3f]
+  // @ts-ignore
+  return PLANTUML_ALPHABET[b & 0x3f];
 }
 
 function append3bytes(b1: number, b2: number, b3: number): string {
-    const c1 = b1 >> 2
-    const c2 = ((b1 & 0x3) << 4) | (b2 >> 4)
-    const c3 = ((b2 & 0xf) << 2) | (b3 >> 6)
-    const c4 = b3 & 0x3f
-    return encode6bit(c1) + encode6bit(c2) + encode6bit(c3) + encode6bit(c4)
+  const c1 = b1 >> 2;
+  const c2 = ((b1 & 0x3) << 4) | (b2 >> 4);
+  const c3 = ((b2 & 0xf) << 2) | (b3 >> 6);
+  const c4 = b3 & 0x3f;
+  return encode6bit(c1) + encode6bit(c2) + encode6bit(c3) + encode6bit(c4);
 }
 
 function encodePlantumlBytes(data: Uint8Array): string {
-    let result = ''
-    let i = 0
-    while (i + 2 < data.length) {
-        // @ts-ignore
-        result += append3bytes(data[i], data[i + 1], data[i + 2])
-        i += 3
-    }
-    if (i + 1 === data.length) {
-        // @ts-ignore
-        result += append3bytes(data[i], 0, 0).slice(0, 2)
-    } else if (i + 2 === data.length) {
-        // @ts-ignore
-        result += append3bytes(data[i], data[i + 1], 0).slice(0, 3)
-    }
-    return result
+  let result = "";
+  let i = 0;
+  while (i + 2 < data.length) {
+    // @ts-ignore
+    result += append3bytes(data[i], data[i + 1], data[i + 2]);
+    i += 3;
+  }
+  if (i + 1 === data.length) {
+    // @ts-ignore
+    result += append3bytes(data[i], 0, 0).slice(0, 2);
+  } else if (i + 2 === data.length) {
+    // @ts-ignore
+    result += append3bytes(data[i], data[i + 1], 0).slice(0, 3);
+  }
+  return result;
 }
 
 async function encodePlantuml(source: string): Promise<string> {
-    const utf8 = new TextEncoder().encode(source)
+  const utf8 = new TextEncoder().encode(source);
 
-    const cs = new CompressionStream('deflate-raw')
-    const writer = cs.writable.getWriter()
-    writer.write(utf8)
-    writer.close()
+  const cs = new CompressionStream("deflate-raw");
+  const writer = cs.writable.getWriter();
+  writer.write(utf8);
+  writer.close();
 
-    const chunks: Uint8Array[] = []
-    const reader = cs.readable.getReader()
-    while (true) {
-        const { done, value } = await reader.read()
-        if (done) break
-        chunks.push(value)
-    }
+  const chunks: Uint8Array[] = [];
+  const reader = cs.readable.getReader();
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    chunks.push(value);
+  }
 
-    const total = chunks.reduce((n, c) => n + c.length, 0)
-    const merged = new Uint8Array(total)
-    let offset = 0
-    for (const chunk of chunks) {
-        merged.set(chunk, offset)
-        offset += chunk.length
-    }
+  const total = chunks.reduce((n, c) => n + c.length, 0);
+  const merged = new Uint8Array(total);
+  let offset = 0;
+  for (const chunk of chunks) {
+    merged.set(chunk, offset);
+    offset += chunk.length;
+  }
 
-    return encodePlantumlBytes(merged)
+  return encodePlantumlBytes(merged);
 }
 
 const SERVER =
-    // @ts-ignore
-    (import.meta.env?.VITE_PLANTUML_SERVER as string | undefined) ??
-    'https://www.plantuml.com/plantuml'
+  // @ts-ignore
+  (import.meta.env?.VITE_PLANTUML_SERVER as string | undefined) ??
+  "https://www.plantuml.com/plantuml";
 
+export type PlantumlTheme = "light" | "dark";
 
-export async function plantumlSvgUrl(source: string): Promise<string> {
-    const wrapped =
-        source.trimStart().startsWith('@')
-            ? source
-            : `@startuml\n${source}\n@enduml`
+function applyTheme(source: string, theme: PlantumlTheme): string {
+  const content = source.trim();
 
-    const encoded = await encodePlantuml(wrapped)
-    return `${SERVER}/svg/${encoded}`
+  const themeName = theme === "dark" ? "cyborg" : "cerulean";
+
+  const withoutTheme = content.replace(/^\s*!theme\s+[^\r\n]+(?:\r?\n|$)/gm, "");
+
+  const startMatch = withoutTheme.match(/^(@start\w+[^\r\n]*)(?:\r?\n|$)/);
+
+  if (startMatch) {
+    return withoutTheme.replace(/^(@start\w+[^\r\n]*)(?:\r?\n|$)/, `$1\n!theme ${themeName}\n`);
+  }
+
+  return `@startuml
+!theme ${themeName}
+${withoutTheme}
+@enduml`;
+}
+export async function plantumlSvgUrl(
+  source: string,
+  theme: PlantumlTheme = "light",
+): Promise<string> {
+  const themedSource = applyTheme(source, theme);
+  const encoded = await encodePlantuml(themedSource);
+
+  return `${SERVER}/svg/${encoded}`;
 }
 
-export async function renderPlantuml(source: string): Promise<string> {
-    const url = await plantumlSvgUrl(source)
-    const res = await fetch(url)
-    if (!res.ok) throw new Error(`PlantUML server error ${res.status}`)
+export async function renderPlantuml(
+  source: string,
+  theme: PlantumlTheme = "light",
+): Promise<string> {
+  const url = await plantumlSvgUrl(source, theme);
 
-    const svg = await res.text()
+  const res = await fetch(url);
 
-    if (svg.includes('erbasieerror') || svg.includes('Syntax Error')) {
-        throw new Error('PlantUML syntax error — check your diagram source')
-    }
+  if (!res.ok) {
+    throw new Error(`PlantUML server error ${res.status}`);
+  }
 
-    return svg
-        .replace(/\s+width="[^"]*"/, '')
-        .replace(/\s+height="[^"]*"/, '')
+  const svg = await res.text();
+
+  if (svg.includes("erbasieerror") || svg.includes("Syntax Error")) {
+    throw new Error("PlantUML syntax error — check your diagram source");
+  }
+
+  return svg.replace(/\s+width="[^"]*"/, "").replace(/\s+height="[^"]*"/, "");
 }

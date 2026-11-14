@@ -24,6 +24,8 @@ import {
   Steps,
   Timeline,
 } from '@simplewiki/ui'
+import WikiImage from '@/components/content/WikiImage.vue'
+import WikiYouTube from '@/components/content/WikiYouTube.vue'
 
 const content = `
 
@@ -82,6 +84,11 @@ Renderer uses Shiki by default to provide excellent syntax highlighting. You can
 // This line is displayed normally
 console.log("This line is visually highlighted!");
 const content = "Nuxt Content rocks";
+\`\`\`
+
+\`\`\`typescript [example.ts] {2}
+const name = 'SimpleWiki'
+console.log(name)
 \`\`\`
 
 ## Table
@@ -156,6 +163,13 @@ For videos stored inside your \`public\` directory, you can use the standard HTM
 <video src="/videos/bunny.mp4" controls width="100%" poster="/images/video-thumbnail.jpg">
   Your browser does not support the video tag.
 </video>
+
+### YouTube Videos
+
+We use a youtube thing for a privacy-friendly (GDPR-compliant) embed. The video is only loaded after the user clicks the play button.
+
+::youtube{id="d_IFKP1Ofq0"}
+::
 
 ---
 
@@ -431,11 +445,10 @@ graph TB
     class UserDB,OrderDB,Cache,AnalyticsDB database;
     class Kafka,DLQ messaging;
 \`\`\`
-
-
 `
 
 const components = {
+  img: WikiImage,
   h1: WikiH1,
   h2: WikiH2,
   h3: WikiH3,
@@ -456,14 +469,28 @@ const components = {
   ReferenceList: ReferenceList,
   SeeAlso: SeeAlso,
   LinkCard: LinkCard,
-  Youtube: 'WikiYouTube',
+  Youtube: WikiYouTube,
 }
+
+import shiki from '@comark/vue/plugins/shiki'
+import githubLight from '@shikijs/themes/github-light'
+import githubDark from '@shikijs/themes/github-dark'
+
+const plugins = [
+  shiki({
+    themes: {
+      light: githubLight,
+      dark: githubDark,
+    },
+    registerDefaultThemes: true,
+  }),
+]
 </script>
 
 <template>
   <DefaultLayout>
     <Suspense>
-      <Markdown :value="content" :components="components" />
+      <Markdown :plugins="plugins" :value="content" :components="components" />
     </Suspense>
   </DefaultLayout>
   <WikiFooter />

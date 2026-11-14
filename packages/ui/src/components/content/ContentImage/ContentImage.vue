@@ -1,66 +1,88 @@
-
 <script setup lang="ts">
-import { computed, useAttrs } from 'vue';
-import styles from './ContentImage.module.css'
+import { computed, useAttrs } from "vue";
+import type { Component } from "vue";
+import styles from "./ContentImage.module.css";
 
 defineOptions({
-  inheritAttrs: false
-})
+  inheritAttrs: false,
+});
 
-const props = defineProps({
-  src: { type: String, default: '' },
-  alt: { type: String, default: '' },
-  title: { type: String, default: '' },
-  width: { type: [String, Number], default: undefined },
-  imageComponent: {
-    type: [String, Object, Function],
-    default: 'img'
-  }
-})
+interface Props {
+  src?: string;
+  alt?: string;
+  title?: string;
 
-const attrs = useAttrs()
+  width?: string | number;
+  height?: string | number;
+
+  loading?: "lazy" | "eager";
+  decoding?: "async" | "sync" | "auto";
+  fetchpriority?: "high" | "low" | "auto";
+
+  srcset?: string;
+  sizes?: string;
+
+  imageComponent?: string | object | Function;
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  src: "",
+  alt: "",
+  title: "",
+  loading: "lazy",
+  decoding: "async",
+  fetchpriority: "auto",
+  imageComponent: "img",
+});
+
+const attrs = useAttrs();
 
 const cssWidth = computed(() => {
-  if (props.width == null) return undefined
+  if (props.width == null) return undefined;
 
-  return typeof props.width === 'number'
-    ? `${props.width}px`
-    : props.width
-})
+  return typeof props.width === "number" ? `${props.width}px` : props.width;
+});
 
-function imageAttrs() {
-  const { style, ...rest } = attrs
-  return rest
-}
+const imageAttrs = computed(() => {
+  const { style, ...rest } = attrs;
+
+  return {
+    ...rest,
+    src: props.src,
+    alt: props.alt,
+    loading: props.loading,
+    decoding: props.decoding,
+    fetchpriority: props.fetchpriority,
+    srcset: props.srcset,
+    sizes: props.sizes,
+    width: props.width,
+    height: props.height,
+  };
+});
+
+const containerStyle = computed(() => [
+  {
+    width: cssWidth.value,
+  },
+  attrs.style,
+]);
 </script>
 
 <template>
   <span :class="styles.wikiImgContainer">
-    <span
-      v-if="title"
-      :class="styles.wikiFigure"
-      :style="[{ width: cssWidth ?? '100%' }, attrs.style]"
-    >
-      <component
-        :is="imageComponent"
-        v-bind="imageAttrs()"
-        :src="src"
-        :alt="alt"
-        :class="styles.wikiImg"
-      />
+    <figure v-if="title" :class="styles.wikiFigure" :style="containerStyle">
+      <component :is="imageComponent" v-bind="imageAttrs" :class="styles.wikiImg" />
 
-      <span :class="styles.wikiFigcaption">
+      <figcaption :class="styles.wikiFigcaption">
         {{ title }}
-      </span>
-    </span>
+      </figcaption>
+    </figure>
 
     <component
       :is="imageComponent"
       v-else
-      v-bind="imageAttrs()"
-      :src="src"
-      :alt="alt"
-      :style="[{ width: cssWidth ?? 'auto' }, attrs.style]"
+      v-bind="imageAttrs"
+      :style="containerStyle"
       :class="styles.wikiImgStandalone"
     />
   </span>

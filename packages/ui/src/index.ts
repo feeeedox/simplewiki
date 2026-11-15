@@ -38,5 +38,5 @@ export { SeeAlso } from "./components/content/SeeAlso";
 export { Steps } from "./components/content/Steps";
 export { Tabs } from "./components/content/Tabs";
 export { Timeline } from "./components/content/Timeline";
-
+export type { TocLink } from "./components/layout/ToC/ToC.vue";
 export { installWikiUi } from "./install";

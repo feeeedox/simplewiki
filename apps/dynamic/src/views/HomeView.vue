@@ -5,7 +5,8 @@ import WikiH3 from '@/components/content/WikiH3.vue'
 import WikiH4 from '@/components/content/WikiH4.vue'
 import WikiFooter from '@/components/WikiFooter.vue'
 import DefaultLayout from '@/layouts/default-layout.vue'
-import { Markdown } from '@comark/vue'
+import { Markdown, MarkdownDocument } from '@comark/vue'
+import { parseMarkdown } from 'comark'
 import ContentPre from '../../../../packages/ui/src/components/content/ContentPre/ContentPre.vue'
 import WikiRef from '@/components/content/WikiRef.vue'
 import {
@@ -65,8 +66,10 @@ import shiki from '@comark/vue/plugins/shiki'
 import footnotes from '@comark/vue/plugins/footnotes'
 import githubLight from '@shikijs/themes/github-light'
 import githubDark from '@shikijs/themes/github-dark'
+import toc from '@comark/vue/plugins/toc'
 
 const plugins = [
+  toc({}),
   footnotes(),
   shiki({
     themes: {
@@ -76,13 +79,29 @@ const plugins = [
     registerDefaultThemes: false,
   }),
 ]
+
+import type { TocLink } from '@simplewiki/ui'
+import { computed, onMounted, shallowRef } from 'vue'
+
+type ParsedDocument = Awaited<ReturnType<typeof parseMarkdown>>
+
+const parsed = shallowRef<ParsedDocument | null>(null)
+
+const tocLinks = computed<TocLink[]>(() => (parsed.value?.meta.toc?.links ?? []) as TocLink[])
+
+onMounted(async () => {
+  parsed.value = await parseMarkdown(content, {
+    plugins,
+  })
+})
 </script>
 
 <template>
-  <DefaultLayout>
+  <DefaultLayout :toc-links="tocLinks">
     <Suspense>
       <Markdown :plugins="plugins" :value="content" :components="components" />
     </Suspense>
   </DefaultLayout>
+
   <WikiFooter />
 </template>

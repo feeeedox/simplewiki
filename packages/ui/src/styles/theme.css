@@ -23,6 +23,7 @@
 }
 
 :root {
+  --primary: #36c;
   --page-bg: #f6f6f6;
   --content-bg: #ffffff;
   --sidebar-bg: #f8f9fa;
@@ -44,6 +45,7 @@
 }
 
 .dark {
+  --primary: rgb(28, 65, 141);
   --page-bg: #101418;
   --content-bg: #1a1f26;
   --sidebar-bg: #14191f;

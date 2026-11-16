@@ -1,0 +1,33 @@
+.input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 4px 8px;
+
+  border: 1px solid var(--header-band);
+  border-radius: 2px;
+
+  background-color: var(--content-bg);
+  color: var(--header-text);
+
+  font: inherit;
+  font-size: 0.875rem;
+
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+
+  &::placeholder {
+    color: var(--text-muted);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--link);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

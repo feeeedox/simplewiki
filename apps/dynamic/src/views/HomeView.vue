@@ -102,6 +102,4 @@ onMounted(async () => {
       <Markdown :plugins="plugins" :value="content" :components="components" />
     </Suspense>
   </DefaultLayout>
-
-  <WikiFooter />
 </template>

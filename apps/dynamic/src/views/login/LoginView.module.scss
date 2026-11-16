@@ -1,0 +1,59 @@
+.form {
+  margin-top: calc(var(--spacing) * 4);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 4);
+
+  // TODO: move buttons to own component and add more variants
+  button {
+    cursor: pointer;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+
+    color: var(--link);
+    background-color: var(--content-bg);
+
+    font: inherit;
+    font-size: 13px;
+    font-weight: 500;
+
+    padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 5);
+
+    transition:
+      background-color 150ms ease,
+      border-color 150ms ease;
+
+    &:hover:not(:disabled) {
+      background-color: var(--row-hover-bg);
+      border-color: var(--link);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--link);
+      outline-offset: 2px;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 1.5);
+}
+
+.forgot_password {
+  color: var(--link);
+}
+
+.form_actions {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-content: end;
+}

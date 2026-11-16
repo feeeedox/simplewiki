@@ -1,5 +1,9 @@
 @import '@simplewiki/ui/theme.css';
 
+html {
+  scrollbar-gutter: stable;
+}
+
 /* Shiki Dark Mode */
 html.dark .shiki {
   background-color: var(--shiki-dark-bg, transparent) !important;

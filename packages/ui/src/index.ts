@@ -6,17 +6,10 @@ export { ContentImage as WikiContentImage } from "./components/content/ContentIm
 export { ContentReference as WikiReference } from "./components/content/ContentReference";
 export { ContentYoutubeApi as WikiContentYoutubeApi } from "./components/content/ContentYoutubeApi";
 export { ContentYoutubePlaybuttonApi as WikiContentYoutubePlaybuttonApi } from "./components/content/ContentYoutubePlaybuttonApi";
-export { WikiHeader } from "./components/layout/Header";
-export type { WikiHeaderSearchResult } from "./components/layout/Header";
 
-export { WikiSidebar } from "./components/layout/Sidebar";
-export type { WikiSidebarItem } from "./components/layout/Sidebar";
-
+export { Footer as WikiFooter } from "./components/Footer";
 export { ToC as WikiToC } from "./components/layout/ToC";
 export { default as WikiLink } from "./components/WikiLink.vue";
-export { WikiTrace } from "./components/layout/Trace";
-export { WikiRenderer } from "./components/content/Renderer";
-export { Footer as WikiFooter } from "./components/Footer";
 
 export { Accordion } from "./components/content/Accordion";
 export { Badge } from "./components/content/Badge";
@@ -34,11 +27,19 @@ export { PlantumlDiagram } from "./components/content/PlantumlDiagram";
 export { PullQuote } from "./components/content/PullQuote";
 export { ReferenceList } from "./components/content/ReferenceList";
 export { References } from "./components/content/References";
+export { WikiRenderer } from "./components/content/Renderer";
 export { SeeAlso } from "./components/content/SeeAlso";
 export { Steps } from "./components/content/Steps";
 export { Tabs } from "./components/content/Tabs";
 export { Timeline } from "./components/content/Timeline";
+export { WikiHeader } from "./components/layout/Header";
+export { WikiSidebar } from "./components/layout/Sidebar";
+export { WikiTrace } from "./components/layout/Trace";
 export { Input } from "./components/wiki/Input";
 export { Label } from "./components/wiki/Label";
-export type { TocLink } from "./components/layout/ToC/ToC.vue";
 export { installWikiUi } from "./install";
+
+export type { WikiHeaderSearchResult } from "./components/layout/Header";
+export type { WikiSidebarItem } from "./components/layout/Sidebar";
+export type { TocLink } from "./components/layout/ToC/ToC.vue";
+
